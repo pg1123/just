@@ -4533,16 +4533,16 @@ function toReturnFname($tbname,$f){
 //返回拼音
 function ReturnPinyinFun($hz){
 	global $ecms_config;
-	include_once(ECMS_PATH.'e/class/epinyin.php');
+	include_once(ECMS_PATH.'e/class/sogopinyin.php');
 	//编码
-	if($ecms_config['sets']['pagechar']!='gb2312')
-	{
-		include_once(ECMS_PATH.'e/class/doiconv.php');
-		$iconv=new Chinese('');
-		$char=$ecms_config['sets']['pagechar']=='big5'?'BIG5':'UTF8';
-		$targetchar='GB2312';
-		$hz=$iconv->Convert($char,$targetchar,$hz);
-	}
+	// if($ecms_config['sets']['pagechar']!='gb2312')
+	// {
+	// 	include_once(ECMS_PATH.'e/class/doiconv.php');
+	// 	$iconv=new Chinese('');
+	// 	$char=$ecms_config['sets']['pagechar']=='big5'?'BIG5':'UTF8';
+	// 	$targetchar='GB2312';
+	// 	$hz=$iconv->Convert($char,$targetchar,$hz);
+	// }
 	return c($hz);
 }
 
