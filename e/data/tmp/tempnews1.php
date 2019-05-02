@@ -21,7 +21,7 @@ if(!defined('InEmpireCMS'))
   <div class="header clearfix ctnt">
     <div class="logo"><img src="/just/images/logo.png" /></div>
     <ul class="layui-nav">
-      <li class="layui-nav-item layui-this"> <a href="index.html">首页</a> </li>
+      <li class="layui-nav-item layui-this"> <a href="/">首页</a> </li>
       <li class="layui-nav-item"> <a href="">软件/插件</a>
         <dl class="layui-nav-child snav">
           <dd> <a href="javascript:;" class="btit">3D资源</a>
@@ -90,18 +90,21 @@ if(!defined('InEmpireCMS'))
         <h1><?=$grpagetitle?></h1>
         <div class="intro">
           <ul>
-            <li> 分类：合作 - <a href="#" target="_blank">资助&amp;合作</a>- <a href="#" target="_blank">推广教程</a> </li>
+            <li> 分类：<a href="/jiaocheng/">教程</a>-<?=$class_r[$grbclassid][classname]?> -<a href="<?=$grclassurl?>"> <?=$class_r[$ecms_gr[classid]][classname]?> </a> </li>
+            <!-- <li> 分类：合作 - <a href="#" target="_blank">资助&amp;合作</a>- <a href="#" target="_blank">推广教程</a> </li> -->
             <li> 标签： <a href="#" target="_blank">超写实</a> <a href="#" target="_blank">模型</a> <a href="#" target="_blank">预售</a> <a href="#" target="_blank">场景</a> </li>
           </ul>
         </div>
-        <div class="conn"> <span class="view"> <i class="fa fa-eye" aria-hidden="true"></i>13030 </span><span class="talk"> <i class="fa fa-commenting-o" aria-hidden="true"></i>42 </span><span class="up" > <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>2474 </span> </div>
+        <div class="conn"> <span class="view"> <i class="fa fa-eye" aria-hidden="true"></i><script src=/e/public/ViewClick/?classid=<?=$ecms_gr[classid]?>&id=<?=$ecms_gr[id]?>&addclick=1></script> </span><span class="talk"> <i class="fa fa-commenting-o" aria-hidden="true"></i><?=$ecms_gr[plnum]?> </span><span class="up" > <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><script src=/e/public/ViewClick/?classid=<?=$ecms_gr[classid]?>&id=<?=$ecms_gr[id]?>&down=5></script> </span> </div>
       </div>
       <div class="dmain-m">
-        <p>到目前为止人数为138.现在提前结束这次统计.因为不会再次出售.请勿相信一切私人团购.按照之前约定.人气统计费用捐赠给网站...感谢支持我的朋友.以后我也会一如既往的努力.做出更好的作品----atng糖</p>
-        <img src="/just/images/pic.jpg" /> </div>
+        <?=strstr($ecms_gr[newstext],'[!--empirenews.page--]')?'[!--newstext--]':$ecms_gr[newstext]?>
+        <!-- <p>到目前为止人数为138.现在提前结束这次统计.因为不会再次出售.请勿相信一切私人团购.按照之前约定.人气统计费用捐赠给网站...感谢支持我的朋友.以后我也会一如既往的努力.做出更好的作品----atng糖</p>
+        <img src="/just/images/pic.jpg" /> </div> -->
       <div class="ding">
-        <div class="up"> <a href="javascript:;">顶</a>
-          <p class="num"> <span>1</span> </p>
+        <div class="up"> 
+          <a href="JavaScript:makeRequest('[!---news.url--]e/public/digg?classid=[!---classid--]&amp;id=[!---id--]&amp;dotop=1&amp;doajax=1&amp;ajaxarea=diggnum','EchoReturnedText','GET','');">顶</a>
+          <p class="num"> <span><script src=/e/public/ViewClick/?classid=<?=$ecms_gr[classid]?>&id=<?=$ecms_gr[id]?>&down=5></script></span> </p>
         </div>
       </div>
       <div class="download"> <img src="/just/images/downico1_1.gif" />
