@@ -144,7 +144,7 @@ $ecms_config['sets']['realplayertype']=',.rm,.ra,.rmvb,.mp4,.mov,.avi,.wav,.ram,
 //-------EmpireCMS.Public.Cache-------
 
 //------------e_public
-$public_r=array('sitename'=>'帝国网站管理系统',
+$public_r=array('sitename'=>'素材网',
 'newsurl'=>'/',
 'filetype'=>'|.gif|.jpg|.swf|.rar|.zip|.mp3|.wmv|.txt|.doc|',
 'filesize'=>2048,
