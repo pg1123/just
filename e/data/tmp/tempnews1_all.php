@@ -18,7 +18,7 @@ if(!defined('InEmpireCMS'))
 
 <body>
 <div id="container">
-    <div class="header clearfix ctnt">
+    <!-- <div class="header clearfix ctnt">
     <div class="logo"><img src="/just/images/logo.png" /></div>
     <ul class="layui-nav">
       <li class="layui-nav-item layui-this"> <a href="/">首页22</a> </li>
@@ -83,8 +83,8 @@ if(!defined('InEmpireCMS'))
     </ul>
     <div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div>
     <div class="login"><a href="javascript:;" onclick="logintc()">登录</a>|<a href="javascript:;" onclick="desgin()">注册</a></div>
-  </div>
-  <!-- <div class="header clearfix ctnt">
+  </div> -->
+  <div class="header clearfix ctnt">
     <div class="logo"><img src="/just/images/logo.png" /></div>
     <ul class="layui-nav">
       <li class="layui-nav-item layui-this"> <a href="/">首页</a> </li>
@@ -140,7 +140,7 @@ if(!defined('InEmpireCMS'))
           </dd>
         </dl>
       </li>
-      <li class="layui-nav-item layui-nav-item1" lay-unselect="" style="display:none;"> <a href="javascript:;"><img src="/just/images/user.png" class="layui-nav-img">用户00368</a>
+      <li class="layui-nav-item layui-nav-item1" lay-unselect=""> <a href="javascript:;"><img src="/just/images/user.png" class="layui-nav-img">用户00368</a>
         <dl class="layui-nav-child">
           <dd><a href="javascript:;">充值服务</a></dd>
           <dd><a href="javascript:;">退出</a></dd>
@@ -149,7 +149,7 @@ if(!defined('InEmpireCMS'))
     </ul>
     <div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div>
     <div class="login"><a href="javascript:;" onclick="logintc()">登录</a>|<a href="javascript:;" onclick="desgin()">注册</a></div>
-  </div> -->
+  </div>
   <div class="detail">
     <div class="dmain">
       <div class="dmain-t">
