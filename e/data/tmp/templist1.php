@@ -7,13 +7,13 @@ if(!defined('InEmpireCMS'))
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>教程 - Powered by EmpireCMS</title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href="/skin/default/css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/skin/default/js/tabs.js"></script>
+<title>[!--pagetitle--] - Powered by EmpireCMS</title>
+<meta name="keywords" content="[!--pagekey--]" />
+<meta name="description" content="[!--pagedes--]" />
+<link href="[!--news.url--]skin/default/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="[!--news.url--]skin/default/js/tabs.js"></script>
 </head>
-<body class="channle">
+<body class="listpage">
 <div class="header clearfix ctnt">
     <div class="logo"><img src="/just/images/logo.png" /></div>
     <ul class="layui-nav">
@@ -84,10 +84,26 @@ if(!defined('InEmpireCMS'))
 <tr valign="top">
 <td class="news_list"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="position">
 <tr>
-<td>您当前的位置：<a href="/">首页</a>&nbsp;>&nbsp;<a href="/jiaocheng/">教程</a></td>
+<td>您当前的位置：[!--newsnav--]</td>
 </tr>
 </table>
-<? @sys_ForSonclassData('selfinfo',5,38,0,0,7,0,0);?></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="box">
+<tr>
+<td>[!--empirenews.listtemp--]<ul>
+<!--list.var1-->
+<!--list.var2-->
+<!--list.var3-->
+<!--list.var4-->
+<!--list.var5--></ul>
+[!--empirenews.listtemp--]
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+                <td height="38"><div class="epages">[!--show.listpage--]</div></td>
+</tr>
+</table>
+</td>
+</tr>
+</table></td>
 <td class="sider"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="title">
 <tr>
 <td><strong>推荐资讯</strong></td>
@@ -129,7 +145,7 @@ if(!defined('InEmpireCMS'))
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
 <tr>
 <td align="center" class="search">
-<form action="/e/search/index.php" method="post" name="searchform" id="searchform">
+<form action="[!--news.url--]e/search/index.php" method="post" name="searchform" id="searchform">
 <table border="0" cellspacing="6" cellpadding="0">
 <tr>
 <td><strong>站内搜索：</strong>
@@ -147,9 +163,9 @@ if(!defined('InEmpireCMS'))
 <option value="info">分类信息</option>
 </select>
 </td>
-<td><input type="image" class="inputSub" src="/skin/default/images/search.gif" />
+<td><input type="image" class="inputSub" src="[!--news.url--]skin/default/images/search.gif" />
 </td>
-<td><a href="/search/" target="_blank">高级搜索</a></td>
+<td><a href="[!--news.url--]search/" target="_blank">高级搜索</a></td>
 </tr>
 </table>
 </form>
@@ -159,9 +175,9 @@ if(!defined('InEmpireCMS'))
 <td>
 	<table width="100%" border="0" cellpadding="0" cellspacing="4" class="copyright">
         <tr> 
-          <td align="center"><a href="/">网站首页</a> | <a href="#">关于我们</a> 
+          <td align="center"><a href="[!--news.url--]">网站首页</a> | <a href="#">关于我们</a> 
             | <a href="#">服务条款</a> | <a href="#">广告服务</a> | <a href="#">联系我们</a> 
-            | <a href="#">网站地图</a> | <a href="#">免责声明</a> | <a href="/e/wap/" target="_blank">WAP</a></td>
+            | <a href="#">网站地图</a> | <a href="#">免责声明</a> | <a href="[!--news.url--]e/wap/" target="_blank">WAP</a></td>
         </tr>
         <tr> 
           <td align="center">Powered by <strong><a href="http://www.phome.net" target="_blank">EmpireCMS</a></strong> 

@@ -1,19 +1,14 @@
-<?php
-if(!defined('InEmpireCMS'))
-{
-	exit();
-}
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>教程 - Powered by EmpireCMS</title>
+<title>2D教程 - Powered by EmpireCMS</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="/skin/default/css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/skin/default/js/tabs.js"></script>
 </head>
-<body class="channle">
+<body class="listpage">
 <div class="header clearfix ctnt">
     <div class="logo"><img src="/just/images/logo.png" /></div>
     <ul class="layui-nav">
@@ -84,10 +79,20 @@ if(!defined('InEmpireCMS'))
 <tr valign="top">
 <td class="news_list"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="position">
 <tr>
-<td>您当前的位置：<a href="/">首页</a>&nbsp;>&nbsp;<a href="/jiaocheng/">教程</a></td>
+<td>您当前的位置：<a href="/">首页</a>&nbsp;>&nbsp;<a href="/jiaocheng/">教程</a>&nbsp;>&nbsp;<a href="/jiaocheng/2djiaocheng/">2D教程</a></td>
 </tr>
 </table>
-<? @sys_ForSonclassData('selfinfo',5,38,0,0,7,0,0);?></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="box">
+<tr>
+<td>此栏目暂无任何新增信息
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+                <td height="38"><div class="epages"></div></td>
+</tr>
+</table>
+</td>
+</tr>
+</table></td>
 <td class="sider"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="title">
 <tr>
 <td><strong>推荐资讯</strong></td>
@@ -95,8 +100,7 @@ if(!defined('InEmpireCMS'))
 </table>
 <table width="100%" border="0" cellspacing="8" cellpadding="0" class="box">
 <tr>
-<td><? @sys_GetClassNewsPic('selfinfo',2,4,128,90,1,20,2);?>
-</td>
+<td></td>
 </tr>
 </table>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="title margin_top">
@@ -107,7 +111,7 @@ if(!defined('InEmpireCMS'))
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="box">
 <tr>
 <td><ul>
-<? @sys_GetEcmsInfo('selfinfo',10,44,0,0,2,0);?> 
+ 
 </ul></td>
 </tr>
 </table>
@@ -119,7 +123,7 @@ if(!defined('InEmpireCMS'))
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="box">
 <tr>
 <td><ol class="rank">
-<? @sys_GetEcmsInfo('selfinfo',10,40,0,1,10,0);?> 
+ 
 </ol></td>
 </tr>
 </table></td>

@@ -156,7 +156,7 @@ if(!defined('InEmpireCMS'))
         <h1><?=$grpagetitle?></h1>
         <div class="intro">
           <ul>
-            <li> 分类：<a href="/jiaocheng/">教程</a>-<?=$class_r[$grbclassid][classname]?> -<a href="<?=$grclassurl?>"> <?=$class_r[$ecms_gr[classid]][classname]?> </a> </li>
+            <li> 分类：<a href="/jiaocheng/">教程</a>&nbsp;|&nbsp;<a href="/ruanjianchajian/">软件/插件</a>-<?=$class_r[$grbclassid][classname]?> -<a href="<?=$grclassurl?>"> <?=$class_r[$ecms_gr[classid]][classname]?> </a> </li>
             <!-- <li> 分类：合作 - <a href="#" target="_blank">资助&amp;合作</a>- <a href="#" target="_blank">推广教程</a> </li> -->
             <li> 标签： <a href="#" target="_blank">超写实</a> <a href="#" target="_blank">模型</a> <a href="#" target="_blank">预售</a> <a href="#" target="_blank">场景</a> </li>
           </ul>

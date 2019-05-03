@@ -7,7 +7,7 @@ if(!defined('InEmpireCMS'))
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>教程 - Powered by EmpireCMS</title>
+<title>软件/插件 - Powered by EmpireCMS</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="/skin/default/css/style.css" rel="stylesheet" type="text/css" />
@@ -84,7 +84,7 @@ if(!defined('InEmpireCMS'))
 <tr valign="top">
 <td class="news_list"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="position">
 <tr>
-<td>您当前的位置：<a href="/">首页</a>&nbsp;>&nbsp;<a href="/jiaocheng/">教程</a></td>
+<td>您当前的位置：<a href="/">首页</a>&nbsp;>&nbsp;<a href="/ruanjianchajian/">软件/插件</a></td>
 </tr>
 </table>
 <? @sys_ForSonclassData('selfinfo',5,38,0,0,7,0,0);?></td>
