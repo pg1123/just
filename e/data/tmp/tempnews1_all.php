@@ -12,6 +12,7 @@ if(!defined('InEmpireCMS'))
 <title><?=$public_r[sitename]?>|<?=$grpagetitle?></title>
 <meta name="keywords" content="<?=$ecms_gr[keyboard]?>">
 <link href="/just/css/style.css" type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" href="/skin/cy/css/chanyan.css"/>
 <script src="/just/js/jquery-1.11.3.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="/just/layui/layui.js"></script>
 </head>
@@ -99,7 +100,7 @@ if(!defined('InEmpireCMS'))
       <div class="ding">
         <div class="up"> 
           <a href="JavaScript:makeRequest('/e/public/digg?classid=<?=$ecms_gr[classid]?>&id=<?=$ecms_gr[id]?>&dotop=1&doajax=1&ajaxarea=diggnum','EchoReturnedText','GET','');">顶</a>
-          <p class="num"> <span><script src=/e/public/ViewClick/?classid=<?=$ecms_gr[classid]?>&id=<?=$ecms_gr[id]?>&down=5></script></span> </p>
+          <p class="num"> <span id="diggnum"><script src=/e/public/ViewClick/?classid=<?=$ecms_gr[classid]?>&id=<?=$ecms_gr[id]?>&down=5></script></span> </p>
         </div>
       </div>
 
@@ -108,94 +109,227 @@ if(!defined('InEmpireCMS'))
         <p>注册登录后可下载，点击<a href="#">登录</a>，点击<a href="#">注册</a></p>
       </div> -->
 
+
+      <div class="changyan">
+      <a id="changyan_area"></a>
+      <div id="SOHUCS" sid="11192"><div id="SOHU_MAIN">
+      <div class="module-cmt-header">
+
+   
+
+    <div class="clear-g section-title-w">
+
+        <div class="title-user-w">
+
+            <div node-type="user" class="clear-g user-wrap-w user-login">
+
+                <span node-type="user-name" class="wrap-name-w">来一发：</span>
+
+            </div>
+
+        </div>
+
     </div>
-    <div class="pingl">
-      <div class="title"> 全部评论 <span>(0)</span> </div>
-      <div class="message_list">
-        <ul class="clearfix">
-          <li>
-            <div class="img"> <img src="/just/images/avatar1.gif" data-bd-imgshare-binded="1" alt=""> </div>
-            <div class="rightarea">
-              <div class="who"> <span>游客</span> <span> 2019/2/12 23:47:26 </span> </div>
-              <div class="txts"> Hi there,
-                
-                First, thank you for the great site that you have made.
-                
-                Second, do you have a sister site in english where I can use it and download some of it's resources, cause the english translation is of no help, and it will greatly help me.
-                
-                Thank you  in advance </div>
-              <a class="sample_name reply" href="javascript:void(0)">回复</a>
-              <div class="replys"> </div>
+
+    <div class="section-cbox-w">
+
+        <div class="cbox-block-w clear-g">
+
+            <div node-type="block-head-w" class="block-head-w block-head-login">
+
+                <div node-type="avatar" class="head-img-w">
+
+                    <a href="javascript:void(0);">
+
+                        <img node-type="user-head" src="/skin/cy/images/noavatar.gif" width="42" height="42" alt="">
+
+                        <div node-type="head-img-ie-mask" class="head-img-ie-mask"></div>
+
+                    </a>
+
+                   
+
+                                    </div>
+
+ 
+
             </div>
-            
-          </li>
-          
-          <li>
-            <div class="img"> <img src="/just/images/avatar1.gif" data-bd-imgshare-binded="1" alt=""> </div>
-            <div class="rightarea">
-              <div class="who"> <span>itchi46</span> <span> 2016/4/15 18:10:54 </span> </div>
-              <div class="txts"> 建議教程
-                http://fr.tuto.com/maya/maya-les-premiers-pas-maya,21067.html
-                
-                http://fr.tuto.com/modo/modeliser-une-voiture-avec-modo-l-ac-shelby-cobra-427-modo,51451.html </div>
-              <a class="sample_name reply" href="javascript:void(0)">回复</a>
-              <div class="replys"> </div>
+
+            <div node-type="login-select" class="block-post-w">
+
+<!-- 放置cbox初始状态 -->
+
+<script>
+
+                       function CheckPl(obj)
+
+                       {
+
+                       if(obj.saytext.value=="")
+
+                       {
+
+                       alert("您没什么话要说吗？");
+
+                       obj.saytext.focus();
+
+                       return false;
+
+                       }
+
+                       return true;
+
+                       }
+
+                       </script>
+
+                      
+
+<form action="/e/pl/doaction.php" method="post" name="saypl" id="saypl" onsubmit="return CheckPl(document.saypl)">
+
+ 
+
+ <div class="module-cmt-box">
+
+    <!-- 展开状态 -->
+
+    <div class="post-wrap-w">
+
+        <div class="post-wrap-border-l"></div>
+
+        <div class="post-wrap-border-r"></div>
+
+        <div node-type="post-wrap-main" class="post-wrap-main">
+
+            <div class="post-wrap-border-t">
+
+                <div node-type="post-wrap-border-t-l" class="post-wrap-border-t-l"></div>
+
+                <div node-type="post-wrap-border-t-r" class="post-wrap-border-t-r" style="margin-left: 115px;"></div>
+
             </div>
-            
-          </li>
-          <li>
-            <div class="textli">
-            <div class="img"> <img src="/just/images/avatar1.gif" data-bd-imgshare-binded="1" alt=""> </div>
-            <div class="rightarea">
-              <div class="who"> <span>lopo</span> <span> 2016/2/25 10:52:28 </span> </div>
-              <div class="txts"> Hi 
-                DAZ3d/poser资源中
-                能否提供下基础模型呢？从贵网下了爆多的模型，但大部分都需要先安装基础模型才可用...baidu了n天也没找全所有基础模型... </div>
-              <a class="sample_name reply" href="javascript:void(0)">回复</a>
-              <div class="replys"> </div>
+
+            <div class="wrap-area-w">
+
+                <div class="area-textarea-w">
+
+            <textarea name="saytext" id="saytext" placeholder="有事没事说两句..." class="textarea-fw textarea-bf"></textarea>
+
+                </div>
+
             </div>
-            </div>
-            <div class="textlia">
-            <div class="img"> <img src="/just/images/avatar1.gif" data-bd-imgshare-binded="1" alt=""> </div>
-            <div class="rightarea">
-              <div class="who"> <span>游客</span> <span> 2019/2/12 23:47:26 </span> </div>
-              <div class="txts"> Hi there,
-                
-                First, thank you for the great site that you have made.
-                
-                Second, do you have a sister site in english where I can use it and download some of it's resources, cause the english translation is of no help, and it will greatly help me.
-                
-                Thank you  in advance </div>
-              <div class="replys"> </div>
-            </div>
-            
-          </div>
-          </li>
-        </ul>
-      </div>
-      <div class="new_message">
-        <div class="input">
-          <input id="nick" name="nick" placeholder="给自己起个名字" type="text" value="">
+
         </div>
-        <div class="textarea">
-          <div style="padding-bottom: 10px; text-align: right;"> 还可以输入
-            <div class="count" style="display: inline;"> 500 </div>
-            字 </div>
-          <textarea cols="20" id="message_content" name="message_content" onkeyup="words_deal()" placeholder="这里你可以：1.发表对本站的建议和想法； 2.完善这个网站或资源的描述； 3.版权提醒； 4.和G友们聊天； 5.限500字以内。" rows="2"></textarea>
+
+        <div class="clear-g wrap-action-w">
+
+           <div class="action-function-w">
+
+    <ul class="clear-g">
+
+           <input name="nomember" type="checkbox" id="nomember" value="1" checked="checked" style=" width: 18px;height: 18px;"/><span style="padding-left: 4px;padding-right: 10px;">匿名评论</span>
+
+<input name="key" placeholder="请输入验证码" type="text" size="10" style="padding-left: 42px;border: 1px solid #4398ED;border-radius: 12px;color: #000;font-family: 'Open Sans',sans-serif;font-size: 1em;height: 28px;padding: 0 10px;">
+
+<img src="/e/ShowKey/?v=pl" align="absmiddle" style="width:60px" name="plKeyImg" id="plKeyImg" onclick="plKeyImg.src='/e/ShowKey/?v=pl&t='+Math.random()" title="看不清楚,点击刷新" />
+
+</ul>              
+
+            </div>
+
+            <div class="clear-g action-issue-w">
+
+                <div class="issue-btn-w">
+
+                    <a href="javascript:void(0)">
+
+                        <button node-type="issue" class="btn-fw"></button>
+
+                    </a>
+
+                </div>
+
+ 
+
+            </div>
+
+           
+
         </div>
-        <div class="input">
-          <input id="verify_code" name="verify_code" onfocus="show_img();" placeholder="输入验证码" type="text" value="">
-          <img src="/just/images/get_verify_code.jpg" id="get_verify_codeImg" alt="点击刷新" style="cursor: pointer" onclick="change_img();"> <a href="javascript:void(0);" onclick="change_img();">点击图片换一个</a>
-          <button class="btn"> 发表评论 </button>
-        </div>
-      </div>
+
     </div>
-  </div>
-  <!--登录弹窗-->
-  <div class="logintc"  id="logintc" style="display:none;">
-    
-  </div>
+
 </div>
+
+<input name="id" type="hidden" id="id" value="<?=$ecms_gr[id]?>" />
+
+<input name="classid" type="hidden" id="classid" value="<?=$ecms_gr[classid]?>" />
+
+<input name="enews" type="hidden" id="enews" value="AddPl" />
+
+<input name="repid" type="hidden" id="repid" value="0" />
+
+<input type="hidden" name="ecmsfrom" value="<?=$grtitleurl?>">
+
+ 
+
+</form>
+
+<div class="list-comment-empty-w">
+
+                </div>
+
+               
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div node-type="module-cmt-list" class="module-cmt-list section-list-w">
+
+   
+
+    <div class="cmt-list-type">
+
+        <ul class="clear-g type-lists">
+
+                <li class="type-list active">评论</li>
+
+        </ul>
+
+        <div class="cmt-list-border"></div>
+
+        <div class="cmt-list-number">
+
+            <span class="comment-number"><span class="cy-number"><script type="text/javascript" src="/e/public/ViewClick/?classid=<?=$ecms_gr[classid]?>&id=<?=$ecms_gr[id]?>&down=2"></script></span>人参与,<span class="cy-number"><script type="text/javascript" src="/e/public/ViewClick/?classid=<?=$ecms_gr[classid]?>&id=<?=$ecms_gr[id]?>&down=2"></script></span>条评论</span>
+
+        </div>
+
+    </div>
+      <!-- 评论列表  S -->
+       <!-- 最新评论 -->
+      <script src="/e/pl/more/?classid=<?=$ecms_gr[classid]?>&id=<?=$ecms_gr[id]?>&num=10"></script>
+      </div>
+      <!-- 评论列表  E -->
+      </div></div>
+      </div>
+
+
+
+
+
+    </div>
+    
+  <!--登录弹窗-->
+<!--   <div class="logintc"  id="logintc" style="display:none;">
+    
+  </div> -->
+</div>
+<script type="text/javascript" src="/skin/default/js/tabs.js"></script>
 <script type="text/javascript" src="/e/data/js/ajax.js"></script>
 <script type="text/javascript">
 

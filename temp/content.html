@@ -7,6 +7,7 @@
 <title><?=$public_r[sitename]?>|[!--pagetitle--]</title>
 <meta name="keywords" content="[!--keyboard--]">
 <link href="/just/css/style.css" type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" href="[!--news.url--]skin/cy/css/chanyan.css"/>
 <script src="/just/js/jquery-1.11.3.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="/just/layui/layui.js"></script>
 </head>
@@ -35,7 +36,7 @@
       <div class="ding">
         <div class="up"> 
           <a href="JavaScript:makeRequest('[!--news.url--]e/public/digg?classid=[!--classid--]&id=[!--id--]&dotop=1&doajax=1&ajaxarea=diggnum','EchoReturnedText','GET','');">顶</a>
-          <p class="num"> <span><script src=[!--news.url--]e/public/ViewClick/?classid=[!--classid--]&id=[!--id--]&down=5></script></span> </p>
+          <p class="num"> <span id="diggnum"><script src=[!--news.url--]e/public/ViewClick/?classid=[!--classid--]&id=[!--id--]&down=5></script></span> </p>
         </div>
       </div>
 
@@ -44,94 +45,31 @@
         <p>注册登录后可下载，点击<a href="#">登录</a>，点击<a href="#">注册</a></p>
       </div> -->
 
-    </div>
-    <div class="pingl">
-      <div class="title"> 全部评论 <span>(0)</span> </div>
-      <div class="message_list">
-        <ul class="clearfix">
-          <li>
-            <div class="img"> <img src="/just/images/avatar1.gif" data-bd-imgshare-binded="1" alt=""> </div>
-            <div class="rightarea">
-              <div class="who"> <span>游客</span> <span> 2019/2/12 23:47:26 </span> </div>
-              <div class="txts"> Hi there,
-                
-                First, thank you for the great site that you have made.
-                
-                Second, do you have a sister site in english where I can use it and download some of it's resources, cause the english translation is of no help, and it will greatly help me.
-                
-                Thank you  in advance </div>
-              <a class="sample_name reply" href="javascript:void(0)">回复</a>
-              <div class="replys"> </div>
-            </div>
-            
-          </li>
-          
-          <li>
-            <div class="img"> <img src="/just/images/avatar1.gif" data-bd-imgshare-binded="1" alt=""> </div>
-            <div class="rightarea">
-              <div class="who"> <span>itchi46</span> <span> 2016/4/15 18:10:54 </span> </div>
-              <div class="txts"> 建議教程
-                http://fr.tuto.com/maya/maya-les-premiers-pas-maya,21067.html
-                
-                http://fr.tuto.com/modo/modeliser-une-voiture-avec-modo-l-ac-shelby-cobra-427-modo,51451.html </div>
-              <a class="sample_name reply" href="javascript:void(0)">回复</a>
-              <div class="replys"> </div>
-            </div>
-            
-          </li>
-          <li>
-            <div class="textli">
-            <div class="img"> <img src="/just/images/avatar1.gif" data-bd-imgshare-binded="1" alt=""> </div>
-            <div class="rightarea">
-              <div class="who"> <span>lopo</span> <span> 2016/2/25 10:52:28 </span> </div>
-              <div class="txts"> Hi 
-                DAZ3d/poser资源中
-                能否提供下基础模型呢？从贵网下了爆多的模型，但大部分都需要先安装基础模型才可用...baidu了n天也没找全所有基础模型... </div>
-              <a class="sample_name reply" href="javascript:void(0)">回复</a>
-              <div class="replys"> </div>
-            </div>
-            </div>
-            <div class="textlia">
-            <div class="img"> <img src="/just/images/avatar1.gif" data-bd-imgshare-binded="1" alt=""> </div>
-            <div class="rightarea">
-              <div class="who"> <span>游客</span> <span> 2019/2/12 23:47:26 </span> </div>
-              <div class="txts"> Hi there,
-                
-                First, thank you for the great site that you have made.
-                
-                Second, do you have a sister site in english where I can use it and download some of it's resources, cause the english translation is of no help, and it will greatly help me.
-                
-                Thank you  in advance </div>
-              <div class="replys"> </div>
-            </div>
-            
-          </div>
-          </li>
-        </ul>
+
+      <div class="changyan">
+      <a id="changyan_area"></a>
+      <div id="SOHUCS" sid="11192"><div id="SOHU_MAIN">
+      [!--temp.pl--]
+      <!-- 评论列表  S -->
+       <!-- 最新评论 -->
+      <script src="[!--news.url--]e/pl/more/?classid=[!--classid--]&id=[!--id--]&num=10"></script>
       </div>
-      <div class="new_message">
-        <div class="input">
-          <input id="nick" name="nick" placeholder="给自己起个名字" type="text" value="">
-        </div>
-        <div class="textarea">
-          <div style="padding-bottom: 10px; text-align: right;"> 还可以输入
-            <div class="count" style="display: inline;"> 500 </div>
-            字 </div>
-          <textarea cols="20" id="message_content" name="message_content" onkeyup="words_deal()" placeholder="这里你可以：1.发表对本站的建议和想法； 2.完善这个网站或资源的描述； 3.版权提醒； 4.和G友们聊天； 5.限500字以内。" rows="2"></textarea>
-        </div>
-        <div class="input">
-          <input id="verify_code" name="verify_code" onfocus="show_img();" placeholder="输入验证码" type="text" value="">
-          <img src="/just/images/get_verify_code.jpg" id="get_verify_codeImg" alt="点击刷新" style="cursor: pointer" onclick="change_img();"> <a href="javascript:void(0);" onclick="change_img();">点击图片换一个</a>
-          <button class="btn"> 发表评论 </button>
-        </div>
+      <!-- 评论列表  E -->
+      </div></div>
       </div>
+
+
+
+
+
     </div>
-  </div>
-  <!--登录弹窗-->
-  <div class="logintc"  id="logintc" style="display:none;">
     
-  </div>
+  <!--登录弹窗-->
+<!--   <div class="logintc"  id="logintc" style="display:none;">
+    
+  </div> -->
 </div>
+<script type="text/javascript" src="[!--news.url--]skin/default/js/tabs.js"></script>
 <script type="text/javascript" src="[!--news.url--]e/data/js/ajax.js"></script>
 <script type="text/javascript">
 
