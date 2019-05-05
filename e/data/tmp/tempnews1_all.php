@@ -18,138 +18,67 @@ if(!defined('InEmpireCMS'))
 
 <body>
 <div id="container">
-    <!-- <div class="header clearfix ctnt">
+    <div class="header clearfix ctnt">
     <div class="logo"><img src="/just/images/logo.png" /></div>
+
     <ul class="layui-nav">
-      <li class="layui-nav-item layui-this"> <a href="/">首页22</a> </li>
-      <li class="layui-nav-item"> <a href="">软件/插件</a>
-        <dl class="layui-nav-child snav">
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-        </dl>
-      </li>
-      <li class="layui-nav-item"> <a href="">教程</a>
-        <dl class="layui-nav-child snav">
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-        </dl>
-      </li>
-      <li class="layui-nav-item"> <a href="">模型</a>
-        <dl class="layui-nav-child snav">
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-        </dl>
-      </li>
-      <li class="layui-nav-item"> <a href="">贴图/后期</a>
-        <dl class="layui-nav-child snav">
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-        </dl>
-      </li>
-      <li class="layui-nav-item layui-nav-item1" lay-unselect="" style="display:none;"> <a href="javascript:;"><img src="/just/images/user.png" class="layui-nav-img">用户00368</a>
-        <dl class="layui-nav-child">
-          <dd><a href="javascript:;">充值服务</a></dd>
-          <dd><a href="javascript:;">退出</a></dd>
-        </dl>
-      </li>
-    </ul>
-    <div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div>
-    <div class="login"><a href="javascript:;" onclick="logintc()">登录</a>|<a href="javascript:;" onclick="desgin()">注册</a></div>
-  </div> -->
-  <div class="header clearfix ctnt">
-    <div class="logo"><img src="/just/images/logo.png" /></div>
-    <ul class="layui-nav">
-      <li class="layui-nav-item layui-this"> <a href="/">首页</a> </li>
-      <li class="layui-nav-item"> <a href="">软件/插件</a>
-        <dl class="layui-nav-child snav">
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-        </dl>
-      </li>
-      <li class="layui-nav-item"> <a href="">教程</a>
-        <dl class="layui-nav-child snav">
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-        </dl>
-      </li>
-      <li class="layui-nav-item"> <a href="">模型</a>
-        <dl class="layui-nav-child snav">
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-        </dl>
-      </li>
-      <li class="layui-nav-item"> <a href="">贴图/后期</a>
-        <dl class="layui-nav-child snav">
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-          <dd> <a href="javascript:;" class="btit">3D资源</a>
-            <div class="snavfl clearfix"><a href="#">建筑室建内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建建建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a><a href="#">建筑室内</a></div>
-          </dd>
-        </dl>
-      </li>
+      <li class="layui-nav-item layui-this"> <a href="index.html">首页</a> </li>
+
+
+      <?php
+        $ecms_bq_sql=sys_ReturnEcmsLoopBq('select classid,classname,classpath from [!db.pre!]enewsclass where bclassid=0 and showclass=0 order by myorder limit 10',20,24,0);
+        while($r=$empire->fetch($ecms_bq_sql))
+        {
+            $s = sys_ReturnEcmsLoopStext($r);
+            //$path = $public_r['newsurl'].$r['classpath']; 
+            ?>
+
+            <li class="layui-nav-item"> <a href="<?php echo $s['classurl']; ?>"><?php echo $s['classname']; ?></a>
+              <dl class="layui-nav-child snav">
+                <?php
+                  $sql2=sys_ReturnEcmsLoopBq('select classid,classname,classpath from [!db.pre!]enewsclass where bclassid='.$r['classid'].' order by myorder limit 25',20,24,0);
+                  while($r2=$empire->fetch($sql2))
+                  {
+                        $s2 = sys_ReturnEcmsLoopStext($r2);
+                    ?>
+                    <dd>
+                      <a href="<?php echo $s2['classurl']; ?>" class="btit"><?php echo $s2['classname']; ?></a>
+                       <div class="snavfl clearfix">
+                         
+                        <?php 
+                            $sql3=sys_ReturnEcmsLoopBq('select classid,classname,classpath from [!db.pre!]enewsclass where bclassid='.$r2['classid'].' order by myorder limit 25',20,24,0);
+                            while($r3=$empire->fetch($sql3))
+                            {   
+                                $s3 = sys_ReturnEcmsLoopStext($r3);
+                            ?>
+                                <a href="<?php echo $s3['classurl']; ?>"><?php echo $s3['classname']; ?></a>
+                        <?php } ?>
+
+
+                       </div>
+                    </dd>
+                  <?php } ?>
+              </dl>
+            </li>
+            
+
+    <?php } ?>
       <li class="layui-nav-item layui-nav-item1" lay-unselect=""> <a href="javascript:;"><img src="/just/images/user.png" class="layui-nav-img">用户00368</a>
         <dl class="layui-nav-child">
           <dd><a href="javascript:;">充值服务</a></dd>
-          <dd><a href="javascript:;">退出</a></dd>
+          <dd><a href="/e/member/doaction.php?enews=exit">退出</a></dd>
         </dl>
       </li>
     </ul>
-    <div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div>
-    <div class="login"><a href="javascript:;" onclick="logintc()">登录</a>|<a href="javascript:;" onclick="desgin()">注册</a></div>
+
+    <?php 
+      if(!$_COOKIE['wwogcmlusername']){
+        echo '<div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div><div class="login"><a href="/e/member/login">登录</a>|<a href="/e/member/register">注册</a></div>';
+      }
+    ?>
+
   </div>
+  
   <div class="detail">
     <div class="dmain">
       <div class="dmain-t">
