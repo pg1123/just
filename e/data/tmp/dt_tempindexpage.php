@@ -21,7 +21,7 @@ if(!defined('InEmpireCMS'))
     <div class="logo"><img src="/just/images/logo.png" /></div>
 
     <ul class="layui-nav">
-      <li class="layui-nav-item layui-this"> <a href="index.html">首页</a> </li>
+      <li class="layui-nav-item layui-this"> <a href="/">首页1</a> </li>
 
 
       <?php
@@ -32,7 +32,7 @@ if(!defined('InEmpireCMS'))
             //$path = $public_r['newsurl'].$r['classpath']; 
             ?>
 
-            <li class="layui-nav-item"> <a href="<?php echo $s['classurl']; ?>"><?php echo $s['classname']; ?></a>
+            <li class="layui-nav-item"> <a href="#"><?php echo $s['classname']; ?></a>
               <dl class="layui-nav-child snav">
                 <?php
                   $sql2=sys_ReturnEcmsLoopBq('select classid,classname,classpath from [!db.pre!]enewsclass where bclassid='.$r['classid'].' order by myorder limit 25',20,24,0);
@@ -80,7 +80,7 @@ if(!defined('InEmpireCMS'))
   <div id="main">
     <div class="cgi cginew">
       <div class="tit clearfix">
-        <h2>CGI最新推荐</h2>
+        <h2>CGI最新推荐1</h2>
         <a href="#"><i class="fa fa-refresh" aria-hidden="true"></i>显示更多</a></div>
       <div class="layui-row">
         <div class="layui-col-xs3">

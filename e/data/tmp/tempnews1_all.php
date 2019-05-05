@@ -23,7 +23,7 @@ if(!defined('InEmpireCMS'))
     <div class="logo"><img src="/just/images/logo.png" /></div>
 
     <ul class="layui-nav">
-      <li class="layui-nav-item layui-this"> <a href="index.html">首页</a> </li>
+      <li class="layui-nav-item layui-this"> <a href="/">首页1</a> </li>
 
 
       <?php
@@ -34,7 +34,7 @@ if(!defined('InEmpireCMS'))
             //$path = $public_r['newsurl'].$r['classpath']; 
             ?>
 
-            <li class="layui-nav-item"> <a href="<?php echo $s['classurl']; ?>"><?php echo $s['classname']; ?></a>
+            <li class="layui-nav-item"> <a href="#"><?php echo $s['classname']; ?></a>
               <dl class="layui-nav-child snav">
                 <?php
                   $sql2=sys_ReturnEcmsLoopBq('select classid,classname,classpath from [!db.pre!]enewsclass where bclassid='.$r['classid'].' order by myorder limit 25',20,24,0);
