@@ -21,7 +21,7 @@ if(!defined('InEmpireCMS'))
     <div class="logo"><img src="/just/images/logo.png" /></div>
 
     <ul class="layui-nav">
-      <li class="layui-nav-item layui-this"> <a href="/">首页1</a> </li>
+      <li class="layui-nav-item layui-this"> <a href="/">首页</a> </li>
 
 
       <?php

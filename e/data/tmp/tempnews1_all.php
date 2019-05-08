@@ -23,7 +23,7 @@ if(!defined('InEmpireCMS'))
     <div class="logo"><img src="/just/images/logo.png" /></div>
 
     <ul class="layui-nav">
-      <li class="layui-nav-item layui-this"> <a href="/">首页1</a> </li>
+      <li class="layui-nav-item layui-this"> <a href="/">首页</a> </li>
 
 
       <?php
@@ -88,7 +88,26 @@ if(!defined('InEmpireCMS'))
           <ul>
             <li> 分类：<a href="[!--bclass.url--]"> <?=$class_r[$grbclassid][classname]?> </a> -<a href="<?=$grclassurl?>"> <?=$class_r[$ecms_gr[classid]][classname]?> </a> </li>
             <!-- <li> 分类：合作 - <a href="#" target="_blank">资助&amp;合作</a>- <a href="#" target="_blank">推广教程</a> </li> -->
-            <li> 标签： <a href="#" target="_blank">超写实</a> <a href="#" target="_blank">模型</a> <a href="#" target="_blank">预售</a> <a href="#" target="_blank">场景</a> </li>
+            <!-- <li> 标签： <a href="#" target="_blank">超写实</a> <a href="#" target="_blank">模型</a> <a href="#" target="_blank">预售</a> <a href="#" target="_blank">场景</a> </li> -->
+
+            <li>
+              标签：
+              <?php
+$bqno=0;
+$ecms_bq_sql=sys_ReturnEcmsLoopBq("select * from [!db.pre!]enewstags order by tagid",0,24,0);
+if($ecms_bq_sql){
+while($bqr=$empire->fetch($ecms_bq_sql)){
+$bqsr=sys_ReturnEcmsLoopStext($bqr);
+$bqno++;
+?>        
+              <a href='<?=$public_r[newsurl]?>e/tags/?tagname=<?=$bqr['tagname']?>' class='tag-link-<?=$bqr['tagid']?>' title='<?=$bqr[num]?>个话题' style='font-size: 9pt;' target="_blank"><?=$bqr['tagname']?></a>
+              <?php
+}
+}
+?>
+            </li>
+
+
           </ul>
         </div>
         <div class="conn"> <span class="view"> <i class="fa fa-eye" aria-hidden="true"></i><script src=/e/public/ViewClick/?classid=<?=$ecms_gr[classid]?>&id=<?=$ecms_gr[id]?>&addclick=1></script> </span><span class="talk"> <i class="fa fa-commenting-o" aria-hidden="true"></i><?=$ecms_gr[plnum]?> </span><span class="up" > <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><script src=/e/public/ViewClick/?classid=<?=$ecms_gr[classid]?>&id=<?=$ecms_gr[id]?>&down=5></script> </span> </div>
