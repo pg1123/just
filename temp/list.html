@@ -15,18 +15,19 @@
   [!--temp.header--]
   <div class="list">
     <div class="choose clearfix">
-       <span class="this"><a href="#">全部qq</a></span>
-       <span><a href="#">最新</a></span>
-       <span><a href="#">人气</a></span>
-       <span><a href="#">点击</a></span>
-       <span><a href="#">回复</a></span>
+       <!-- <span class="this"><a href="[!--news.url--]e/public/ViewClick/?classid=[!--classid--]&id=[!--id--]&down=5">全部</a></span> -->
+        <span class="this"><a href="[!--news.url--]e/action/ListInfo.php?classid=[!--self.classid--]&orderby=onclick">全部</a></span>
+       <span><a href="[!--news.url--]e/action/ListInfo.php?classid=[!--self.classid--]&orderby=newstime">最新</a></span>
+       <span><a href="[!--news.url--]e/action/ListInfo.php?classid=[!--self.classid--]&orderby=diggtop">人气</a></span>
+       <span><a href="[!--news.url--]e/action/ListInfo.php?classid=[!--self.classid--]&orderby=onclick">点击</a></span>
+       <span><a href="[!--news.url--]e/action/ListInfo.php?classid=[!--self.classid--]&orderby=plnum">回复</a></span>
     </div>
     <div class="layui-tab-content">
     <div class="layui-row">
             [!--empirenews.listtemp--]<!--list.var1-->[!--empirenews.listtemp--]
-          <div id="demo8"></div>
     </div>
   </div>
+　<div class="pageBox pTB20">[!--show.listpage--]</div>
 </div>
 <script type="text/javascript">
 $(function(){

@@ -67,22 +67,23 @@
       </li>
     </ul>
 
-    <div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div><div class="login"><a href="/e/member/login">登录</a>|<a href="/e/member/register">注册</a></div>
+    
   </div>
   <div class="list">
     <div class="choose clearfix">
-       <span class="this"><a href="#">全部qq</a></span>
-       <span><a href="#">最新</a></span>
-       <span><a href="#">人气</a></span>
-       <span><a href="#">点击</a></span>
-       <span><a href="#">回复</a></span>
+       <!-- <span class="this"><a href="/e/public/ViewClick/?classid=[!--classid--]&id=[!--id--]&down=5">全部</a></span> -->
+        <span class="this"><a href="/e/action/ListInfo.php?classid=7&orderby=onclick">全部</a></span>
+       <span><a href="/e/action/ListInfo.php?classid=7&orderby=newstime">最新</a></span>
+       <span><a href="/e/action/ListInfo.php?classid=7&orderby=diggtop">人气</a></span>
+       <span><a href="/e/action/ListInfo.php?classid=7&orderby=onclick">点击</a></span>
+       <span><a href="/e/action/ListInfo.php?classid=7&orderby=plnum">回复</a></span>
     </div>
     <div class="layui-tab-content">
     <div class="layui-row">
             此栏目暂无任何新增信息
-          <div id="demo8"></div>
     </div>
   </div>
+　<div class="pageBox pTB20"></div>
 </div>
 <script type="text/javascript">
 $(function(){

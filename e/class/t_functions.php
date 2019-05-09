@@ -163,7 +163,7 @@ function sys_ShowListMorePage($num,$page,$dolink,$type,$totalpage,$line,$ok,$sea
 		}
 		$returnstr.='&nbsp;'.$is_1.$i.$is_2;
 	}
-	$returnstr=$firststr.$toppage.$prepage.$returnstr.$nextpage.$lastpage;
+	$returnstr=$toppage.$prepage.$returnstr.$nextpage.$lastpage;
 	$pager['showpage']=$returnstr;
 	return $pager;
 }
@@ -223,7 +223,7 @@ function sys_ShowTextPage($totalpage,$page,$dolink,$add,$type,$search=""){
 		}
 		$returnstr.='&nbsp;'.$is_1.$i.$is_2;
 	}
-	$returnstr=$firststr.$toppage.$prepage.$returnstr.$nextpage.$lastpage;
+	$returnstr=$toppage.$prepage.$returnstr.$nextpage.$lastpage;
 	return $returnstr;
 }
 
