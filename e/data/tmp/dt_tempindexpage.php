@@ -80,10 +80,19 @@ if(!defined('InEmpireCMS'))
   <div id="main">
     <div class="cgi cginew">
       <div class="tit clearfix">
-        <h2>CGI最新推荐1</h2>
+        <h2>CGI最新推荐</h2>
         <a href="#"><i class="fa fa-refresh" aria-hidden="true"></i>显示更多</a></div>
       <div class="layui-row">
-        <div class="layui-col-xs3">
+         <?php 
+            $sql4=sys_ReturnEcmsLoopBq('select * from just_ecms_news where isgood=1 order by newstime limit 6',20,24,0);
+            while($r4=$empire->fetch($sql4))
+            {   
+            ?>
+                <div class="layui-col-xs3">
+                    <div class="grid-demo"><a href="<?php echo $r4['titleurl']; ?>"><img src="<?php echo $r4['titlepic']; ?>" /></a></div>
+                </div>
+        <?php } ?>
+        <!-- <div class="layui-col-xs3">
           <div class="grid-demo"><a href="#"><img src="/just/images/img.jpg" /></a></div>
         </div>
         <div class="layui-col-xs3">
@@ -100,7 +109,7 @@ if(!defined('InEmpireCMS'))
         </div>
         <div class="layui-col-xs3">
           <div class="grid-demo"><a href="#"><img src="/just/images/img3.jpg" /></a></div>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
