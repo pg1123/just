@@ -120,7 +120,7 @@ if(!defined('InEmpireCMS'))
       </ul>
       <div class="layui-tab-content">
         <div class="layui-tab-item layui-show">
-          <div class="layui-row">
+          <div class="layui-row" id="con">
             <div class="layui-col-xs3">
               <div class="grid-demo"> <a href="#" class="show"> <img src="/just/images/img.jpg" /><span class="new">最新</span>
                 <div class="shadow" style="display:none;"> 犀牛的V-Ray 提供了可视化的最先进的解渲云渲染，让渲染更高效。犀牛是当今最流行的基于Windows的NURBS建模工具之一。犀牛的V-Ray 提供了可视化的最先进的解渲云渲染，让渲染更高效。犀牛是当今最流行的基于Windows的NURBS建模工具 </div>
@@ -257,7 +257,7 @@ if(!defined('InEmpireCMS'))
           <div class="more"><a href="list.html">查看全部项目</a></div>
         </div>
         <div class="layui-tab-item">
-          <div class="layui-row">
+          <div class="layui-row" id="cons">
             <div class="layui-col-xs3">
               <div class="grid-demo"> <a href="#" class="show"> <img src="/just/images/img1.jpg" /><span class="new">最新</span>
                 <div class="shadow" style="display:none;"> 犀牛的V-Ray 提供了可视化的最先进的解渲云渲染，让渲染更高效。犀牛是当今最流行的基于Windows的NURBS建模工具之一。犀牛的V-Ray 提供了可视化的最先进的解渲云渲染，让渲染更高效。犀牛是当今最流行的基于Windows的NURBS建模工具 </div>
@@ -537,9 +537,9 @@ if(!defined('InEmpireCMS'))
         <h2>CGI全部资源</h2>
 </div>
       <div class="layui-row flow-default clearfix" id="LAY_demo1">
-            <div class="layui-col-xs3">
-              <div class="grid-demo"> <a href="#" class="show"> <img src="/just/images/img1.jpg" />
-</a>
+
+            <!-- <div class="layui-col-xs3">
+              <div class="grid-demo"> <a href="#" class="show"> <img src="/just/images/img1.jpg" /></a>
                 <div class="cgiarc">
                   <div class="cgiarc1">
                   <h3><a href="#" title="渲云渲染，让渲染更高效">渲云渲染，让渲染更高效</a></h3>
@@ -549,163 +549,104 @@ if(!defined('InEmpireCMS'))
                   <div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>66</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>12</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>24</span></div>
                 </div>
               </div>
-            </div>
+            </div> -->
+
+            <?php 
+            $sql5=sys_ReturnEcmsLoopBq('select * from just_ecms_news order by newstime desc limit 24',20,24,0);
+            while($r5=$empire->fetch($sql5))
+            {   
+            ?>
             <div class="layui-col-xs3">
-              <div class="grid-demo"> <a href="#" class="show"> <img src="/just/images/img2.jpg" />
-                </a>
+              <div class="grid-demo"> <a href="<?php echo $r5['titleurl']; ?>" class="show"> <img src="<?php echo $r5['titlepic']; ?>" /></a>
                 <div class="cgiarc">
                   <div class="cgiarc1">
-                  <h3><a href="#" title="渲云渲染，让渲染更高效">渲云渲染，让渲染更高效</a></h3>
-                  <div class="tag"><strong><a href="#">插画</a></strong><strong><a href="#">手绘</a></strong><strong><a href="#">绘画</a></strong><strong><a href="#">教程</a></strong><strong><a href="#">场景</a></strong><strong><a href="#">全景</a></strong></div>
+                  <h3><a href="<?php echo $r5['titleurl']; ?>" title="<?php echo $r5['title']; ?>"><?php echo $r5['title']; ?></a></h3>
                   <div class="tag tag1"><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong></div>
                   </div>
-                  <div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>66</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>12</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>24</span></div>
+                  <div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i><?php echo $r5['onclick']; ?></span><span><i class="fa fa-commenting-o" aria-hidden="true"></i><?php echo $r5['plnum']; ?></span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><?php echo $r5['diggtop']; ?></span></div>
                 </div>
               </div>
             </div>
-            <div class="layui-col-xs3">
-              <div class="grid-demo"> <a href="#" class="show"> <img src="/just/images/img3.jpg" />
-                </a>
-                <div class="cgiarc">
-                  <div class="cgiarc1">
-                  <h3><a href="#" title="渲云渲染，让渲染更高效">渲云渲染，让渲染更高效</a></h3>
-                  <div class="tag"><strong><a href="#">插画</a></strong><strong><a href="#">手绘</a></strong><strong><a href="#">绘画</a></strong><strong><a href="#">教程</a></strong><strong><a href="#">场景</a></strong><strong><a href="#">全景</a></strong></div>
-                  <div class="tag tag1"><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong></div>
-                  </div>
-                  <div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>66</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>12</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>24</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="layui-col-xs3">
-              <div class="grid-demo"> <a href="#" class="show"> <img src="/just/images/img.jpg" />
-                </a>
-                <div class="cgiarc">
-                  <div class="cgiarc1">
-                  <h3><a href="#" title="渲云渲染，让渲染更高效">渲云渲染，让渲染更高效</a></h3>
-                  <div class="tag"><strong><a href="#">插画</a></strong><strong><a href="#">手绘</a></strong><strong><a href="#">绘画</a></strong><strong><a href="#">教程</a></strong><strong><a href="#">场景</a></strong><strong><a href="#">全景</a></strong></div>
-                  <div class="tag tag1"><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong></div>
-                  </div>
-                  <div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>66</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>12</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>24</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="layui-col-xs3">
-              <div class="grid-demo"> <a href="#" class="show"> <img src="/just/images/img1.jpg" />
-                </a>
-                <div class="cgiarc">
-                  <div class="cgiarc1">
-                  <h3><a href="#" title="渲云渲染，让渲染更高效">渲云渲染，让渲染更高效</a></h3>
-                  <div class="tag"><strong><a href="#">插画</a></strong><strong><a href="#">手绘</a></strong><strong><a href="#">绘画</a></strong><strong><a href="#">教程</a></strong><strong><a href="#">场景</a></strong><strong><a href="#">全景</a></strong></div>
-                  <div class="tag tag1"><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong></div>
-                  </div>
-                  <div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>66</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>12</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>24</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="layui-col-xs3">
-              <div class="grid-demo"> <a href="#" class="show"> <img src="/just/images/img.jpg" />
-                </a>
-                <div class="cgiarc">
-                  <div class="cgiarc1">
-                  <h3><a href="#" title="渲云渲染，让渲染更高效">渲云渲染，让渲染更高效</a></h3>
-                  <div class="tag"><strong><a href="#">插画</a></strong><strong><a href="#">手绘</a></strong><strong><a href="#">绘画</a></strong><strong><a href="#">教程</a></strong><strong><a href="#">场景</a></strong><strong><a href="#">全景</a></strong></div>
-                  <div class="tag tag1"><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong></div>
-                  </div>
-                  <div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>66</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>12</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>24</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="layui-col-xs3">
-              <div class="grid-demo"> <a href="#" class="show"> <img src="/just/images/img2.jpg" />
-                </a>
-                <div class="cgiarc">
-                  <div class="cgiarc1">
-                  <h3><a href="#" title="渲云渲染，让渲染更高效">渲云渲染，让渲染更高效</a></h3>
-                  <div class="tag"><strong><a href="#">插画</a></strong><strong><a href="#">手绘</a></strong><strong><a href="#">绘画</a></strong><strong><a href="#">教程</a></strong><strong><a href="#">场景</a></strong><strong><a href="#">全景</a></strong></div>
-                  <div class="tag tag1"><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong></div>
-                  </div>
-                  <div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>66</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>12</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>24</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="layui-col-xs3">
-              <div class="grid-demo"> <a href="#" class="show"> <img src="/just/images/img3.jpg" />
-                </a>
-                <div class="cgiarc">
-                  <div class="cgiarc1">
-                  <h3><a href="#" title="渲云渲染，让渲染更高效">渲云渲染，让渲染更高效</a></h3>
-                  <div class="tag"><strong><a href="#">插画</a></strong><strong><a href="#">手绘</a></strong><strong><a href="#">绘画</a></strong><strong><a href="#">教程</a></strong><strong><a href="#">场景</a></strong><strong><a href="#">全景</a></strong></div>
-                  <div class="tag tag1"><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong></div>
-                  </div>
-                  <div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>66</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>12</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>24</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="layui-col-xs3">
-              <div class="grid-demo"> <a href="#" class="show"> <img src="/just/images/img.jpg" />
-                </a>
-                <div class="cgiarc">
-                  <div class="cgiarc1">
-                  <h3><a href="#" title="渲云渲染，让渲染更高效">渲云渲染，让渲染更高效</a></h3>
-                  <div class="tag"><strong><a href="#">插画</a></strong><strong><a href="#">手绘</a></strong><strong><a href="#">绘画</a></strong><strong><a href="#">教程</a></strong><strong><a href="#">场景</a></strong><strong><a href="#">全景</a></strong></div>
-                  <div class="tag tag1"><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong></div>
-                  </div>
-                  <div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>66</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>12</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>24</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="layui-col-xs3">
-              <div class="grid-demo"> <a href="#" class="show"> <img src="/just/images/img1.jpg" />
-                </a>
-                <div class="cgiarc">
-                  <div class="cgiarc1">
-                  <h3><a href="#" title="渲云渲染，让渲染更高效">渲云渲染，让渲染更高效</a></h3>
-                  <div class="tag"><strong><a href="#">插画</a></strong><strong><a href="#">手绘</a></strong><strong><a href="#">绘画</a></strong><strong><a href="#">教程</a></strong><strong><a href="#">场景</a></strong><strong><a href="#">全景</a></strong></div>
-                  <div class="tag tag1"><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong></div>
-                  </div>
-                  <div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>66</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>12</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>24</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="layui-col-xs3">
-              <div class="grid-demo"> <a href="#" class="show"> <img src="/just/images/img.jpg" />
-                </a>
-                <div class="cgiarc">
-                  <div class="cgiarc1">
-                  <h3><a href="#" title="渲云渲染，让渲染更高效">渲云渲染，让渲染更高效</a></h3>
-                  <div class="tag"><strong><a href="#">插画</a></strong><strong><a href="#">手绘</a></strong><strong><a href="#">绘画</a></strong><strong><a href="#">教程</a></strong><strong><a href="#">场景</a></strong><strong><a href="#">全景</a></strong></div>
-                  </div>
-                  <div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>66</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>12</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>24</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="layui-col-xs3">
-              <div class="grid-demo"> <a href="#" class="show"> <img src="/just/images/img1.jpg" />
-                </a>
-                <div class="cgiarc">
-                  <div class="cgiarc1">
-                  <h3><a href="#" title="渲云渲染，让渲染更高效">渲云渲染，让渲染更高效</a></h3>
-                  <div class="tag"><strong><a href="#">插画</a></strong><strong><a href="#">手绘</a></strong><strong><a href="#">绘画</a></strong><strong><a href="#">教程</a></strong><strong><a href="#">场景</a></strong><strong><a href="#">全景</a></strong></div>
-                  <div class="tag tag1"><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong></div>
-                  </div>
-                  <div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>66</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>12</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>24</span></div>
-                </div>
-              </div>
-            </div>
+
+
+
+        <?php } ?>
+
+
+
+           
+
           </div>
     </div>
+            <p class="nodata"></p>
   </div>
 </div>
 <script type="text/javascript">
 $(function(){
-    
-$(".show").hover(function() {
-  $(this).children(".shadow").show();
-}, function() {
-  $(this).children(".shadow").hide();
-});
+    $(".show").hover(function() {
+      $(this).children(".shadow").show();
+    }, function() {
+      $(this).children(".shadow").hide();
+    });
 
-  })
+
+    var winH = $(window).height(); //页面可视区域高度  
+    var i = 4;  
+    $(window).scroll(function() {  
+        var pageH = $(document.body).height();  
+        var scrollT = $(window).scrollTop(); //滚动条top  
+        var aa = (pageH - winH - scrollT) / winH;  
+        if (aa < 0.02) {
+            $.getJSON("/e/extend/cmsdxmore.php",{page:i,cd:1},function(json){
+                if(json){
+                    var str = "";
+                    $.each(json, function(index, array) {
+
+                         str = str + '<div class="layui-col-xs3">';
+                         str = str + '<div class="grid-demo"> <a href="' + array['titleurl'] + '" class="show"> <img src="'+ array['titlepic'] +'" /></a>';
+                         str = str + '<div class="cgiarc">';
+                         str = str + '<div class="cgiarc1">';
+                         str = str + '<h3><a href="' + array['titleurl'] + '" title="' + array['title'] + '">' + array['title'] +  '</a></h3>';
+                         str = str + '<div class="tag tag1"><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong></div>';
+                         str = str + '</div>';
+                         str = str + '<div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>' +array['onclick']+ '</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>'+ array['plnum'] +'</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>'+array['diggtop']+'</span></div>';
+                         str = str + '</div>';
+                         str = str + '</div>';
+                         str = str + '</div>';
+                        $('#LAY_demo1').append(str);
+                    });
+                    i++;
+                } else {
+                    $(".nodata").show().html("别滚动了，已经到底了。。。");
+                    return false;
+                }
+
+
+            });
+
+
+
+            /*$.getJSON("result.php", {page: i}, function(json) {  
+                if (json) {  
+                    var str = "";  
+                    $.each(json, function(index, array) {  
+                        var str = "<div class="single_item"><div class="element_head">";  
+                        var str = str + "<div class="date">" + array['date'] + "</div>";  
+                        var str = str + "<div class="author">" + array['author'] + "</div>";  
+                        var str = str + "</div><div class="content">" + array['content'] + "</div></div>";  
+                        $("#container").append(str);  
+                    });  
+                    i++;  
+                } else {  
+                    $(".nodata").show().html("别滚动了，已经到底了。。。");  
+                    return false;  
+                }  
+            });  */
+        }  
+    });  
+
+
+})
   
   
   layui.use('element', function(){
@@ -717,28 +658,7 @@ $(".show").hover(function() {
     layer.msg(elem.text());
   });
 });
-layui.use('flow', function(){
-  var flow = layui.flow;
- 
-  flow.load({
-    elem: '#LAY_demo1' //流加载容器
-    ,scrollElem: '#LAY_demo1' //滚动条所在元素，一般不用填，此处只是演示需要。
-    ,done: function(page, next){ //执行下一页的回调
-      
-      //模拟数据插入
-      setTimeout(function(){
-        var lis = [];
-        for(var i = 0; i < 8; i++){
-          lis.push('<div class="layui-col-xs3"><div class="grid-demo"> <a href="#" class="show"><img src="/just/images/img.jpg" /></a><div class="cgiarc"><div class="cgiarc1"><h3><a href="#" title="渲云渲染，让渲染更高效">渲云渲染，让渲染更高效</a></h3><div class="tag"><strong><a href="#">插画</a></strong><strong><a href="#">手绘</a></strong><strong><a href="#">绘画</a></strong><strong><a href="#">教程</a></strong><strong><a href="#">场景</a></strong><strong><a href="#">全景</a></strong></div><div class="tag tag1"><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong></div></div><div class="action"><span><i class="fa fa-eye" aria-hidden="true"></i>66</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>12</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>24</span></div></div></div></div>')
-        }
-        
-        //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
-        //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
-        next(lis.join(''), page < 10); //假设总页数为 10
-      }, 500);
-    }
-  });
- });
+
 </script>
 </body>
 </html>
