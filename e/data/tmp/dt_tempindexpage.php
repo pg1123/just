@@ -21,7 +21,7 @@ if(!defined('InEmpireCMS'))
     <div class="logo"><img src="/just/images/logo.png" /></div>
 
     <ul class="layui-nav">
-      <li class="layui-nav-item layui-this"> <a href="/">首页</a> </li>
+      <li class="layui-nav-item layui-this"> <a href="/">首页1</a> </li>
 
 
       <?php
@@ -69,10 +69,11 @@ if(!defined('InEmpireCMS'))
         </dl>
       </li>
     </ul>
-
+<!-- /e/member/login -->
+<!-- /e/member/register -->
     <?php 
       if(!$_COOKIE['wwogcmlusername']){
-        echo '<div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div><div class="login"><a href="/e/member/login">登录</a>|<a href="/e/member/register">注册</a></div>';
+        echo '<div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div><div class="login"><a href="#" onclick="logintc()">登录</a>|<a href="#" onclick="desgin()">注册</a></div>';
       }
     ?>
 
@@ -580,6 +581,77 @@ if(!defined('InEmpireCMS'))
     </div>
             <p class="nodata"></p>
   </div>
+  <!--登录弹窗-->
+  <div class="logina"  id="logintc" style="display:none;">
+ <form class="layui-form" method="post" action="/e/member/doaction.php">
+    <input type="hidden" name="ecmsfrom" value="">
+    <input name="tobind" type="hidden" id="tobind" value="0">
+    <input type="hidden" name="enews" value="login">
+    <input type="hidden" name="lifetime" value="3600">
+  <div class="layui-form-item">
+    <label class="layui-form-label">用户名</label>
+    <div class="layui-input-block">
+      <input type="text" name="username" id="username" lay-verify="title" autocomplete="off" placeholder="请输入用户名" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">密码</label>
+    <div class="layui-input-block">
+      <input type="password" name="password" id="password" lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input" >
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">&nbsp;</label>
+    <div class="layui-input-block">
+      <p><a href="/e/member/GetPassword/">忘记密码？</a></p>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即登录</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+</form>
+  </div>
+
+  <!--注册弹窗-->
+  <div class="logina"  id="desgin" style="display:none;">
+     <form class="layui-form" method="post" name="userinfoform" action="/e/member/doaction.php">
+        <input name="tobind" type="hidden" id="tobind" value="0">
+        <input type="hidden" name="enews" value="register">
+  <div class="layui-form-item">
+    <label class="layui-form-label">用户名</label>
+    <div class="layui-input-block">
+      <input type="text" name="username" id="username" lay-verify="title" autocomplete="off" placeholder="请输入用户名" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">密码</label>
+    <div class="layui-input-block">
+      <input type="password" name="password" id="password" lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input" password="password">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">重复密码</label>
+    <div class="layui-input-block">
+      <input type="password" name="repassword" id='repassword' lay-verify="required" placeholder="再次输入密码" autocomplete="off" class="layui-input" password="password">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">邮箱</label>
+    <div class="layui-input-block">
+      <input type="text" name="email" id='email' type="text" lay-verify="required" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即注册</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+</form>
+  </div>
 </div>
 <script type="text/javascript">
 $(function(){
@@ -658,7 +730,39 @@ $(function(){
     layer.msg(elem.text());
   });
 });
+layui.use(['form','upload', 'laydate','laypage', 'layer'], function(){
+    
+    var form = layui.form
+    ,layer = layui.layer
+    ,laydate = layui.laydate;
+  });
 
+//登录弹窗
+function logintc(){
+    layer.open({
+        type: 1,
+  title: '用户登录',
+  shadeClose: true,
+  shade: 0.8,
+  area: ['400px', 'auto'],
+  content: $('#logintc') //iframe的url
+        
+ 
+});
+}
+//注册弹窗
+function desgin(){
+    layer.open({
+        type: 1,
+  title: '用户注册',
+  shadeClose: true,
+  shade: 0.8,
+  area: ['400px', 'auto'],
+  content: $('#desgin') //iframe的url
+        
+ 
+});
+}
 </script>
 </body>
 </html>

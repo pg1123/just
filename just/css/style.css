@@ -137,6 +137,11 @@ body{ background-color:#f7f7f7;}
 .txts {padding: 20px 0px 50px 0px;}
 .textli{ border-bottom:1px solid #eaeaea; padding-bottom:30px;}
 .textlia{ padding-left:50px; padding-top:30px;}
+
+.logina{ padding:30px 40px; padding-left:0; padding-bottom: 20px; }
+.logina p a{ color:#0158ff;  }
+.logina .layui-btn1,.layui-layer-title{ background-color:#0158ff;   }
+.logina .layui-btn:hover{border-color: #0158ff}
 @media(min-width:1600px){
 	.layui-col-xs3{ width:16.666%;}
 	.cginew .layui-col-xs3:nth-child(5),.cginew .layui-col-xs3:nth-child(6){ display:block;}
