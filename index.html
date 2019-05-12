@@ -12,66 +12,7 @@
 
 <body>
 <div id="container">
-  <div class="header clearfix ctnt">
-    <div class="logo"><img src="/just/images/logo.png" /></div>
-
-    <ul class="layui-nav">
-      <li class="layui-nav-item layui-this"> <a href="/">首页</a> </li>
-
-
-      <?php
-        $ecms_bq_sql=sys_ReturnEcmsLoopBq('select classid,classname,classpath from [!db.pre!]enewsclass where bclassid=0 and showclass=0 order by myorder limit 10',20,24,0);
-        while($r=$empire->fetch($ecms_bq_sql))
-        {
-            $s = sys_ReturnEcmsLoopStext($r);
-            //$path = $public_r['newsurl'].$r['classpath']; 
-            ?>
-
-            <li class="layui-nav-item"> <a href="#"><?php echo $s['classname']; ?></a>
-              <dl class="layui-nav-child snav">
-                <?php
-                  $sql2=sys_ReturnEcmsLoopBq('select classid,classname,classpath from [!db.pre!]enewsclass where bclassid='.$r['classid'].' order by myorder limit 25',20,24,0);
-                  while($r2=$empire->fetch($sql2))
-                  {
-                        $s2 = sys_ReturnEcmsLoopStext($r2);
-                    ?>
-                    <dd>
-                      <a href="<?php echo $s2['classurl']; ?>" class="btit"><?php echo $s2['classname']; ?></a>
-                       <div class="snavfl clearfix">
-                         
-                        <?php 
-                            $sql3=sys_ReturnEcmsLoopBq('select classid,classname,classpath from [!db.pre!]enewsclass where bclassid='.$r2['classid'].' order by myorder limit 25',20,24,0);
-                            while($r3=$empire->fetch($sql3))
-                            {   
-                                $s3 = sys_ReturnEcmsLoopStext($r3);
-                            ?>
-                                <a href="<?php echo $s3['classurl']; ?>"><?php echo $s3['classname']; ?></a>
-                        <?php } ?>
-
-
-                       </div>
-                    </dd>
-                  <?php } ?>
-              </dl>
-            </li>
-            
-
-    <?php } ?>
-      <li class="layui-nav-item layui-nav-item1" lay-unselect=""> <a href="javascript:;"><img src="/just/images/user.png" class="layui-nav-img">用户00368</a>
-        <dl class="layui-nav-child">
-          <dd><a href="javascript:;">充值服务</a></dd>
-          <dd><a href="/e/member/doaction.php?enews=exit">退出</a></dd>
-        </dl>
-      </li>
-    </ul>
-
-    <?php 
-      if(!$_COOKIE['wwogcmlusername']){
-        echo '<div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div><div class="login"><a href="/e/member/login">登录</a>|<a href="/e/member/register">注册</a></div>';
-      }
-    ?>
-
-  </div>
+   [!--temp.header--]
   <div id="main">
     <div class="cgi cginew">
       <div class="tit clearfix">
@@ -575,6 +516,81 @@
     </div>
             <p class="nodata"></p>
   </div>
+
+ <!--登录弹窗-->
+  <div class="logina"  id="logintc" style="display:none;">
+ <form class="layui-form" method="post" action="/e/member/doaction.php">
+    <input type="hidden" name="ecmsfrom" value="">
+    <input name="tobind" type="hidden" id="tobind" value="0">
+    <input type="hidden" name="enews" value="login">
+    <input type="hidden" name="lifetime" value="3600">
+  <div class="layui-form-item">
+    <label class="layui-form-label">用户名</label>
+    <div class="layui-input-block">
+      <input type="text" name="username" id="username" lay-verify="title" autocompl
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">密码</label>
+    <div class="layui-input-block">
+      <input type="password" name="password" id="password" lay-verify="required" pl
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">&nbsp;</label>
+    <div class="layui-input-block">
+      <p><a href="/e/member/GetPassword/">忘记密码？</a></p>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即登
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+</form>
+  </div>
+
+  <!--注册弹窗-->
+  <div class="logina"  id="desgin" style="display:none;">
+     <form class="layui-form" method="post" name="userinfoform" action="/e/member/d
+        <input name="tobind" type="hidden" id="tobind" value="0">
+        <input type="hidden" name="enews" value="register">
+  <div class="layui-form-item">
+    <label class="layui-form-label">用户名</label>
+    <div class="layui-input-block">
+      <input type="text" name="username" id="username" lay-verify="title" autocompl
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">密码</label>
+    <div class="layui-input-block">
+      <input type="password" name="password" id="password" lay-verify="required" pl
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">重复密码</label>
+    <div class="layui-input-block">
+      <input type="password" name="repassword" id='repassword' lay-verify="required
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">邮箱</label>
+    <div class="layui-input-block">
+      <input type="text" name="email" id='email' type="text" lay-verify="required" 
+    </div>
+  </div>
+  </div>
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即注
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+</form>
+  </div>
+
+[!--temp.footer--]
 </div>
 <script type="text/javascript">
 $(function(){

@@ -17,11 +17,11 @@ if(!defined('InEmpireCMS'))
 
 <body>
 <div id="container">
-  <div class="header clearfix ctnt">
+   <div class="header clearfix ctnt">
     <div class="logo"><img src="/just/images/logo.png" /></div>
 
     <ul class="layui-nav">
-      <li class="layui-nav-item layui-this"> <a href="/">首页1</a> </li>
+      <li class="layui-nav-item layui-this"> <a href="/">首页1111</a> </li>
 
 
       <?php
@@ -62,18 +62,23 @@ if(!defined('InEmpireCMS'))
             
 
     <?php } ?>
-      <li class="layui-nav-item layui-nav-item1" lay-unselect=""> <a href="javascript:;"><img src="/just/images/user.png" class="layui-nav-img">用户00368</a>
+      
+       <?php 
+      if($_COOKIE['wwogcmlusername']){
+     echo '<li class="layui-nav-item layui-nav-item1 usera" lay-unselect=""> <a href="javascript:;"><img src="/just/images/user.png" class="layui-nav-img">用户00368</a>
         <dl class="layui-nav-child">
           <dd><a href="javascript:;">充值服务</a></dd>
           <dd><a href="/e/member/doaction.php?enews=exit">退出</a></dd>
         </dl>
-      </li>
+      </li>';
+   }
+ ?>
+
     </ul>
-<!-- /e/member/login -->
-<!-- /e/member/register -->
+
     <?php 
       if(!$_COOKIE['wwogcmlusername']){
-        echo '<div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div><div class="login"><a href="#" onclick="logintc()">登录</a>|<a href="#" onclick="desgin()">注册</a></div>';
+        echo '<div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div><div class="login"><a href="#" onclick="loginct()">登录</a>|<a href="#" onclick="design()">注册</a></div>';
       }
     ?>
 
@@ -581,7 +586,8 @@ if(!defined('InEmpireCMS'))
     </div>
             <p class="nodata"></p>
   </div>
-  <!--登录弹窗-->
+
+ <!--登录弹窗-->
   <div class="logina"  id="logintc" style="display:none;">
  <form class="layui-form" method="post" action="/e/member/doaction.php">
     <input type="hidden" name="ecmsfrom" value="">
@@ -591,13 +597,13 @@ if(!defined('InEmpireCMS'))
   <div class="layui-form-item">
     <label class="layui-form-label">用户名</label>
     <div class="layui-input-block">
-      <input type="text" name="username" id="username" lay-verify="title" autocomplete="off" placeholder="请输入用户名" class="layui-input">
+      <input type="text" name="username" id="username" lay-verify="title" autocompl
     </div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">密码</label>
     <div class="layui-input-block">
-      <input type="password" name="password" id="password" lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input" >
+      <input type="password" name="password" id="password" lay-verify="required" pl
     </div>
   </div>
   <div class="layui-form-item">
@@ -608,7 +614,7 @@ if(!defined('InEmpireCMS'))
   </div>
   <div class="layui-form-item">
     <div class="layui-input-block">
-      <button class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即登录</button>
+      <button class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即登
       <button type="reset" class="layui-btn layui-btn-primary">重置</button>
     </div>
   </div>
@@ -617,41 +623,47 @@ if(!defined('InEmpireCMS'))
 
   <!--注册弹窗-->
   <div class="logina"  id="desgin" style="display:none;">
-     <form class="layui-form" method="post" name="userinfoform" action="/e/member/doaction.php">
+     <form class="layui-form" method="post" name="userinfoform" action="/e/member/d
         <input name="tobind" type="hidden" id="tobind" value="0">
         <input type="hidden" name="enews" value="register">
   <div class="layui-form-item">
     <label class="layui-form-label">用户名</label>
     <div class="layui-input-block">
-      <input type="text" name="username" id="username" lay-verify="title" autocomplete="off" placeholder="请输入用户名" class="layui-input">
+      <input type="text" name="username" id="username" lay-verify="title" autocompl
     </div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">密码</label>
     <div class="layui-input-block">
-      <input type="password" name="password" id="password" lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input" password="password">
+      <input type="password" name="password" id="password" lay-verify="required" pl
     </div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">重复密码</label>
     <div class="layui-input-block">
-      <input type="password" name="repassword" id='repassword' lay-verify="required" placeholder="再次输入密码" autocomplete="off" class="layui-input" password="password">
+      <input type="password" name="repassword" id='repassword' lay-verify="required
     </div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">邮箱</label>
     <div class="layui-input-block">
-      <input type="text" name="email" id='email' type="text" lay-verify="required" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+      <input type="text" name="email" id='email' type="text" lay-verify="required" 
     </div>
+  </div>
   </div>
   <div class="layui-form-item">
     <div class="layui-input-block">
-      <button class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即注册</button>
+      <button class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即注
       <button type="reset" class="layui-btn layui-btn-primary">重置</button>
     </div>
   </div>
 </form>
   </div>
+
+<!-- 页脚 -->
+<div class="footer">
+Copyright ©2019 CGITool right reserved.京ICP备11081390号-1
+</div>
 </div>
 <script type="text/javascript">
 $(function(){
@@ -730,39 +742,7 @@ $(function(){
     layer.msg(elem.text());
   });
 });
-layui.use(['form','upload', 'laydate','laypage', 'layer'], function(){
-    
-    var form = layui.form
-    ,layer = layui.layer
-    ,laydate = layui.laydate;
-  });
 
-//登录弹窗
-function logintc(){
-    layer.open({
-        type: 1,
-  title: '用户登录',
-  shadeClose: true,
-  shade: 0.8,
-  area: ['400px', 'auto'],
-  content: $('#logintc') //iframe的url
-        
- 
-});
-}
-//注册弹窗
-function desgin(){
-    layer.open({
-        type: 1,
-  title: '用户注册',
-  shadeClose: true,
-  shade: 0.8,
-  area: ['400px', 'auto'],
-  content: $('#desgin') //iframe的url
-        
- 
-});
-}
 </script>
 </body>
 </html>

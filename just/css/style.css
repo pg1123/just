@@ -37,6 +37,7 @@ body{ background-color:#f7f7f7;}
 .header .login{ position:absolute ; right:190px; top:20px;color:#c4c5c9;}
 .header .login a{ color:#c4c5c9; margin:0 8px;}
 .header .login a:hover{ color:#fff;}
+.layui-nav .usera{ position: absolute; right: 200px; }
 /*主要内容*/
 #main{ width:90%; padding:0 5%; margin:0 auto; min-width:1080px;}
 .cgi ,.cgijc{ padding-top:20px;}
@@ -147,11 +148,13 @@ body{ background-color:#f7f7f7;}
 	.cginew .layui-col-xs3:nth-child(5),.cginew .layui-col-xs3:nth-child(6){ display:block;}
 	}
 .pageBox {text-align: center;}
-.pageBox a {border:1px solid #ddd;display:inline-block;margin-right:6px;color: #707070;width:34px;height:34px;font:bold 14px/34px arial;}
+.pageBox a {border:1px solid #ddd;display:inline-block;margin-right:6px;color: #707070;padding:0 8px;height:32px;font:bold 14px/34px arial;}
 .pageBox a:hover,.pageBox a:active{background:#3aa9f2;color: #FFFFFF;text-decoration: none;}
 .pageBox .cur { background: #3aa9f2;border: 1px solid #3aa9f2;text-decoration: none;}
 .pageBox a.cur {color: #fff;}
 .pageBox .disabled {width: 79px;}
+.nodata{ text-align: center; line-height: 80px;  }
+.footer{background-color:#393d49; width:100%; line-height: 60px; color: #fff; text-align: center;}
 
 
 

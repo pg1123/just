@@ -11,7 +11,6 @@ require(ECMS_PATH.'e/template/incfile/header.php');
 ?>
 
 <div class="app-content-body ">
-	    
 
 <div class="bg-light lter b-b wrapper-md">
   <h1 class="m-n font-thin h3">控制面板</h1>
@@ -51,56 +50,6 @@ require(ECMS_PATH.'e/template/incfile/header.php');
         
       </div>
 
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-list fa-fw"></i> 最新公告</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="list-group">
-<!--8个公告循环开始 -->
-<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
-<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
-<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
-<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
-<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
-<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
-<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
-<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
-<!--8个公告循环结束-->
-                             </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-list fa-fw"></i> 最新文章</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="list-group">
-<!--8个文章循环开始 -->                        
-<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
-<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
-<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
-<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
-<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
-<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
-<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
-<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>          
-<!--8个文章循环结束-->
-
-</div>
-                                
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- /.row -->
 
 </div>
 

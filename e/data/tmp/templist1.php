@@ -21,7 +21,7 @@ if(!defined('InEmpireCMS'))
     <div class="logo"><img src="/just/images/logo.png" /></div>
 
     <ul class="layui-nav">
-      <li class="layui-nav-item layui-this"> <a href="/">首页</a> </li>
+      <li class="layui-nav-item layui-this"> <a href="/">首页1111</a> </li>
 
 
       <?php
@@ -62,12 +62,18 @@ if(!defined('InEmpireCMS'))
             
 
     <?php } ?>
-      <li class="layui-nav-item layui-nav-item1" lay-unselect=""> <a href="javascript:;"><img src="/just/images/user.png" class="layui-nav-img">用户00368</a>
+      
+       <?php 
+      if($_COOKIE['wwogcmlusername']){
+     echo '<li class="layui-nav-item layui-nav-item1 usera" lay-unselect=""> <a href="javascript:;"><img src="/just/images/user.png" class="layui-nav-img">用户00368</a>
         <dl class="layui-nav-child">
           <dd><a href="javascript:;">充值服务</a></dd>
           <dd><a href="/e/member/doaction.php?enews=exit">退出</a></dd>
         </dl>
-      </li>
+      </li>';
+   }
+ ?>
+
     </ul>
 
     <?php 

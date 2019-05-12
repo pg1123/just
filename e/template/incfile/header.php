@@ -422,18 +422,9 @@ $tgetmid=(int)$_GET['mid'];
                             <li>
                                 <a title="帐号状态" id="aZCenter_Order_UnPayed" href="<?=$public_r['newsurl']?>e/member/my/"><span>帐号状态</span></a>
                             </li>
-                   <li>
-                                <a title="收藏夹" id="aZCenter_Order_UnPayed" href="<?=$public_r['newsurl']?>e/member/fava/"><span>收藏夹</span></a>
-                            </li>
-                   <li>
-                                <a title="好友列表" id="aZCenter_Order_UnPayed"  href="<?=$public_r['newsurl']?>e/member/friend/"><span>好友列表</span></a>
-                            </li>
-                   <li>
-                                <a title="绑定外部登录" id="aZCenter_Order_UnPayed"  href="<?=$public_r['newsurl']?>e/memberconnect/ListBind.php"><span>绑定外部登录</span></a>
-                            </li>
                 </ul>
                     </li>
-<li id="nav_ZCenter_Order" class="">
+<!-- <li id="nav_ZCenter_Order" class="">
                         <a href="javascript:;" id="aZCenter_Order" class="auto">
               <span class="pull-right text-muted">
                     <i class="fa fa-fw fa-angle-right text"></i>
@@ -452,8 +443,8 @@ $tgetmid=(int)$_GET['mid'];
                             </li>
                         
                 </ul>
-                    </li>
-<li id="nav_ZCenter_Order" class="">
+                    </li> -->
+<!-- <li id="nav_ZCenter_Order" class="">
                         <a href="javascript:;" id="aZCenter_Order" class="auto">
               <span class="pull-right text-muted">
                     <i class="fa fa-fw fa-angle-right text"></i>
@@ -492,7 +483,9 @@ $tgetmid=(int)$_GET['mid'];
                             
                             
                 </ul>
-                    </li><li id="nav_ZCenter_Order" class="">
+                    </li> -->
+
+                    <!-- <li id="nav_ZCenter_Order" class="">
                         <a href="javascript:;" id="aZCenter_Order" class="auto">
               <span class="pull-right text-muted">
                     <i class="fa fa-fw fa-angle-right text"></i>
@@ -519,7 +512,7 @@ $tgetmid=(int)$_GET['mid'];
                                 <a title="管理反馈" id="aZCenter_Order_UnPayed" href="<?=$public_r['newsurl']?>e/member/mspace/feedback.php"><span>管理反馈</span></a>
                             </li>
                 </ul>
-                    </li>                    <li id="nav_ZCenter_Charge" class="">
+                    </li>    -->                 <li id="nav_ZCenter_Charge" class="">
                         <a href="javascript:;" id="aZCenter_Charge" class="auto">
               <span class="pull-right text-muted">
                     <i class="fa fa-fw fa-angle-right text"></i>
