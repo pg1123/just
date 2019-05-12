@@ -12,7 +12,76 @@
 
 <body>
 <div id="container">
-   [!--temp.header--]
+       <div class="header clearfix ctnt">
+    <div class="logo"><img src="/just/images/logo.png" /></div>
+
+    <ul class="layui-nav">
+      <li class="layui-nav-item layui-this"> <a href="/">首页</a> </li>
+
+
+      <?php
+        $ecms_bq_sql=sys_ReturnEcmsLoopBq('select classid,classname,classpath from [!db.pre!]enewsclass where bclassid=0 and showclass=0 order by myorder limit 10',20,24,0);
+        while($r=$empire->fetch($ecms_bq_sql))
+        {
+            $s = sys_ReturnEcmsLoopStext($r);
+            //$path = $public_r['newsurl'].$r['classpath']; 
+            ?>
+
+            <li class="layui-nav-item"> <a href="#"><?php echo $s['classname']; ?></a>
+              <dl class="layui-nav-child snav">
+                <?php
+                  $sql2=sys_ReturnEcmsLoopBq('select classid,classname,classpath from [!db.pre!]enewsclass where bclassid='.$r['classid'].' order by myorder limit 25',20,24,0);
+                  while($r2=$empire->fetch($sql2))
+                  {
+                        $s2 = sys_ReturnEcmsLoopStext($r2);
+                    ?>
+                    <dd>
+                      <a href="<?php echo $s2['classurl']; ?>" class="btit"><?php echo $s2['classname']; ?></a>
+                       <div class="snavfl clearfix">
+                         
+                        <?php 
+                            $sql3=sys_ReturnEcmsLoopBq('select classid,classname,classpath from [!db.pre!]enewsclass where bclassid='.$r2['classid'].' order by myorder limit 25',20,24,0);
+                            while($r3=$empire->fetch($sql3))
+                            {   
+                                $s3 = sys_ReturnEcmsLoopStext($r3);
+                            ?>
+                                <a href="<?php echo $s3['classurl']; ?>"><?php echo $s3['classname']; ?></a>
+                        <?php } ?>
+
+
+                       </div>
+                    </dd>
+                  <?php } ?>
+              </dl>
+            </li>
+            
+
+    <?php } ?>
+      
+       <?php 
+      if($_COOKIE['wwogcmlusername']){
+     echo '<li class="layui-nav-item layui-nav-item1 usera" lay-unselect=""> <a href="javascript:;"><img src="/just/images/user.png" class="layui-nav-img">用户00368</a>
+        <dl class="layui-nav-child">
+          <dd><a href="javascript:;">充值服务</a></dd>
+          <dd><a href="/e/member/doaction.php?enews=exit">退出</a></dd>
+        </dl>
+      </li>';
+   }
+ ?>
+
+    </ul>
+
+    <?php 
+      if(!$_COOKIE['wwogcmlusername']){
+        echo '<div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div><div class="login"><a href="#" onclick="logintc()">登录</a>|<a href="#" onclick="design()">注册</a></div>';
+      }
+    ?>
+
+<script type="text/javascript">
+alert(222222);
+</script>
+  </div>
+
   <div id="main">
     <div class="cgi cginew">
       <div class="tit clearfix">
@@ -590,7 +659,10 @@
 </form>
   </div>
 
-[!--temp.footer--]
+<!-- 页脚 -->
+<div class="footer">
+Copyright ©2019 CGITool right reserved.京ICP备11081390号-1
+</div>
 </div>
 <script type="text/javascript">
 $(function(){
@@ -641,10 +713,10 @@ $(function(){
                 if (json) {  
                     var str = "";  
                     $.each(json, function(index, array) {  
-                        var str = "<div class=\"single_item\"><div class=\"element_head\">";  
-                        var str = str + "<div class=\"date\">" + array['date'] + "</div>";  
-                        var str = str + "<div class=\"author\">" + array['author'] + "</div>";  
-                        var str = str + "</div><div class=\"content\">" + array['content'] + "</div></div>";  
+                        var str = "<div class="single_item"><div class="element_head">";  
+                        var str = str + "<div class="date">" + array['date'] + "</div>";  
+                        var str = str + "<div class="author">" + array['author'] + "</div>";  
+                        var str = str + "</div><div class="content">" + array['content'] + "</div></div>";  
                         $("#container").append(str);  
                     });  
                     i++;  
@@ -668,6 +740,29 @@ $(function(){
     //console.log(elem)
     layer.msg(elem.text());
   });
+
+
+  layui.use(['form','upload', 'laydate','laypage', 'layer'], function(){
+    var form = layui.form,
+    layer = layui.layer,
+    laydate = layui.laydate;
+  });
+
+  //登录弹窗^M
+  function logintc(){
+    alert(111);
+      layer.open({
+        type: 1,
+        title: '用户登录',
+        shadeClose: true,
+        shade: 0.8,
+        area: ['400px', 'auto'],
+        content: $('#logintc') //iframe的url
+      });
+  }
+
+
+
 });
 
 </script>

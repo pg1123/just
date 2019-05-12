@@ -17,11 +17,11 @@ if(!defined('InEmpireCMS'))
 
 <body>
 <div id="container">
-   <div class="header clearfix ctnt">
+       <div class="header clearfix ctnt">
     <div class="logo"><img src="/just/images/logo.png" /></div>
 
     <ul class="layui-nav">
-      <li class="layui-nav-item layui-this"> <a href="/">首页1111</a> </li>
+      <li class="layui-nav-item layui-this"> <a href="/">首页</a> </li>
 
 
       <?php
@@ -78,11 +78,14 @@ if(!defined('InEmpireCMS'))
 
     <?php 
       if(!$_COOKIE['wwogcmlusername']){
-        echo '<div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div><div class="login"><a href="#" onclick="loginct()">登录</a>|<a href="#" onclick="design()">注册</a></div>';
+        echo '<div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div><div class="login"><a href="#" onclick="logintc()">登录</a>|<a href="#" onclick="design()">注册</a></div>';
       }
     ?>
 
+<script type="text/javascript">
+</script>
   </div>
+
   <div id="main">
     <div class="cgi cginew">
       <div class="tit clearfix">
@@ -622,7 +625,7 @@ if(!defined('InEmpireCMS'))
   </div>
 
   <!--注册弹窗-->
-  <div class="logina"  id="desgin" style="display:none;">
+  <div class="logina"  id="design" style="display:none;">
      <form class="layui-form" method="post" name="userinfoform" action="/e/member/d
         <input name="tobind" type="hidden" id="tobind" value="0">
         <input type="hidden" name="enews" value="register">
@@ -741,7 +744,44 @@ $(function(){
     //console.log(elem)
     layer.msg(elem.text());
   });
+
+
+  layui.use(['form','upload', 'laydate','laypage', 'layer'], function(){
+    var form = layui.form,
+    layer = layui.layer,
+    laydate = layui.laydate;
+  });
+
+
+
 });
+
+
+//登录弹窗
+  function logintc(){
+      layer.open({
+        type: 1,
+        title: '用户登录',
+        shadeClose: true,
+        shade: 0.8,
+        area: ['400px', 'auto'],
+        content: $('#logintc') //iframe的url
+      });
+  }
+
+
+  //注册弹窗^M
+function design(){
+    layer.open({
+        type: 1,
+  title: '用户注册',
+  shadeClose: true,
+  shade: 0.8,
+  area: ['400px', 'auto'],
+  content: $('#design') //iframe的url
+        
+});
+}
 
 </script>
 </body>
