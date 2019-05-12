@@ -10,7 +10,8 @@ $url="<a href=../../../>首页</a>&nbsp;>&nbsp;<a href=../cp/>会员中心</a>&n
 require(ECMS_PATH.'e/template/incfile/header.php');
 ?>
 <br>
-<table width="500" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
+<div class="app-content-body ">
+<table width="500" class="table table-bordered table-hover table-striped table_striped table_hover" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
   <form name="GetPassForm" method="POST" action="../doaction.php">
     <tr class="header"> 
       <td height="25" colspan="2"><div align="center">重设密码</div></td>
@@ -36,7 +37,7 @@ require(ECMS_PATH.'e/template/incfile/header.php');
         <input name="cc" type="hidden" id="cc" value="<?=$r[cc]?>"></td>
     </tr>
   </form>
-</table>
+</table></div>
 <br>
 <?php
 require(ECMS_PATH.'e/template/incfile/footer.php');

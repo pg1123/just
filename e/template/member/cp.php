@@ -9,109 +9,108 @@ $public_diyr['pagetitle']='会员中心';
 $url="<a href=../../../>首页</a>&nbsp;>&nbsp;<a href=../cp/>会员中心</a>";
 require(ECMS_PATH.'e/template/incfile/header.php');
 ?>
-<table width="100%" border="0" cellspacing="1" cellpadding="3" class="tableborder">
-  <tr class="header"> 
-    <td height="25">会员中心</td>
-  </tr>
-  <tr> 
-    <td height="25" bgcolor="#FFFFFF"> <table width="100%" border="0" cellspacing="1" cellpadding="3">
-        <tr> 
-          <td width="220" valign="top"> 
-            <table width="100%" border="0" align="center" cellpadding="0" cellspacing="6">
-              <tr> 
-                <td height="25"><div align="center"><img src="<?=$userpic?>" width="158" height="158" style="border:1px solid #cccccc;" /></div></td>
-              </tr>
-              <tr> 
-                <td height="25"><div align="center"><a href="../../space/?userid=<?=$user[userid]?>" target="_blank"> 
-                    <?=$user[username]?>
-                    </a></div></td>
-              </tr>
-            </table>
-          </td>
-          <td> <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
-              <tr bgcolor="#FFFFFF"> 
-                <td width="15%" height="25">用户ID:</td>
-                <td width="85%" height="25"> 
-                  <?=$user[userid]?>
-                </td>
-              </tr>
-              <tr bgcolor="#FFFFFF"> 
-                <td height="25">用户名:</td>
-                <td height="25"> 
-                  <?=$user[username]?>
-                  &nbsp;&nbsp;(<a href="../../space/?userid=<?=$user[userid]?>" target="_blank">我的会员空间</a>) 
-                </td>
-              </tr>
-              <tr bgcolor="#FFFFFF"> 
-                <td width="33%" height="25">注册时间:</td>
-                <td width="67%" height="25"> 
-                  <?=$registertime?>
-                </td>
-              </tr>
-              <tr bgcolor="#FFFFFF"> 
-                <td height="25">会员等级:</td>
-                <td height="25"> 
-                  <?=$level_r[$r[groupid]][groupname]?>
-                </td>
-              </tr>
-              <tr bgcolor="#FFFFFF"> 
-                <td height="25">剩余有效期:</td>
-                <td height="25"> 
-                  <?=$userdate?>
-                  天 </td>
-              </tr>
-              <tr bgcolor="#FFFFFF"> 
-                <td height="25">剩余点数:</td>
-                <td height="25"> 
-                  <?=$r[userfen]?>
-                  点</td>
-              </tr>
-              <tr bgcolor="#FFFFFF"> 
-                <td height="25">帐户余额:</td>
-                <td height="25"> 
-                  <?=$r[money]?>
-                  元 </td>
-              </tr>
-              <tr bgcolor="#FFFFFF"> 
-                <td height="25">新消息:</td>
-                <td height="25"> 
-                  <?=$havemsg?>
-                </td>
-              </tr>
-            </table>
-            <div align="center"> </div></td>
-        </tr>
-      </table> 
-    </td>
-  </tr>
-  <tr>
-    <td height="20">快速入口</td>
-  </tr>
-  <tr>
-    <td height="36" bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="1" cellpadding="3">
-        <tr> 
-          <td width="16%" height="25"> 
-            <div align="center"><a href="../EditInfo/"><img src="../../data/images/membercp/userinfo.gif" width="16" height="16" border="0" align="absmiddle"> 
-              修改资料</a></div></td>
-          <td width="16%"> 
-            <div align="center"><a href="../msg/"><img src="../../data/images/membercp/msg.gif" width="16" height="16" border="0" align="absmiddle"> 
-              站内消息</a></div></td>
-          <td width="16%"> 
-            <div align="center"><a href="../mspace/SetSpace.php"><img src="../../data/images/membercp/space.gif" width="16" height="16" border="0" align="absmiddle"> 
-              空间设置</a></div></td>
-          <td width="16%"> 
-            <div align="center"><a href="../../DoInfo/"><img src="../../data/images/membercp/info.gif" width="16" height="16" border="0" align="absmiddle"> 
-              管理信息</a></div></td>
-          <td width="16%"> 
-            <div align="center"><a href="../fava/"><img src="../../data/images/membercp/favitorie.gif" width="16" height="16" border="0" align="absmiddle"> 
-              管理收藏夹</a></div></td>
-          <td width="16%">
-<div align="center"><a href="../friend/"><img src="../../data/images/membercp/friend.gif" width="16" height="16" border="0" align="absmiddle"> 
-              我的好友</a></div></td>
-        </tr>
-      </table></td>
-  </tr>
-</table>
-<?php
+
+<div class="app-content-body ">
+	    
+
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">控制面板</h1>
+<small class="text-muted">欢迎你 <?=$user[username]?>（<?=$level_r[$r[groupid]][groupname]?>）</small>
+</div>
+<div class="wrapper-md">
+<div class="row">
+        <div class="col-md-12">
+          <div class="row row-sm text-center">
+            <div class="col-lg-3 col-md-6">
+                <a class="block panel padder-v item">
+                <div class="h1 text-info font-thin h1"><?=$level_r[$r[groupid]][groupname]?></div>
+                <span class="text-muted text-xs">当前用户组</span>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <a class="block panel padder-v bg-primary item" href="<?=$public_r['newsurl']?>e/member/my/">
+                <span class="text-white font-thin h1 block"><?=$r[userfen]?>元</span>
+                <span class="text-muted text-xs">余额</span>
+              </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <a class="block panel padder-v bg-info item" href="<?=$public_r['newsurl']?>e/member/my/">
+                <span class="text-white font-thin h1 block"><?=$r[userfen]?>
+                  点</span>
+                <span class="text-muted text-xs">点数</span>
+              </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <a class="block panel padder-v item" href="<?=$public_r['newsurl']?>e/ShopSys/ListDd/">
+                <div class="font-thin h1">我的订单</div>
+                <span class="text-muted text-xs">购物</span>
+               </a> 
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-list fa-fw"></i> 最新公告</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="list-group">
+<!--8个公告循环开始 -->
+<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
+<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
+<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
+<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
+<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
+<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
+<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
+<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
+<!--8个公告循环结束-->
+                             </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-list fa-fw"></i> 最新文章</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="list-group">
+<!--8个文章循环开始 -->                        
+<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
+<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
+<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
+<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
+<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
+<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
+<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>
+<a target="_blank" href="http://www.cmsdx.com" class="list-group-item"> <span class="badge">[04-10]</span><i class="fa fa-fw fa-arrow-circle-right"></i> CMS大学，为帝国cms爱好者提供动力！ </a>          
+<!--8个文章循环结束-->
+
+</div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.row -->
+
+</div>
+
+
+
+	</div>
+    
+    
+
+   <?php
 require(ECMS_PATH.'e/template/incfile/footer.php');
-?>
+?> 
+    

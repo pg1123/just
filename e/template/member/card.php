@@ -23,44 +23,83 @@ else
 {return false;}
 }
 </script>
-<br>
-<table width="60%" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
-  <form name=GetFen method=post action=../doaction.php onsubmit="return GetFen1();">
+ 
+
+  	<div class="app-content-body ">
+	    
+        
+
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">点卡冲值 </h1>
+</div>
+<div class="wrapper-md">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+       <form name=GetFen method=post action=../doaction.php onsubmit="return GetFen1();">
     <input type=hidden name=enews value=CardGetFen>
-    <tr class="header"> 
-      <td height="25" colspan="2"><div align="center">点卡冲值</div></td>
-    </tr>
-    <tr bordercolor="#FFFFFF" bgcolor="#FFFFFF"> 
-      <td width="34%" height="25"> <div align="right">冲值的用户名：</div></td>
-      <td width="66%" height="25"> <input name="username" type="text" id="username" value="<?=$user[username]?>">
+                            <table align="center" class="table table-bordered table-hover table-striped">
+                                <tbody>
+
+
+<tr class="color1">
+			<td width="280" align="right" class="td5 tdCenter">冲值的用户名:</td>
+			<td width="282" class="td25 tdCenter">  <input name="username" type="text" id="username" value="<?=$user[username]?>">
         *</td>
-    </tr>
-    <tr bordercolor="#FFFFFF" bgcolor="#FFFFFF"> 
-      <td height="25"> <div align="right">重复用户名：</div></td>
-      <td height="25"> <input name="reusername" type="text" id="reusername" value="<?=$user[username]?>">
+		
+	
+</tr>
+                              
+                               
+<tr>
+<td align="right">重复用户名:</td>
+<td> <input name="reusername" type="text" id="reusername" value="<?=$user[username]?>">
+        * </td>
+
+
+</tr>
+<tr>
+<td align="right">冲值卡号：</td>
+<td> <input name="card_no" type="text" id="card_no">
         *</td>
-    </tr>
-    <tr bordercolor="#FFFFFF" bgcolor="#FFFFFF"> 
-      <td height="25"> <div align="right">冲值卡号：</div></td>
-      <td height="25"> <input name="card_no" type="text" id="card_no">
+
+
+</tr>
+
+<tr>
+<td align="right">冲值卡密码</td>
+<td><input name="password" type="password" id="password">
         *</td>
-    </tr>
-    <tr bordercolor="#FFFFFF" bgcolor="#FFFFFF"> 
-      <td height="25"> <div align="right">冲值卡密码：</div></td>
-      <td height="25"> <input name="password" type="password" id="password">
-        *</td>
-    </tr>
-    <tr bordercolor="#FFFFFF" bgcolor="#FFFFFF"> 
-      <td height="25"> <div align="center"></div></td>
-      <td height="25"> <input type="submit" name="Submit" value="开始冲值"> &nbsp; 
-        <input type="reset" name="Submit2" value="重置"> </td>
-    </tr>
-    <tr bordercolor="#FFFFFF" bgcolor="#FFFFFF"> 
-      <td height="25" colspan="2"> <div align="center">说明：带*的为必填项。</div></td>
-    </tr>
-  </form>
+
+
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+  <input type="submit" name="Submit" value="开始冲值" class="btn btn-primary"> 
+  &nbsp; 
+  <input type="reset" name="Submit2" value="重置" class="btn btn-primary"></td>
+</tr>
+<tr>
+<td colspan="2" align="center">说明：带*的为必填项。</td>
+</tr>
+
+</tbody>
 </table>
-<br>
+</form>
+
+                      </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+
+</div>
+
+
+
+	</div>  
 <?php
 require(ECMS_PATH.'e/template/incfile/footer.php');
 ?>

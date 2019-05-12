@@ -12,7 +12,8 @@ if(!defined('InEmpireCMS'))
 </head>
 
 <body>
-  <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
+<div class="app-content-body ">
+  <table class="table table-bordered table-hover table-striped table_striped table_hover" width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
   <form name="form1" method="post" action="../doaction.php">
     <input type=hidden name=ecmsfrom value="<?=ehtmlspecialchars($_GET['from'])?>">
     <input type=hidden name=prtype value="<?=ehtmlspecialchars($_GET['prt'])?>">
@@ -46,15 +47,8 @@ if(!defined('InEmpireCMS'))
 	?>
     <tr bgcolor="#FFFFFF"> 
       <td height="25">验证码：</td>
-      <td height="25">
-		<table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tr> 
-                  <td width="52"><input name="key" type="text" id="key" size="6"> 
-                  </td>
-                  <td id="loginshowkey"><a href="#EmpireCMS" onclick="edoshowkey('loginshowkey','login','<?=$public_r['newsurl']?>');" title="点击显示验证码">点击显示验证码</a></td>
-                </tr>
-            </table>
-      </td>
+      <td height="25"><input name="key" type="text" id="key" size="6">
+        <img src="../../ShowKey/?v=login" name="loginKeyImg" id="loginKeyImg" onclick="loginKeyImg.src='../../ShowKey/?v=login&t='+Math.random()" title="看不清楚,点击刷新"></td>
     </tr>
     <?php
 	}	
@@ -64,6 +58,6 @@ if(!defined('InEmpireCMS'))
       <td height="25"><input type="submit" name="Submit" value="登陆"> <input type="button" name="button" value="注册" onclick="window.open('../register/');"></td>
     </tr>
 	</form>
-  </table>
+  </table></div>
 </body>
 </html>

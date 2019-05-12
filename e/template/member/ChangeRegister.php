@@ -10,7 +10,8 @@ $url="<a href=../../../>首页</a>&nbsp;>&nbsp;<a href=../cp/>会员中心</a>&n
 require(ECMS_PATH.'e/template/incfile/header.php');
 ?>
 <br>
-<table width="500" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
+<div class="app-content-body ">
+<table class="table table-bordered table-hover table-striped table_striped table_hover" width="500" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
   <form name="ChRegForm" method="GET" action="index.php">
   <input name="tobind" type="hidden" id="tobind" value="<?=$tobind?>">
     <tr class="header"> 
@@ -28,21 +29,21 @@ require(ECMS_PATH.'e/template/incfile/header.php');
 			}
 		?>
           <tr>
-            <td height="23">
+            <td height="23" align="center">
 			<input type="radio" name="groupid" value="<?=$r[groupid]?>"<?=$checked?>>
               <?=$r[groupname]?>
             </td>
-          </tr>
+        </tr>
 		<?php
 		}
 		?>
         </table></td>
     </tr>
     <tr bgcolor="#FFFFFF"> 
-      <td height="25"> &nbsp;<input type="submit" name="button" value="下一步"></td>
+      <td height="25" align="center"> &nbsp;<input type="submit" name="button" value="下一步" class="btn btn-primary"></td>
     </tr>
   </form>
-</table>
+</table></div>
 <br>
 <?php
 require(ECMS_PATH.'e/template/incfile/footer.php');

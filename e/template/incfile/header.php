@@ -1,4 +1,8 @@
 <?php
+$muserid=(int)getcvar('mluserid');
+$member=$empire->fetch1("select userpic from just_enewsmemberadd where userid='$muserid'");
+?>
+<?php
 if(!defined('InEmpireCMS'))
 {
 	exit();
@@ -82,236 +86,385 @@ if($tmgetgroupid)
 //模型
 $tgetmid=(int)$_GET['mid'];
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+
+<!DOCTYPE html>
+<html lang="zh-CN" >
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<title><?=$thispagetitle?></title>
-<style>
-a						{ text-decoration: none; color: #002280 }
-a:hover					{ text-decoration: underline }
-body					{ font-size: 9pt; }
-table					{ font: 9pt Tahoma, Verdana; color: #000000 }
-input,select,textarea	{ font: 9pt Tahoma, Verdana; font-weight: normal; }
-select					{ font: 9pt Tahoma, Verdana; font-weight: normal; }
-.category				{ font: 9pt Tahoma, Verdana; color: #000000; background-color: #fcfcfc }
-.singleborder			{ font-size: 0px; line-height: 1px; padding: 0px; background-color: #F8F8F8 }
-.bold					{ font-weight: bold }
-
-/*修改主要色调*/
-.header					{ font: 9pt Tahoma, Verdana; color: #FFFFFF; font-weight: bold; background-color: #4FB4DE }
-.header a				{ color: #FFFFFF }
-.tableborder			{ background: #C9F1FF; border: 1px solid #4FB4DE } 
-
-/*分页样式*/
-.epages{margin:3px 0;font:11px/12px Tahoma}
-.epages *{vertical-align:middle;}
-.epages a{padding:1px 4px 1px;border:1px solid #A6CBE7;margin:0 1px 0 0;text-align:center;text-decoration:none;font:normal 12px/14px verdana;}
-.epages a:hover{border:#659B28 1px solid;background:#f3f8ef;text-decoration:none;color:#004c7d}
-.epages input{margin-bottom:0px;border:1px solid #659B28;height:15px;font:bold 12px/15px Verdana;padding-bottom:1px;padding-left:1px;margin-right:1px;color:#659B28;}
-
-</style>
-<script src="<?=$public_r['newsurl']?>e/data/js/ajax.js"></script>
-
-<SCRIPT lanuage="JScript">
-function DisplayImg(ss,imgname,phome)
-{
-	if(imgname=="menumemberimg")
-	{
-		img=todisplay(domenumember,phome);
-		document.images.menumemberimg.src=img;
-	}
-	else if(imgname=="menumsgimg")
-	{
-		img=todisplay(domenumsg,phome);
-		document.images.menumsgimg.src=img;
-	}
-	else if(imgname=="menuinfoimg")
-	{
-		img=todisplay(domenuinfo,phome);
-		document.images.menuinfoimg.src=img;
-	}
-	else if(imgname=="menuspaceimg")
-	{
-		img=todisplay(domenuspace,phome);
-		document.images.menuspaceimg.src=img;
-	}
-	else if(imgname=="menupayimg")
-	{
-		img=todisplay(domenupay,phome);
-		document.images.menupayimg.src=img;
-	}
-	else if(imgname=="menushopimg")
-	{
-		img=todisplay(domenushop,phome);
-		document.images.menushopimg.src=img;
-	}
-	else
-	{
-	}
-	DisplayAllMenu(imgname);
-}
-function todisplay(ss,phome)
-{
-	if(ss.style.display=="") 
-	{
-  		ss.style.display="none";
-		theimg="<?=$addimgurl?>";
-	}
-	else
-	{
-  		ss.style.display="";
-		theimg="<?=$noaddimgurl?>";
-	}
-	return theimg;
-}
-function turnit(ss,img)
-{
-	DisplayImg(ss,img,0);
-}
-function DisplayAllMenu(imgname)
-{
-	if(imgname!='menumemberimg'&&domenumember.style.display=="")
-	{
-		domenumember.style.display="none";
-		document.images.menumemberimg.src="<?=$addimgurl?>";
-	}
-	if(imgname!='menumsgimg'&&domenumsg.style.display=="")
-	{
-		domenumsg.style.display="none";
-		document.images.menumsgimg.src="<?=$addimgurl?>";
-	}
-	if(imgname!='menuinfoimg'&&domenuinfo.style.display=="")
-	{
-		domenuinfo.style.display="none";
-		document.images.menuinfoimg.src="<?=$addimgurl?>";
-	}
-	if(imgname!='menuspaceimg'&&domenuspace.style.display=="")
-	{
-		domenuspace.style.display="none";
-		document.images.menuspaceimg.src="<?=$addimgurl?>";
-	}
-	if(imgname!='menupayimg'&&domenupay.style.display=="")
-	{
-		domenupay.style.display="none";
-		document.images.menupayimg.src="<?=$addimgurl?>";
-	}
-	if(imgname!='menushopimg'&&domenushop.style.display=="")
-	{
-		domenushop.style.display="none";
-		document.images.menushopimg.src="<?=$addimgurl?>";
-	}
-}
-</SCRIPT>
+    <meta charset="utf-8">
+    <title><?=$thispagetitle?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="<?=$public_r['newsurl']?>skin_member/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="<?=$public_r['newsurl']?>skin_member/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="<?=$public_r['newsurl']?>skin_member/css/bootstrap.css" type="text/css" />
+    <!-- Custom CSS -->
+    <link href="<?=$public_r['newsurl']?>skin_member/css/angulr-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?=$public_r['newsurl']?>skin_member/css/font.css" type="text/css" />
+    <link rel="stylesheet" href="<?=$public_r['newsurl']?>skin_member/css/app.css" type="text/css" />
+    <script src="<?=$public_r['newsurl']?>skin_member/js/jquery.js"></script>
+    <script src="<?=$public_r['newsurl']?>skin_member/js/zbp_add.js"></script>
+    <!-- ZCenter js-->
+    <!-- zbp system -->
+    <script src="<?=$public_r['newsurl']?>skin_member/js/zblogphp.js" type="text/javascript"></script>
+    <script src="<?=$public_r['newsurl']?>skin_member/js/c_admin_js_add.js" type="text/javascript"></script>
+    <script src="<?=$public_r['newsurl']?>skin_member/js/functions.js"></script>
+    <!--[if lt IE 9]>
+        <script src="<?=$public_r['newsurl']?>skin_member/js/html5shiv.js"></script>
+        <script src="<?=$public_r['newsurl']?>skin_member/js/respond.min.js"></script>
+    <![endif]-->
 </head>
-
-<body leftmargin="0" topmargin="0">
-<table width="960" border="0" align="center" cellpadding="3" cellspacing="1">
-  <tr>
-    <td width="42%"><img src="<?=$logoimgurl?>" width="397" height="65" border="0"></td>
-    <td width="58%">
-	<?php
+<body>
+<div class="app app-header-fixed ">
+    <!-- header -->
+  <header id="header" class="app-header navbar" role="menu">
+      <!-- navbar header -->
+      <div class="navbar-header bg-info dker">
+        <button class="pull-right visible-xs dk" ui-toggle-class="show" target=".navbar-collapse">
+          <i class="glyphicon glyphicon-cog"></i>
+        </button>
+        <button class="pull-right visible-xs" ui-toggle-class="off-screen" target=".app-aside" ui-scroll="app">
+          <i class="glyphicon glyphicon-align-justify"></i>
+        </button>
+        <!-- brand -->
+        <a target="_blank"  href="<?=$public_r['newsurl']?>" class="navbar-brand text-lt">
+<img src="<?=$public_r['newsurl']?>skin_member/picture/logo.png">
+<span class="hidden-folded m-l-xs">ASPKU</span>
+        </a></div>
+        
+        <?php
 	if($tmgetuserid)	//已登录
 	{
 	?>
-	<table width="100%" border="0" align="right" cellpadding="3" cellspacing="1">
-      <tr>
-        <td colspan="2">您好，<strong><?=$tmgetusername?></strong> &lt;<?=$tmgetgroupname?>&gt; </td>
-      </tr>
-      <tr>
-        <td width="65%">[ <a href="<?=$public_r['newsurl']?>e/space/?userid=<?=$tmgetuserid?>">我的空间</a> | <a href="<?=$public_r['newsurl']?>e/member/msg/">站内消息</a> | <a href="<?=$public_r['newsurl']?>e/member/fava/">收藏夹</a> | <a href="<?=$public_r['newsurl']?>e/member/doaction.php?enews=exit" onclick="return confirm('确认要退出?');">退出</a> ]</td>
-        <td width="35%"><div align="right"><a href="<?=$public_r['newsurl']?>"><u>网站首页</u></a> | <a href="<?=$public_r['newsurl']?>e/member/cp/"><u>会员中心</u></a> | <a href="<?=$public_r['newsurl']?>e/member/list/"><u>会员列表</u></a></div></td>
-      </tr>
-    </table>
-	<?php
+        <!-- / brand -->
+      
+      <!-- / navbar header -->
+
+      <!-- navbar collapse -->
+      <div class="collapse pos-rlt navbar-collapse box-shadow bg-info dk">
+        <!-- buttons -->
+        <div class="nav navbar-nav hidden-xs">
+          <a onclick="ZCenter_hideMenu()" id="aZCenter_Menu"  class="btn no-shadow navbar-btn" ui-toggle-class="app-aside-folded" target=".app">
+            <i class="fa fa-dedent fa-fw text"></i>
+            <i class="fa fa-indent fa-fw text-active"></i>
+          </a>
+        </div>
+        <!-- / buttons -->
+
+        <!-- link and dropdown -->
+        <ul class="nav navbar-nav hidden-sm">
+          <li class="dropdown pos-stc">
+            <!--<a href="#" data-toggle="dropdown" class="dropdown-toggle">
+              <span>产品</span> 
+              <span class="caret"></span>
+            </a> -->
+            <div class="dropdown-menu wrapper w-full bg-white">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="m-l-xs m-t-xs m-b-xs font-bold">热门分类 <span class="badge badge-sm bg-success">12</span></div>
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <ul class="list-unstyled l-h-2x">
+                      
+               <!--6个循环开始 -->       
+<li><a target="_blank" href="#"><i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>励志文章</a></li>                   
+
+                 <!--6个循环结束 -->   
+</ul>
+                    </div>
+                    <div class="col-xs-6">
+                      <ul class="list-unstyled l-h-2x">
+                      
+                       <!--6个循环开始 -->   
+<li><a target="_blank" href="#"><i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>茶余饭后</a></li>                  
+
+                         <!--6个循环结束 -->   
+ </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-8 b-l b-light">
+                  <div class="m-l-xs m-t-xs m-b-xs font-bold">热门标签 <span class="label label-sm bg-primary">18</span></div>
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <ul class="list-unstyled l-h-2x">
+                      <!--6个循环开始 --> 
+                      
+<li><a target="_blank" href="#"><i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>ZBLOG</a></li>
+  <!--6个循环结束 -->  
+                      </ul>
+                    </div>
+                    <div class="col-xs-4">
+                      <ul class="list-unstyled l-h-2x">
+                      <!--6个循环开始 --> 
+<li><a target="_blank" href="#"><i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>DELPHI</a></li>
+  <!--6个循环结束 -->  
+
+                    </ul>
+                    </div>
+
+                    <div class="col-xs-4">
+                      <ul class="list-unstyled l-h-2x">
+                      
+                         <!--6个循环开始 -->        
+                      
+<li><a target="_blank" href="#"><i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>言论</a></li>
+
+  <!--6个循环结束 -->  
+          </ul>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </li>
+        </ul>
+        <!-- / link and dropdown -->
+
+  
+
+        <!-- nabar right -->
+        <ul class="nav navbar-nav navbar-right">
+          <li id="topmenu_ZCenterCart">
+         <a href="#ecms" onclick="window.open('<?=$public_r['newsurl']?>e/ShopSys/buycar/','','width=680,height=500,scrollbars=yes,resizable=yes');">
+              <i class="fa fa-shopping-cart fa-fw"></i> &nbsp;&nbsp;购物车
+            </a>
+          </li>
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle clear" data-toggle="dropdown">
+              <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                <img src="<?=$member[userpic]?$member[userpic]:$public_r['newsurl'].'e/data/images/nouserpic.gif'?>">
+                <!--<i class="on md b-white bottom"></i>-->
+              </span>
+              <span class="hidden-sm hidden-md"><?=$tmgetgroupname?>：<?=$tmgetusername?></span> <b class="caret"></b>
+            </a>
+            <!-- dropdown -->
+            <ul class="dropdown-menu animated fadeInRight w">
+                            <li>
+                            <a target="_blank" href="<?=$public_r['newsurl']?>"><i class="fa fa-fw fa-home"></i> 返回首页</a>
+                        </li>                        <li>
+                            <a href="<?=$public_r['newsurl']?>e/member/EditInfo/"><i class="fa fa-fw fa-user"></i> &nbsp;&nbsp;个人资料</a>
+                        </li>
+              <li class="divider"></li>
+                        <li>
+                            <a href="<?=$public_r['newsurl']?>e/member/doaction.php?enews=exit" onclick="return confirm('确认要退出?');"><i class="fa fa-fw fa-power-off"></i> 注销</a>
+                        </li>
+                       
+           
+            </ul>
+            <!-- / dropdown -->
+          </li>
+        </ul>
+        <!-- / navbar right -->
+      </div>
+      <!-- / navbar collapse -->
+                            <?php
 	}
 	else	//游客
 	{
 	?>
-	<table width="100%" border="0" align="right" cellpadding="3" cellspacing="1">
-      <tr>
-        <td colspan="2">您好，<strong>游客</strong> &lt;游客&gt;</td>
-      </tr>
-      <tr>
-        <td width="65%">[ <a href="<?=$public_r['newsurl']?>e/member/login/">马上登录</a> | <a href="<?=$public_r['newsurl']?>e/member/register/">注册帐号</a> ]</td>
-        <td width="35%"><div align="right"><a href="<?=$public_r['newsurl']?>"><u>网站首页</u></a> | <a href="<?=$public_r['newsurl']?>e/member/cp/"><u>会员中心</u></a> | <a href="<?=$public_r['newsurl']?>e/member/list/"><u>会员列表</u></a></div></td>
-      </tr>
-    </table>
+    
+    
+    <div class="collapse pos-rlt navbar-collapse box-shadow bg-info dk">
+        <!-- buttons -->
+        <div class="nav navbar-nav hidden-xs">
+          <a onclick="ZCenter_hideMenu()" id="aZCenter_Menu"  class="btn no-shadow navbar-btn" ui-toggle-class="app-aside-folded" target=".app">
+            <i class="fa fa-dedent fa-fw text"></i>
+            <i class="fa fa-indent fa-fw text-active"></i>
+          </a>
+        </div>
+        <!-- / buttons -->
+
+        <!-- link and dropdown -->
+        <ul class="nav navbar-nav hidden-sm">
+          <li class="dropdown pos-stc">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+              <span>产品</span> 
+              <span class="caret"></span>
+            </a>
+            <div class="dropdown-menu wrapper w-full bg-white">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="m-l-xs m-t-xs m-b-xs font-bold">热门分类 <span class="badge badge-sm bg-success">12</span></div>
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <ul class="list-unstyled l-h-2x">
+                      
+               <!--6个循环开始 -->       
+<li><a target="_blank" href="#"><i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>励志文章</a></li>                   
+
+                 <!--6个循环结束 -->   
+</ul>
+                    </div>
+                    <div class="col-xs-6">
+                      <ul class="list-unstyled l-h-2x">
+                      
+                       <!--6个循环开始 -->   
+<li><a target="_blank" href="#"><i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>茶余饭后</a></li>                  
+
+                         <!--6个循环结束 -->   
+ </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-8 b-l b-light">
+                  <div class="m-l-xs m-t-xs m-b-xs font-bold">热门标签 <span class="label label-sm bg-primary">18</span></div>
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <ul class="list-unstyled l-h-2x">
+                      <!--6个循环开始 --> 
+                      
+<li><a target="_blank" href="#"><i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>ZBLOG</a></li>
+  <!--6个循环结束 -->  
+                      </ul>
+                    </div>
+                    <div class="col-xs-4">
+                      <ul class="list-unstyled l-h-2x">
+                      <!--6个循环开始 --> 
+<li><a target="_blank" href="#"><i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>DELPHI</a></li>
+  <!--6个循环结束 -->  
+
+                    </ul>
+                    </div>
+
+                    <div class="col-xs-4">
+                      <ul class="list-unstyled l-h-2x">
+                      
+                         <!--6个循环开始 -->        
+                      
+<li><a target="_blank" href="#"><i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>言论</a></li>
+
+  <!--6个循环结束 -->  
+          </ul>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </li>
+        </ul>
+        <!-- / link and dropdown -->
+
+  
+
+        <!-- nabar right -->
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+         
+           <a>
+              <span class="hidden-sm hidden-md">您好，<strong>游客</strong> &lt;游客&gt;</span> </a>
+        
+          </li>
+<li><a href="<?=$public_r['newsurl']?>e/member/login/">
+      <span class="hidden-sm hidden-md">[马上登录]</span></a> 
+        
+          
+          </li>
+          <li>  <a href="<?=$public_r['newsurl']?>e/member/register/">
+      <span class="hidden-sm hidden-md">[注册帐号]</span></a>
+        
+          
+          </li>
+          
+<li>
+           
+           <a href="<?=$public_r['newsurl']?>">
+              <span class="hidden-sm hidden-md"><u>网站首页</u></span> 
+            </a>
+          
+          </li>
+        </ul>
+        <!-- / navbar right -->
+      </div>
+
+    
+    
+    
+    
 	<?php
 	}
 	?>
-    </td>
-  </tr>
-</table>
-<table width="100%" height="6" border="0" cellpadding="3" cellspacing="1" bgcolor="<?=$bgcolor_line?>">
-  <tr>
-    <td></td>
-  </tr>
-</table>
-<table width="960" border="0" align="center" cellpadding="3" cellspacing="3">
-  <tr>
-    <td>当前位置：<?=$url?></td>
-  </tr>
-</table>
-<table width="960" border="0" align="center" cellpadding="12" cellspacing="1" bgcolor="#C9F1FF">
-  <tr>
-    <td width="20%" valign="top" bgcolor="#FFFFFF">
-	<?php
+  </header>
+  <!-- / header -->
+
+            <!-- aside -->
+  <aside id="aside" class="app-aside hidden-xs bg-black">
+      <div class="aside-wrap">
+        <div class="navi-wrap">
+          <!-- nav -->
+          <nav ui-nav class="navi clearfix">
+      
+          <ul class="nav">
+          <?php
 	if($tmgetuserid)	//已登录
 	{
 	?>
-	<table width="180" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
-      <tr class="header" id="domenumemberid" onMouseUp="turnit(domenumember,'menumemberimg');" style="CURSOR: hand" title="展开/收缩">
-        <td height="25">&nbsp;&nbsp;<img src="<?=$addimgurl?>" name="menumemberimg" width="20" height="9" border="0">帐号</td>
-      </tr>
-      <tbody id="domenumember" style="display:none">
-        <tr>
-          <td bgcolor="#FFFFFF"><table width="90%" border="0" align="right" cellpadding="3" cellspacing="1">
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/member/EditInfo/">修改资料</a></td>
-              </tr>
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/member/EditInfo/EditSafeInfo.php">修改安全信息</a></td>
-              </tr>
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/member/my/">帐号状态</a></td>
-              </tr>
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/member/fava/">收藏夹</a></td>
-              </tr>
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/member/friend/">好友列表</a></td>
-              </tr>
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/memberconnect/ListBind.php">绑定外部登录</a></td>
-              </tr>
-          </table></td>
-        </tr>
-      </tbody>
-      <tr class="header" id="domenumsgid" onMouseUp="turnit(domenumsg,'menumsgimg');" style="CURSOR: hand" title="展开/收缩">
-        <td height="25">&nbsp;&nbsp;<img src="<?=$addimgurl?>" name="menumsgimg" width="20" height="9" border="0">站内消息</td>
-      </tr>
-      <tbody id="domenumsg" style="display:none">
-        <tr>
-          <td bgcolor="#FFFFFF"><table width="90%" border="0" align="right" cellpadding="3" cellspacing="1">
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/member/msg/AddMsg/?enews=AddMsg">发送消息</a></td>
-              </tr>
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/member/msg/">消息列表</a></td>
-              </tr>
-          </table></td>
-        </tr>
-      </tbody>
-      <tr class="header" id="domenuinfoid" onMouseUp="turnit(domenuinfo,'menuinfoimg');" style="CURSOR: hand" title="展开/收缩">
-        <td height="25">&nbsp;&nbsp;<img src="<?=$addimgurl?>" name="menuinfoimg" width="20" height="9" border="0">投稿</td>
-      </tr>
-      <tbody id="domenuinfo" style="display:none">
-        <tr>
-          <td bgcolor="#FFFFFF">
-          <table width="90%" border="0" align="right" cellpadding="3" cellspacing="1">
-			<?php
+<li id="nav_home" class=""><a id="aDashboard" href="<?=$public_r['newsurl']?>e/member/cp/" title="控制面板"><i class="glyphicon glyphicon-stats icon"></i><span class="font-bold">&nbsp;控制面板</span></a></li>                    
+
+<li id="nav_ZCenter_Order" class="">
+                        <a href="javascript:;" id="aZCenter_Order" class="auto">
+              <span class="pull-right text-muted">
+                    <i class="fa fa-fw fa-angle-right text"></i>
+                    <i class="fa fa-fw fa-angle-down text-active"></i>
+                  </span>
+                  <i class="fa fa-fw  fa-list"></i>
+	
+                         <span>账号</span>
+                         </a>
+                <ul class="nav nav-sub dk" style="display: none;">
+               <li>
+                                <a title="修改资料" id="aZCenter_Order_All" href="<?=$public_r['newsurl']?>e/member/EditInfo/"><span>修改资料</span></a>
+                            </li>
+                            <li>
+                                <a title="修改安全信息" id="aZCenter_Order_Payed" href="<?=$public_r['newsurl']?>e/member/EditInfo/EditSafeInfo.php"><span>修改安全信息</span></a>
+                            </li>
+                            <li>
+                                <a title="帐号状态" id="aZCenter_Order_UnPayed" href="<?=$public_r['newsurl']?>e/member/my/"><span>帐号状态</span></a>
+                            </li>
+                   <li>
+                                <a title="收藏夹" id="aZCenter_Order_UnPayed" href="<?=$public_r['newsurl']?>e/member/fava/"><span>收藏夹</span></a>
+                            </li>
+                   <li>
+                                <a title="好友列表" id="aZCenter_Order_UnPayed"  href="<?=$public_r['newsurl']?>e/member/friend/"><span>好友列表</span></a>
+                            </li>
+                   <li>
+                                <a title="绑定外部登录" id="aZCenter_Order_UnPayed"  href="<?=$public_r['newsurl']?>e/memberconnect/ListBind.php"><span>绑定外部登录</span></a>
+                            </li>
+                </ul>
+                    </li>
+<li id="nav_ZCenter_Order" class="">
+                        <a href="javascript:;" id="aZCenter_Order" class="auto">
+              <span class="pull-right text-muted">
+                    <i class="fa fa-fw fa-angle-right text"></i>
+                    <i class="fa fa-fw fa-angle-down text-active"></i>
+                  </span>
+                  <i class="fa fa-fw  fa-list"></i>
+
+                         <span>站内信息</span>
+                         </a>
+                <ul class="nav nav-sub dk" style="display: none;">
+               <li>
+                                <a title="发送消息" id="aZCenter_Order_All"  href="<?=$public_r['newsurl']?>e/member/msg/AddMsg/?enews=AddMsg"><span>发送消息</span></a>
+                            </li>
+                            <li>
+                                <a title="消息列表" id="aZCenter_Order_Payed" href="<?=$public_r['newsurl']?>e/member/msg/"><span>消息列表</span></a>
+                            </li>
+                        
+                </ul>
+                    </li>
+<li id="nav_ZCenter_Order" class="">
+                        <a href="javascript:;" id="aZCenter_Order" class="auto">
+              <span class="pull-right text-muted">
+                    <i class="fa fa-fw fa-angle-right text"></i>
+                    <i class="fa fa-fw fa-angle-down text-active"></i>
+                  </span>
+                  <i class="fa fa-fw  fa-list"></i>
+
+                         <span>投稿</span>
+                         </a>
+                <ul class="nav nav-sub dk" style="display: none;">
+                <?php
 			//输出可管理的模型
 			$tmodsql=$empire->query("select mid,qmname from {$dbtbpre}enewsmod where usemod=0 and showmod=0 and qenter<>'' order by myorder,mid");
 			while($tmodr=$empire->fetch($tmodsql))
@@ -324,164 +477,156 @@ function DisplayAllMenu(imgname)
 					$fontb1="</b>";
 				}
 			?>
-              <tr>
-                <td width="74%" height="23"><a href="<?=$public_r['newsurl']?>e/DoInfo/ListInfo.php?mid=<?=$tmodr['mid']?>"><?=$fontb?>管理<?=$tmodr[qmname]?><?=$fontb1?></a></td>
-                <td width="26%"><div align="right"><a href="<?=$public_r['newsurl']?>e/DoInfo/ChangeClass.php?mid=<?=$tmodr['mid']?>"><?=$fontb?>发布<?=$fontb1?></a></div></td>
-              </tr>
-			<?php
+                
+                
+                
+                   <li>
+                                <a title="管理<?=$tmodr[qmname]?><?=$fontb1?>" id="aZCenter_Order_All" href="<?=$public_r['newsurl']?>e/DoInfo/ListInfo.php?mid=<?=$tmodr['mid']?>"><span>管理<?=$tmodr[qmname]?><?=$fontb1?></span></a>
+                            </li>
+                
+                  	<?php
 			}
-			?>
-          </table>
-          </td>
-        </tr>
-      </tbody>
-      <tr class="header" id="domenuspaceid" onMouseUp="turnit(domenuspace,'menuspaceimg');" style="CURSOR: hand" title="展开/收缩">
-        <td height="25">&nbsp;&nbsp;<img src="<?=$addimgurl?>" name="menuspaceimg" width="20" height="9" border="0">会员空间</td>
-      </tr>
-      <tbody id="domenuspace" style="display:none">
-        <tr>
-          <td bgcolor="#FFFFFF"><table width="90%" border="0" align="right" cellpadding="3" cellspacing="1">
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/space/?userid=<?=$tmgetuserid?>">预览空间</a></td>
-              </tr>
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/member/mspace/SetSpace.php">设置空间</a></td>
-              </tr>
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/member/mspace/ChangeStyle.php">选择模板</a></td>
-              </tr>
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/member/mspace/gbook.php">管理留言</a></td>
-              </tr>
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/member/mspace/feedback.php">管理反馈</a></td>
-              </tr>
-          </table></td>
-        </tr>
-      </tbody>
-      <tr class="header" id="domenupayid" onMouseUp="turnit(domenupay,'menupayimg');" style="CURSOR: hand" title="展开/收缩">
-        <td height="25">&nbsp;&nbsp;<img src="<?=$addimgurl?>" name="menupayimg" width="20" height="9" border="0">财务</td>
-      </tr>
-      <tbody id="domenupay" style="display:none">
-        <tr>
-          <td bgcolor="#FFFFFF"><table width="90%" border="0" align="right" cellpadding="3" cellspacing="1">
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/payapi/">在线支付</a></td>
-              </tr>
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/member/buygroup/">在线充值</a></td>
-              </tr>
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/member/card/">点卡充值</a></td>
-              </tr>
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/member/buybak/">点卡充值记录</a></td>
-              </tr>
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/member/downbak/">下载消费记录</a></td>
-              </tr>
-          </table></td>
-        </tr>
-      </tbody>
-      <tr class="header" id="domenushopid" onMouseUp="turnit(domenushop,'menushopimg');" style="CURSOR: hand" title="展开/收缩">
-        <td height="25">&nbsp;&nbsp;<img src="<?=$addimgurl?>" name="menushopimg" width="20" height="9" border="0">商城</td>
-      </tr>
-      <tbody id="domenushop" style="display:none">
-        <tr>
-          <td bgcolor="#FFFFFF"><table width="90%" border="0" align="right" cellpadding="3" cellspacing="1">
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/ShopSys/ListDd/">我的订单</a></td>
-              </tr>
-              <tr>
-                <td height="23"><a href="#ecms" onclick="window.open('<?=$public_r['newsurl']?>e/ShopSys/buycar/','','width=680,height=500,scrollbars=yes,resizable=yes');">我的购物车</a></td>
-              </tr>
-              <tr>
-                <td height="23"><a href="<?=$public_r['newsurl']?>e/ShopSys/address/ListAddress.php">管理配送地址</a></td>
-              </tr>
-          </table></td>
-        </tr>
-      </tbody>
-      <tr class="header">
-        <td height="25">&nbsp;&nbsp;<img src="<?=$noaddimgurl?>" width="20" height="9" border="0"><a href="<?=$public_r['newsurl']?>e/member/doaction.php?enews=exit" onclick="return confirm('确认要退出?');">退出</a></td>
-      </tr>
-    </table>
-	<?php
+			?>          
+                            
+                            
+                            
+                            
+                </ul>
+                    </li><li id="nav_ZCenter_Order" class="">
+                        <a href="javascript:;" id="aZCenter_Order" class="auto">
+              <span class="pull-right text-muted">
+                    <i class="fa fa-fw fa-angle-right text"></i>
+                    <i class="fa fa-fw fa-angle-down text-active"></i>
+                  </span>
+                  <i class="fa fa-fw  fa-list"></i>
+
+                         <span>会员空间</span>
+                         </a>
+                <ul class="nav nav-sub dk" style="display: none;">
+               <li>
+                                <a title=" 预览空间" id="aZCenter_Order_All"  href="<?=$public_r['newsurl']?>e/space/?userid=<?=$tmgetuserid?>"><span> 预览空间</span></a>
+                            </li>
+                            <li>
+                                <a title="设置空间" id="aZCenter_Order_Payed" href="<?=$public_r['newsurl']?>e/member/mspace/SetSpace.php"><span>设置空间</span></a>
+                            </li>
+                            <li>
+                                <a title="选择模板" id="aZCenter_Order_UnPayed" href="<?=$public_r['newsurl']?>e/member/mspace/ChangeStyle.php"><span>选择模板</span></a>
+                            </li>
+                     <li>
+                                <a title="管理留言" id="aZCenter_Order_UnPayed"  href="<?=$public_r['newsurl']?>e/member/mspace/gbook.php"><span>管理留言</span></a>
+                            </li>
+                     <li>
+                                <a title="管理反馈" id="aZCenter_Order_UnPayed" href="<?=$public_r['newsurl']?>e/member/mspace/feedback.php"><span>管理反馈</span></a>
+                            </li>
+                </ul>
+                    </li>                    <li id="nav_ZCenter_Charge" class="">
+                        <a href="javascript:;" id="aZCenter_Charge" class="auto">
+              <span class="pull-right text-muted">
+                    <i class="fa fa-fw fa-angle-right text"></i>
+                    <i class="fa fa-fw fa-angle-down text-active"></i>
+                  </span>
+                  <i class="fa fa-fw fa-rmb"></i>
+
+                         <span>财务管理</span>
+                        </a>
+                <ul class="nav nav-sub dk" style="display: none;">
+                            <li>
+                                <a title="在线支付" id="aZCenter_Charge_All" href="<?=$public_r['newsurl']?>e/payapi/"> <span>在线支付</span></a>
+                            </li>
+                            
+                            <li>
+                                <a title="点卡充值" id="aZCenter_Charge_UnPayed"  href="<?=$public_r['newsurl']?>e/member/card/"><span>点卡充值</span></a>
+                            </li>
+                    <li>
+                                <a title="点卡充值记录" id="aZCenter_Charge_UnPayed" href="<?=$public_r['newsurl']?>e/member/buybak/"><span>点卡充值记录</span></a>
+                            </li>
+                    <li>
+                                <a title="下载消费记录" id="aZCenter_Charge_UnPayed" href="<?=$public_r['newsurl']?>e/member/downbak/"><span>下载消费记录</span></a>
+                            </li>
+
+                        </ul>
+                    </li>                    <li id="nav_ZCenter_Enchashment" class="">
+                        <a href="javascript:;" id="aZCenter_Enchashment" class="auto">
+              <span class="pull-right text-muted">
+                    <i class="fa fa-fw fa-angle-right text"></i>
+                    <i class="fa fa-fw fa-angle-down text-active"></i>
+                  </span>
+                  <i class="fa fa-fw fa-rmb"></i>
+
+                         <span>商城</span>
+                        </a>
+                <ul class="nav nav-sub dk" style="display: none;">
+                            <li>
+                                <a title="我的订单" id="aZCenter_Enchashment_All"  href="<?=$public_r['newsurl']?>e/ShopSys/ListDd/"> <span>我的订单</span></a>
+                            </li>
+                            <li>
+                                <a title="我的购物车" id="aZCenter_EnchashmentNew" href="#ecms" onclick="window.open('<?=$public_r['newsurl']?>e/ShopSys/buycar/','','width=680,height=500,scrollbars=yes,resizable=yes');"><span>我的购物车</span></a>
+                            </li>
+                            <li>
+                                <a title="管理配送地址" id="aZCenter_EnchashmentNew" href="<?=$public_r['newsurl']?>e/ShopSys/address/ListAddress.php"><span>管理配送地址</span></a>
+                            </li>
+
+
+                        </ul>
+                    </li><li class="line dk hidden-folded"></li><li id="nav_help"><a id="aHelpLink" href="<?=$public_r['newsurl']?>e/member/doaction.php?enews=exit" onclick="return confirm('确认要退出?');" title="退出"><i class="icon-question icon"></i><span class="">退出</span></a></li>            </ul>
+                    
+<?php
 	}
 	else	//游客
 	{
 	?>
-	<table width="180" border="0" align="center" cellspacing="1" cellpadding="3" class="tableborder">
-	<tr class="header" id="domenumemberid" onMouseUp="turnit(domenumember,'menumemberimg');" style="CURSOR: hand" title="展开/收缩">
-		<td height="25">&nbsp;&nbsp;<img src="<?=$addimgurl?>" name="menumemberimg" width="20" height="9" border="0">帐号</td>
-	</tr>
-	<tbody id="domenumember" style="display:none">
-	<tr>
-		<td bgcolor="#FFFFFF">
-		<table width="90%" border="0" align="right" cellpadding="3" cellspacing="1">
-			<tr>
-				<td height="23"><a href="<?=$public_r['newsurl']?>e/member/login/">会员登录</a></td>
-			</tr>
-			<tr>
-				<td height="23"><a href="<?=$public_r['newsurl']?>e/member/register/">注册帐号</a></td>
-			</tr>
-		</table>
-		</td>
-	</tr>
-	</tbody>
-	<tbody id="domenumsg" style="display:none">
-	</tbody>
-	<tr class="header" id="domenuinfoid" onMouseUp="turnit(domenuinfo,'menuinfoimg');" style="CURSOR: hand" title="展开/收缩">
-		<td height="25">&nbsp;&nbsp;<img src="<?=$addimgurl?>" name="menuinfoimg" width="20" height="9" border="0">投稿</td>
-	</tr>
-	<tbody id="domenuinfo" style="display:none">
-	<tr>
-		<td bgcolor="#FFFFFF">
-		<table width="90%" border="0" align="right" cellpadding="3" cellspacing="1">
-		<?php
-		//输出可管理的模型
-		$tmodsql=$empire->query("select mid,qmname from {$dbtbpre}enewsmod where usemod=0 and showmod=0 and qenter<>'' order by myorder,mid");
-		while($tmodr=$empire->fetch($tmodsql))
-		{
-			$fontb="";
-			$fontb1="";
-			if($tmodr['mid']==$tgetmid)
-			{
-				$fontb="<b>";
-				$fontb1="</b>";
-			}
-		?>
-		<tr>
-			<td width="74%" height="23"><a href="<?=$public_r['newsurl']?>e/DoInfo/ChangeClass.php?mid=<?=$tmodr['mid']?>"><?=$fontb?>发布<?=$tmodr[qmname]?><?=$fontb1?></a></td>
-			<td width="26%"><div align="right"></div></td>
-		</tr>
-		<?php
-		}
-		?>
-		</table>
-		</td>
-	</tr>
-	</tbody>
-	<tbody id="domenuspace" style="display:none">
-	</tbody>
-	<tbody id="domenupay" style="display:none">
-	</tbody>
-	<tr class="header" id="domenushopid" onMouseUp="turnit(domenushop,'menushopimg');" style="CURSOR: hand" title="展开/收缩">
-		<td height="25">&nbsp;&nbsp;<img src="<?=$addimgurl?>" name="menushopimg" width="20" height="9" border="0">商城</td>
-	</tr>
-	<tbody id="domenushop" style="display:none">
-	<tr>
-		<td bgcolor="#FFFFFF">
-		<table width="90%" border="0" align="right" cellpadding="3" cellspacing="1">
-		<tr>
-			<td height="23"><a href="#ecms" onclick="window.open('<?=$public_r['newsurl']?>e/ShopSys/buycar/','','width=680,height=500,scrollbars=yes,resizable=yes');">我的购物车</a></td>
-		</tr>
-		</table>
-		</td>
-	</tr>
-	</tbody>
-	</table>
+    <li id="nav_ZCenter_Order" class="">
+                        <a href="javascript:;" id="aZCenter_Order" class="auto">
+              <span class="pull-right text-muted">
+                    <i class="fa fa-fw fa-angle-right text"></i>
+                    <i class="fa fa-fw fa-angle-down text-active"></i>
+                  </span>
+                  <i class="fa fa-fw  fa-list"></i>
+    
+       <span>账号</span>
+                         </a>
+                <ul class="nav nav-sub dk" style="display: none;">
+               <li><a title="会员登录" id="aZCenter_Order_All" href="<?=$public_r['newsurl']?>e/member/login/"><span>会员登录</span></a> </li>
+                 <li> <a title="注册帐号" id="aZCenter_Order_Payed" href="<?=$public_r['newsurl']?>e/member/register/"><span>注册帐号</span></a></li>
+                   
+                </ul>
+                    </li>
+                <li id="nav_ZCenter_Enchashment" class="">
+                        <a href="javascript:;" id="aZCenter_Enchashment" class="auto">
+              <span class="pull-right text-muted">
+                    <i class="fa fa-fw fa-angle-right text"></i>
+                    <i class="fa fa-fw fa-angle-down text-active"></i>
+                  </span>
+                  <i class="fa fa-fw fa-rmb"></i>
+
+                         <span>商城</span>
+                        </a>
+                <ul class="nav nav-sub dk" style="display: none;">
+                            
+                            <li>
+                                <a title="我的购物车" id="aZCenter_EnchashmentNew" href="#ecms" onclick="window.open('<?=$public_r['newsurl']?>e/ShopSys/buycar/','','width=680,height=500,scrollbars=yes,resizable=yes');"><span>我的购物车</span></a>
+                            </li>
+                            
+
+
+                        </ul>
+                    </li>
+                    
+                    
+                              </ul>
+       
+	
 	<?php
 	}
 	?>
-	</td>
-    <td width="80%" height="420" valign="top" bgcolor="#FFFFFF">
+          
+          </nav>
+          <!-- nav -->
+
+        </div>
+      </div>
+  </aside>
+  <!-- / aside -->
+
+  <!-- content -->
+  <div id="content" class="app-content" role="main">

@@ -10,7 +10,8 @@ $url="<a href=../../../>首页</a>&nbsp;>&nbsp;<a href=../cp/>会员中心</a>&n
 require(ECMS_PATH.'e/template/incfile/header.php');
 ?>
 <br>
-<table width="600" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
+<div class="app-content-body ">
+<table class="table table-bordered table-hover table-striped table_striped table_hover" width="600" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
   <form name="RegSendForm" method="POST" action="../doaction.php">
     <tr class="header"> 
       <td height="25" colspan="2"><div align="center">重发帐号激活邮件</div></td>
@@ -34,15 +35,7 @@ require(ECMS_PATH.'e/template/incfile/header.php');
     </tr>
     <tr bgcolor="#FFFFFF"> 
       <td height="25">验证码</td>
-      <td>
-	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tr> 
-                  <td width="52"><input name="key" type="text" id="key" size="6"> 
-                  </td>
-                  <td id="regsendshowkey"><a href="#EmpireCMS" onclick="edoshowkey('regsendshowkey','regsend','<?=$public_r['newsurl']?>');" title="点击显示验证码">点击显示验证码</a></td>
-                </tr>
-            </table>
-	  </td>
+      <td><input name="key" type="text" id="key" size="6"> <img src="../../ShowKey/?v=regsend" name="regsendKeyImg" id="regsendKeyImg" onclick="regsendKeyImg.src='../../ShowKey/?v=regsend&t='+Math.random()" title="看不清楚,点击刷新"></td>
     </tr>
     <tr bgcolor="#FFFFFF"> 
       <td height="25">&nbsp; </td>
@@ -50,7 +43,7 @@ require(ECMS_PATH.'e/template/incfile/header.php');
         <input name="enews" type="hidden" id="enews" value="RegSend"></td>
     </tr>
   </form>
-</table>
+</table></div>
 <br>
 <?php
 require(ECMS_PATH.'e/template/incfile/footer.php');

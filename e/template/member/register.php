@@ -9,40 +9,46 @@ $public_diyr['pagetitle']='注册会员';
 $url="<a href=../../../>首页</a>&nbsp;>&nbsp;<a href=../cp/>会员中心</a>&nbsp;>&nbsp;注册会员";
 require(ECMS_PATH.'e/template/incfile/header.php');
 ?>
-<table width='100%' border='0' align='center' cellpadding='3' cellspacing='1' class="tableborder">
+
+
+
+
+<div class="app-content-body ">
+
+<table class="table table-bordered table-hover table-striped table_striped table_hover" width='100%' border='0' align='center' cellpadding='3' cellspacing='1' class="tableborder">
   <form name=userinfoform method=post enctype="multipart/form-data" action=../doaction.php>
     <input type=hidden name=enews value=register>
     <tr class="header"> 
       <td height="25" colspan="2">注册会员<?=$tobind?' (绑定账号)':''?></td>
     </tr>
     <tr> 
-      <td height="25" colspan="2"><strong>基本信息 
+      <td height="25" colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;<font color="red"><strong>基本信息</font> 
         <input name="groupid" type="hidden" id="groupid" value="<?=$groupid?>">
         <input name="tobind" type="hidden" id="tobind" value="<?=$tobind?>">
       </strong></td>
     </tr>
     <tr> 
-      <td width='25%' height="25" bgcolor="#FFFFFF"> <div align='left'>用户名</div></td>
-      <td width='75%' height="25" bgcolor="#FFFFFF"> <input name='username' type='text' id='username' maxlength='30'>
-        *</td>
+      <td width='20%' height="25" bgcolor="#FFFFFF"> <div align='center'>用户名*</div></td>
+      <td width='80%' height="25" bgcolor="#FFFFFF"> <input name='username' type='text' id='username' maxlength='30' class="form-control">
+        </td>
     </tr>
     <tr> 
-      <td height="25" bgcolor="#FFFFFF"> <div align='left'>密码</div></td>
-      <td height="25" bgcolor="#FFFFFF"> <input name='password' type='password' id='password' maxlength='20'>
-        *</td>
+      <td height="25" bgcolor="#FFFFFF"> <div align='center'>密码*</div></td>
+      <td height="25" bgcolor="#FFFFFF"> <input name='password' type='password' id='password' maxlength='20' class="form-control">
+        </td>
     </tr>
     <tr> 
-      <td height="25" bgcolor="#FFFFFF"> <div align='left'>重复密码</div></td>
-      <td height="25" bgcolor="#FFFFFF"> <input name='repassword' type='password' id='repassword' maxlength='20'>
-        *</td>
+      <td height="25" bgcolor="#FFFFFF"> <div align='center'>重复密码*</div></td>
+      <td height="25" bgcolor="#FFFFFF"> <input name='repassword' type='password' id='repassword' maxlength='20' class="form-control">
+        </td>
     </tr>
     <tr> 
-      <td height="25" bgcolor="#FFFFFF"> <div align='left'>邮箱</div></td>
-      <td height="25" bgcolor="#FFFFFF"> <input name='email' type='text' id='email' maxlength='50'>
-        *</td>
+      <td height="25" bgcolor="#FFFFFF"> <div align='center'>邮箱*</div></td>
+      <td height="25" bgcolor="#FFFFFF"> <input name='email' type='text' id='email' maxlength='50' class="form-control">
+        </td>
     </tr>
     <tr> 
-      <td height="25" colspan="2"><strong>其他信息</strong></td>
+      <td height="25" colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;<font color="red"><strong>其他信息</strong></font></td>
     </tr>
     <tr> 
       <td height="25" colspan="2" bgcolor="#FFFFFF"> 
@@ -57,29 +63,26 @@ require(ECMS_PATH.'e/template/incfile/header.php');
 	?>
     <tr>
       <td height="25" bgcolor="#FFFFFF">验证码：</td>
-      <td height="25" bgcolor="#FFFFFF">
-		<table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tr> 
-                  <td width="52"><input name="key" type="text" id="key" size="6"> 
-                  </td>
-                  <td id="regshowkey"><a href="#EmpireCMS" onclick="edoshowkey('regshowkey','reg','<?=$public_r['newsurl']?>');" title="点击显示验证码">点击显示验证码</a></td>
-                </tr>
-            </table>
-      </td>
+      <td height="25" bgcolor="#FFFFFF"><input name="key" type="text" id="key" size="6"> 
+        <img src="../../ShowKey/?v=reg" name="regKeyImg" id="regKeyImg" onclick="regKeyImg.src='../../ShowKey/?v=reg&t='+Math.random()" title="看不清楚,点击刷新"></td>
     </tr>
 	<?
 	}	
 	?>
     <tr> 
       <td height="25" bgcolor="#FFFFFF">&nbsp;</td>
-      <td height="25" bgcolor="#FFFFFF"> <input type='submit' name='Submit' value='马上注册'> 
-        &nbsp;&nbsp; <input type='button' name='Submit2' value='返回' onclick='history.go(-1)'></td>
+      <td height="25" bgcolor="#FFFFFF"> <div  align="center"><input type='submit' name='Submit' value='马上注册' class="btn btn-primary"> 
+        &nbsp;&nbsp; <input type='button' name='Submit2' value='返回' onclick='history.go(-1)' class="btn btn-primary"></div></td>
     </tr>
     <tr bgcolor="#FFFFFF"> 
-      <td height="25" colspan="2">说明：带*项为必填。</td>
+      <td height="25" colspan="2"> <div  align="center">说明：带*项为必填。</div></td>
     </tr>
   </form>
-</table>
+</table></div>
+
+
+
+
 <?php
 require(ECMS_PATH.'e/template/incfile/footer.php');
 ?>

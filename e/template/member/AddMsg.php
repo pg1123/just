@@ -1,3 +1,4 @@
+
 <?php
 if(!defined('InEmpireCMS'))
 {
@@ -5,39 +6,77 @@ if(!defined('InEmpireCMS'))
 }
 ?>
 <?php
-$public_diyr['pagetitle']='发送消息';
-$url="<a href=../../../../>首页</a>&nbsp;>&nbsp;<a href=../../cp/>会员中心</a>&nbsp;>&nbsp;<a href=../../msg/>消息列表</a>&nbsp;>&nbsp;发送消息";
+$public_diyr['pagetitle']='查看消息';
+$url="<a href=../../../../>首页</a>&nbsp;>&nbsp;<a href=../../cp/>会员中心</a>&nbsp;>&nbsp;<a href=../../msg/>消息列表</a>&nbsp;>&nbsp;查看消息";
 require(ECMS_PATH.'e/template/incfile/header.php');
 ?>
-        <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
-          <form action="../../doaction.php" method="post" name="sendmsg" id="sendmsg">
-            <tr class="header"> 
-              <td height="23" colspan="2">发送消息</td>
-            </tr>
-            <tr bgcolor="#FFFFFF"> 
-              <td width="21%" height="25">标题</td>
-              <td width="79%" height="25"><input name="title" type="text" id="title2" value="<?=ehtmlspecialchars(stripSlashes($title))?>" size="43">
-                *</td>
-            </tr>
-            <tr bgcolor="#FFFFFF"> 
-              <td height="25">接收者</td>
-              <td height="25"><input name="to_username" type="text" id="to_username2" value="<?=$username?>">
-                [<a href="#EmpireCMS" onclick="window.open('../../friend/change/?fm=sendmsg&f=to_username','','width=250,height=360');">选择好友</a>] 
-                *</td>
-            </tr>
-            <tr bgcolor="#FFFFFF"> 
-              <td height="25" valign="top">内容</td>
-              <td height="25"><textarea name="msgtext" cols="60" rows="12" id="textarea"><?=ehtmlspecialchars(stripSlashes($msgtext))?></textarea>
-                *</td>
-            </tr>
-            <tr bgcolor="#FFFFFF"> 
-              <td height="25">&nbsp;</td>
-              <td height="25"><input type="submit" name="Submit" value="发送">
-                &nbsp; 
-                <input type="reset" name="Submit2" value="重置"> <input name="enews" type="hidden" id="enews" value="AddMsg">              </td>
-            </tr>
-          </form>
-        </table>
+    
+    
+
+  	<div class="app-content-body ">
+	    
+         <form name="form1" method="post" action="../../doaction.php">
+
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3"><?=stripSlashes($r[title])?> </h1>
+</div>
+<div class="wrapper-md">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <tbody>
+
+<tr class="color1">
+			<td width="93" align="center" class="td5 tdCenter">发送者:</td>
+			<td width="469" class="td25 tdCenter"><a href="../../ShowInfo/?userid=<?=$r[from_userid]?>"> 
+                <?=$r[from_username]?>
+                </a></td>
+		
+	
+</tr>
+<tr class="color1">
+			<td width="93" align="center" class="td5 tdCenter">发送时间:</td>
+			<td width="469" class="td25 tdCenter">   <?=$r[msgtime]?>    </td>
+		
+	
+</tr>
+                              
+                               
+<tr>
+<td align="center">内容:</td>
+<td>   <?=nl2br(stripSlashes($r[msgtext]))?>       </td>
+
+
+</tr>
+<tr>
+<td align="center">&nbsp;</td>
+<td> [<a href="#ecms" onclick="javascript:history.go(-1);"><strong>返回</strong></a>] &nbsp;&nbsp;
+                [<a href="../AddMsg/?enews=AddMsg&re=1&mid=<?=$mid?>"><strong>回复</strong></a>] &nbsp;&nbsp;
+                [<a href="../AddMsg/?enews=AddMsg&mid=<?=$mid?>"><strong>转发</strong></a>] &nbsp;&nbsp;
+                [<a href="../../doaction.php?enews=DelMsg&mid=<?=$mid?>" onclick="return confirm('确认要删除?');"><strong>删除</strong></a>]</td>
+
+
+</tr>
+
+
+
+</tbody>
+</table>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+
+</div>
+
+
+
+	</div>  </form>
 <?php
 require(ECMS_PATH.'e/template/incfile/footer.php');
 ?>

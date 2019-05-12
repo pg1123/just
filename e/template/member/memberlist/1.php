@@ -18,7 +18,8 @@ $public_diyr['pagetitle']='会员列表';
 $url="<a href='../../../'>首页</a>&nbsp;>&nbsp;会员列表";
 require(ECMS_PATH.'e/template/incfile/header.php');
 ?>
-<table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
+<div class="app-content-body ">
+<table class="table table-bordered table-hover table-striped table_striped table_hover" width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
   <form name="memberform" method="get" action="index.php">
     <input type="hidden" name="sear" value="1">
     <input type="hidden" name="groupid" value="<?=$groupid?>">
@@ -59,12 +60,12 @@ require(ECMS_PATH.'e/template/incfile/header.php');
         <?=$returnpage?>
       </td>
       <td height="25"> <div align="center"> 
-          <input name="keyboard[]" type="text" id="keyboard" size="10">
+          <input name="keyboard" type="text" id="keyboard" size="10">
           <input type="submit" name="Submit" value="搜索">
         </div></td>
     </tr>
   </form>
-</table>
+</table></div>
 <?php
 require(ECMS_PATH.'e/template/incfile/footer.php');
 ?>
