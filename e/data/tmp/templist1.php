@@ -65,9 +65,9 @@ if(!defined('InEmpireCMS'))
       
        <?php 
       if($_COOKIE['wwogcmlusername']){
-     echo '<li class="layui-nav-item layui-nav-item1 usera" lay-unselect=""> <a href="javascript:;"><img src="/just/images/user.png" class="layui-nav-img">用户00368</a>
+     echo '<li class="layui-nav-item layui-nav-item1 usera" lay-unselect=""> <a href="javascript:;"><img src="/skin/cy/images/noavatar.gif" class="layui-nav-img">'. $_COOKIE['wwogcmlusername']  . '</a>
         <dl class="layui-nav-child">
-          <dd><a href="javascript:;">充值服务</a></dd>
+          <dd><a href="/e/member/cp/">个人中心</a></dd>
           <dd><a href="/e/member/doaction.php?enews=exit">退出</a></dd>
         </dl>
       </li>';
@@ -82,9 +82,88 @@ if(!defined('InEmpireCMS'))
       }
     ?>
 
-<script type="text/javascript">
-</script>
+
   </div>
+
+<!--登录弹窗-->
+  <div class="logina"  id="logintc" style="display:none;">
+ <form class="layui-form" method="post" action="/e/member/doaction.php">
+    <input type="hidden" name="ecmsfrom" value="">
+    <input name="tobind" type="hidden" id="tobind" value="0">
+    <input type="hidden" name="enews" value="login">
+    <input type="hidden" name="lifetime" value="3600">
+  <div class="layui-form-item">
+    <label class="layui-form-label">用户名</label>
+    <div class="layui-input-block">
+      <input type="text" name="username" id="username" lay-verify="title" autocomplete>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">密码</label>
+    <div class="layui-input-block">
+      <input type="password" name="password" id="password" lay-verify="required" autocomplete>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">&nbsp;</label>
+    <div class="layui-input-block">
+      <p><a href="/e/member/GetPassword/">忘记密码？</a></p>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即登录
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+</form>
+  </div>
+
+  <!--注册弹窗-->
+  <div class="logina"  id="design" style="display:none;">
+     <form class="layui-form" method="post" name="userinfoform" action="/e/member/doaction.php">
+        <input name="tobind" type="hidden" id="tobind" value="0">
+        <input type="hidden" name="enews" value="register">
+
+        <div class="layui-form-item">
+          <label class="layui-form-label">用户名</label>
+          <div class="layui-input-block">
+            <input type="text" name="username" id="username" lay-verify="title" autocomplete>
+          </div>
+        </div>
+
+        <div class="layui-form-item">
+          <label class="layui-form-label">密码</label>
+          <div class="layui-input-block">
+            <input type="password" name="password" id="password" lay-verify="required" autocomplete>
+          </div>
+        </div>
+
+        <div class="layui-form-item">
+          <label class="layui-form-label">重复密码</label>
+          <div class="layui-input-block">
+            <input type="password" name="repassword" id='repassword' lay-verify="required">
+          </div>
+        </div>
+
+        <div class="layui-form-item">
+          <label class="layui-form-label">邮箱</label>
+          <div class="layui-input-block">
+            <input type="text" name="email" id='email' type="text" lay-verify="required"> 
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <button class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即注册
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+          </div>
+        </div>
+</form>
+  </div>
+
+<script type="text/javascript">
+
+</script>
   <div class="list">
     <div class="choose clearfix">
        <!-- <span class="this"><a href="[!--news.url--]e/public/ViewClick/?classid=[!--classid--]&id=[!--id--]&down=5">全部</a></span> -->
@@ -100,6 +179,11 @@ if(!defined('InEmpireCMS'))
     </div>
   </div>
 　<div class="pageBox pTB20">[!--show.listpage--]</div>
+
+</div>
+<!-- 页脚 -->
+<div class="footer">
+Copyright ©2019 CGITool right reserved.京ICP备11081390号-1
 </div>
 <script type="text/javascript">
 $(function(){
@@ -110,8 +194,7 @@ $(".show").hover(function() {
   $(this).children(".shadow").hide();
 });
 
-    })
-    
+})
     
     layui.use('element', function(){
   var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
@@ -121,18 +204,48 @@ $(".show").hover(function() {
     //console.log(elem)
     layer.msg(elem.text());
   });
+
+
+  layui.use(['form','upload', 'laydate','laypage', 'layer'], function(){
+    var form = layui.form,
+    layer = layui.layer,
+    laydate = layui.laydate;
+  });
+
+
+
 });
-layui.use(['laypage', 'layer'], function(){
-  var laypage = layui.laypage
-  ,layer = layui.layer;
-  
-  //总页数低于页码总数
-  laypage.render({
-    elem: 'demo8'
-    ,count: 1000
-    ,layout: ['limit', 'prev', 'page', 'next']
-  });
-  });
+
+
+//登录弹窗
+  function logintc(){
+      layer.open({
+        type: 1,
+        title: '用户登录',
+        shadeClose: true,
+        shade: 0.8,
+        area: ['400px', 'auto'],
+        content: $('#logintc') //iframe的url
+      });
+  }
+
+
+  //注册弹窗^M
+function design(){
+    layer.open({
+        type: 1,
+  title: '用户注册',
+  shadeClose: true,
+  shade: 0.8,
+  area: ['400px', 'auto'],
+  content: $('#design') //iframe的url
+        
+});
+}
+
+
+
+
 </script>
 </body>
 </html>
