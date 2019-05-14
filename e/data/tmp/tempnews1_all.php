@@ -23,7 +23,7 @@ if(!defined('InEmpireCMS'))
     <div class="logo"><img src="/just/images/logo.png" /></div>
 
     <ul class="layui-nav">
-      <li class="layui-nav-item layui-this"> <a href="/">首页1111</a> </li>
+      <li class="layui-nav-item layui-this"> <a href="/">首页</a> </li>
 
 
       <?php
@@ -83,8 +83,10 @@ if(!defined('InEmpireCMS'))
         echo '<div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div><div class="login"><a href="#" onclick="logintc()">登录</a>|<a href="#" onclick="design()">注册</a></div>';
       }
     ?>
-  </div>
 
+<script type="text/javascript">
+</script>
+  </div>
   
   <div class="detail">
     <div class="dmain">

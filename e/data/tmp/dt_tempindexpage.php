@@ -17,7 +17,8 @@ if(!defined('InEmpireCMS'))
 
 <body>
 <div id="container">
-       <div class="header clearfix ctnt">
+       
+<div class="header clearfix ctnt">
     <div class="logo"><img src="/just/images/logo.png" /></div>
 
     <ul class="layui-nav">

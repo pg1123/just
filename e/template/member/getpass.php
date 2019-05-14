@@ -1,3 +1,14 @@
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>CGItool</title>
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
 <?php
 if(!defined('InEmpireCMS'))
 {
@@ -7,38 +18,32 @@ if(!defined('InEmpireCMS'))
 <?php
 $public_diyr['pagetitle']='取回密码';
 $url="<a href=../../../>首页</a>&nbsp;>&nbsp;<a href=../cp/>会员中心</a>&nbsp;>&nbsp;取回密码";
-require(ECMS_PATH.'e/template/incfile/header.php');
 ?>
-<br>
+
 <div class="app-content-body ">
-<table width="500" class="table table-bordered table-hover table-striped table_striped table_hover" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
   <form name="GetPassForm" method="POST" action="../doaction.php">
-    <tr class="header"> 
-      <td height="25" colspan="2"><div align="center">重设密码</div></td>
-    </tr>
-    <tr bgcolor="#FFFFFF"> 
-      <td width="23%" height="25">用户名</td>
-      <td width="77%"><?=$username?></td>
-    </tr>
-    <tr bgcolor="#FFFFFF"> 
-      <td height="25">新密码</td>
-      <td><input name="newpassword" type="password" id="newpassword" size="38"></td>
-    </tr>
-    <tr bgcolor="#FFFFFF">
-      <td height="25">重复新密码</td>
-      <td><input name="renewpassword" type="password" id="renewpassword" size="38"></td>
-    </tr>
-    <tr bgcolor="#FFFFFF"> 
-      <td height="25">&nbsp; </td>
-      <td> <input type="submit" name="button" value="修改"> 
+   <h2 >重设密码</h2>
+    <div class="clearfix"> 
+      <p>用户名</p>
+      <span><?=$username?></span>
+    </div>
+   <div class="clearfix"> 
+      <p>新密码</p>
+      <span><input name="newpassword" type="password" id="newpassword" size="38" class="ipt"></span>
+    </div>
+<div class="clearfix"> 
+      <p>重复新密码</p>
+      <span><input name="renewpassword" type="password" id="renewpassword" size="38" class="ipt"></span>
+    </div>
+ <div class="clearfix"> 
+      <p>&nbsp; </p>
+      <span><input type="submit" name="button" value="修改" class="tj"> 
         <input name="enews" type="hidden" id="enews" value="DoGetPassword">
         <input name="id" type="hidden" id="id" value="<?=$r[id]?>">
         <input name="tt" type="hidden" id="tt" value="<?=$r[tt]?>">
-        <input name="cc" type="hidden" id="cc" value="<?=$r[cc]?>"></td>
-    </tr>
+        <input name="cc" type="hidden" id="cc" value="<?=$r[cc]?>"></span>
+    </div>
   </form>
-</table></div>
-<br>
-<?php
-require(ECMS_PATH.'e/template/incfile/footer.php');
-?>
+</div>
+</body>
+</html>

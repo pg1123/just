@@ -1,4 +1,9 @@
-@charset "utf-8";
+<?php
+if(!defined('InEmpireCMS'))
+{
+	exit();
+}
+?>@charset "utf-8";
 /* CSS Document */
 @import url("font-awesome.min.css");
 @import url("../layui/css/layui.css");
@@ -152,19 +157,17 @@ body{ background-color:#f7f7f7;}
 .pageBox .disabled {width: 79px;}
 .nodata{ text-align: center; line-height: 80px;  }
 .footer{background-color:#393d49; width:100%; line-height: 60px; color: #fff; text-align: center;}
+
 /*找回密码*/
-.app-content-body{ width:500px; margin:0 auto; margin-top:40px; background-color:#fff; padding-bottom:20px; border:1px solid #ddd;}
+.app-content-body{ width:500px; margin:0 auto; margin-top:40px; background-color:#fff; padding-bottom:40px;}
 .app-content-body div{ margin-bottom:15px;}
 .app-content-body h2{    padding: 0 15px;display:block;height: 42px;line-height: 42px;border-bottom: 1px solid #eee;font-size: 16px;color: #fff;background-color: #3596dd; margin-bottom:40px;
 }
 .app-content-body p ,.app-content-body span{ display:block; float:left;}
 .app-content-body p{padding: 9px 15px;width: 80px;font-weight: 400;text-align: right;}
 .app-content-body .ipt{height: 38px;line-height: 1.3;border: 1px solid #e6e6e6;background-color: #fff;border-radius: 2px;display: block;width: 230px;padding-left: 10px;}
-.app-content-body .ipt1{ float:left; width:120px; margin-right:6px;}
-.app-content-body .tj{background-color: #3596dd;    display: inline-block;height: 38px;line-height: 38px;padding: 0 30px;color: #fff;white-space: nowrap;text-align: center;font-size: 14px; border: none;border-radius: 2px;cursor: pointer;}
-.app-content-body img{ height:30px; margin-top:4px;}
-.app-content-body span a{ color:#3596dd; margin-left:10px;}
-.app-content-body span a:hover{ text-decoration:underline;}
+.app-content-body .ipt1{ float:left; width:100px;}
+.app-content-body .tj{background-color: #0158ff;    display: inline-block;height: 38px;line-height: 38px;padding: 0 18px;color: #fff;white-space: nowrap;text-align: center;font-size: 14px; border: none;border-radius: 2px;cursor: pointer;}
 @media(min-width:1600px){
 	.layui-col-xs3{ width:16.666%;}
 	.cginew .layui-col-xs3:nth-child(5),.cginew .layui-col-xs3:nth-child(6){ display:block;}
