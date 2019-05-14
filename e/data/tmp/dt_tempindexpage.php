@@ -128,7 +128,7 @@ if(!defined('InEmpireCMS'))
         <li>CGI素材</li>
       </ul>
       <div class="layui-tab-content">
-        <div class="layui-tab-item layui-show">
+         <div class="layui-tab-item layui-show">
           <div class="layui-row" id="con">
             <div class="layui-col-xs3">
               <div class="grid-demo"> <a href="#" class="show"> <img src="/just/images/img.jpg" /><span class="new">最新</span>
@@ -600,13 +600,13 @@ if(!defined('InEmpireCMS'))
   <div class="layui-form-item">
     <label class="layui-form-label">用户名</label>
     <div class="layui-input-block">
-      <input type="text" name="username" id="username" lay-verify="title" autocompl
+      <input type="text" name="username" id="username" lay-verify="title" autocomplete>
     </div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">密码</label>
     <div class="layui-input-block">
-      <input type="password" name="password" id="password" lay-verify="required" pl
+      <input type="password" name="password" id="password" lay-verify="required" autocomplete>
     </div>
   </div>
   <div class="layui-form-item">
@@ -617,7 +617,7 @@ if(!defined('InEmpireCMS'))
   </div>
   <div class="layui-form-item">
     <div class="layui-input-block">
-      <button class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即登
+      <button class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即登录
       <button type="reset" class="layui-btn layui-btn-primary">重置</button>
     </div>
   </div>
@@ -626,40 +626,43 @@ if(!defined('InEmpireCMS'))
 
   <!--注册弹窗-->
   <div class="logina"  id="design" style="display:none;">
-     <form class="layui-form" method="post" name="userinfoform" action="/e/member/d
+     <form class="layui-form" method="post" name="userinfoform" action="/e/member/doaction.php">
         <input name="tobind" type="hidden" id="tobind" value="0">
         <input type="hidden" name="enews" value="register">
-  <div class="layui-form-item">
-    <label class="layui-form-label">用户名</label>
-    <div class="layui-input-block">
-      <input type="text" name="username" id="username" lay-verify="title" autocompl
-    </div>
-  </div>
-  <div class="layui-form-item">
-    <label class="layui-form-label">密码</label>
-    <div class="layui-input-block">
-      <input type="password" name="password" id="password" lay-verify="required" pl
-    </div>
-  </div>
-  <div class="layui-form-item">
-    <label class="layui-form-label">重复密码</label>
-    <div class="layui-input-block">
-      <input type="password" name="repassword" id='repassword' lay-verify="required
-    </div>
-  </div>
-  <div class="layui-form-item">
-    <label class="layui-form-label">邮箱</label>
-    <div class="layui-input-block">
-      <input type="text" name="email" id='email' type="text" lay-verify="required" 
-    </div>
-  </div>
-  </div>
-  <div class="layui-form-item">
-    <div class="layui-input-block">
-      <button class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即注
-      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-    </div>
-  </div>
+
+        <div class="layui-form-item">
+          <label class="layui-form-label">用户名</label>
+          <div class="layui-input-block">
+            <input type="text" name="username" id="username" lay-verify="title" autocomplete>
+          </div>
+        </div>
+
+        <div class="layui-form-item">
+          <label class="layui-form-label">密码</label>
+          <div class="layui-input-block">
+            <input type="password" name="password" id="password" lay-verify="required" autocomplete>
+          </div>
+        </div>
+
+        <div class="layui-form-item">
+          <label class="layui-form-label">重复密码</label>
+          <div class="layui-input-block">
+            <input type="password" name="repassword" id='repassword' lay-verify="required">
+          </div>
+        </div>
+
+        <div class="layui-form-item">
+          <label class="layui-form-label">邮箱</label>
+          <div class="layui-input-block">
+            <input type="text" name="email" id='email' type="text" lay-verify="required"> 
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <button class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即注册
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+          </div>
+        </div>
 </form>
   </div>
 
