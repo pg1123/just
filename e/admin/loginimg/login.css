@@ -1,0 +1,342 @@
+
+html {
+	overflow-y:scroll
+}
+body {
+	font-size:14px;
+	font-family:'Microsoft Yahei','Helvetica Neue',Helvetica,Arial,sans-serif;
+	color:#000;
+	margin:0;
+	padding:0;
+}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+	margin:0;
+	padding:0
+}
+table {
+	*border-collapse:collapse;
+	border-spacing:0
+}
+fieldset,img {
+	border:0
+}
+ul,ol {
+	list-style:none
+}
+a,a:visited,a:active {
+	color:#2d70c1;
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:underline;
+}
+.f14 {
+	font-size:14px
+}
+.dis {
+	display:none!important
+}
+.nodis {
+	display:block
+}
+.clear {
+	clear:both;
+	overflow:hidden
+}
+
+
+body {
+	background:#ffffff;
+}
+.head {
+border-bottom: 2px solid #01AF63;
+background: #FFF;
+}
+.head .area {
+	height:75px;
+	width:960px;
+	margin:0 auto;
+	line-height: 75px;
+	font-size: 28px;
+	font-family:"Microsoft YaHei";
+}
+.head .area  .logo {
+	float:left;
+	width:155px;
+	padding-top:14px
+}
+
+.head .area h2{
+float:left;
+overflow: hidden;
+line-height: 75px;
+color: #0B9E5E;
+font-size: 28px;font-weight: normal;
+}
+.head .head_right,.head .head-right {
+	float:right;
+	width:736px;
+	padding-top:8px;
+	padding-right:4px;
+	color:#fff;
+	text-align:right
+}
+.head span {
+	margin:0 0 0 12px;
+	vertical-align:middle
+}
+.head a:link,.head a:visited {
+	color:#0a467c
+}
+.head a:hover {
+	text-decoration:underline
+}
+.head .feedback a:link,.head .feedback a:visited,.head .feedback a:hover,.head .help a:link,.head .help a:visited,.head .help a:hover {
+	color:#fff
+}
+.head span.help {
+	margin-left:0
+}
+.head span.sep {
+	margin:0 5px
+}
+.head .gov {
+	margin-left:7px
+}
+.head .gov a:link,.head .gov a:visited,.head .gov a:hover {
+	display:inline-block;
+	height:19px;
+	width:89px;
+	padding-top:4px;
+	padding-left:13px;
+	line-height:15px;
+	*line-height:19px;
+	_line-height:15px;
+	text-align:left;
+	background:url(head_btn.png) no-repeat;
+	color:#fff
+}
+.head .head_contact {
+	position:relative;
+	height:24px;
+	margin-top:11px;
+	padding-right:109px;
+	line-height:24px;
+	color:#b9cde7
+}
+.head .contactOnError {
+	padding-right:0
+}
+.head .head_contact span {
+	margin-left:3px
+}
+.head .head_contact span.retail {
+	margin-left:8px
+}
+.head .head_contact .wpa {
+	position:absolute;
+	right:0;
+	top:0
+}
+.head .tools {
+	padding-top:10px;
+	padding-right:2px
+}
+.head .tools span {
+	display:inline-block;
+	height:16px;
+	padding-left:22px
+}
+.head .tools .phone {
+	background:url(head_kf.png) no-repeat 0 1px
+}
+.head .tools .mail {
+	background:url(head_mail.png) no-repeat 0 0
+}
+.head .tools .mail a {
+	color:#fff
+}
+.foot {
+	width:960px;
+	margin:0 auto;
+	clear:both;
+	padding:25px 0 25px;
+	line-height:24px;
+	text-align:center;
+	color:#555657;
+}
+.foot a,.foot a:visited {
+	color:#767779;
+	margin:0 2px
+}
+/* == main == */
+.login_main {background-color: #F1F1F1;border-bottom: 1px solid #E7E7E7;
+	overflow:hidden;
+}
+.login_box {
+	width:960px;
+	margin:0 auto;
+	padding-top:42px;
+	padding-bottom: 20px;
+	clear:both;
+	overflow:hidden;
+	zoom:1;
+}
+.banner {
+	float:left;
+	width:582px;
+	height:342px;
+	text-align:right;
+}
+.banner img {
+	width:582px;
+	height:342px;
+}
+.login {
+	float:right;
+	width:260px;
+	min-height:295px;
+	_height:295px;
+	margin-right:68px;
+	padding:15px 24px 30px 24px;
+	background-color:#fafbfd;
+	border:1px solid #4cae4c;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	box-shadow:2px 2px #eeeff3;
+	-moz-box-shadow:2px 2px #eeeff3;
+	-webkit-box-shadow:2px 2px #eeeff3;
+}
+.login h2 {
+	height:32px;
+	line-height:32px;
+	padding:0;
+	margin-bottom:15px;
+	font-size:20px;
+	font-family:"Microsoft YaHei";
+	color:#333;
+	overflow:hidden;
+	font-weight:normal;
+	overflow:hidden;
+}
+.login .login_err {
+	padding:4px 8px 5px 30px;
+	*padding:5px 8px 3px 30px;
+	_padding:3px 8px 5px 30px;
+	line-height:18px;
+	*line-height:18px;
+	_line-height:18px;
+	background:#fcfadf url(icon_error.jpg) no-repeat 10px 7px;
+	border:1px solid #e2c7a8;
+	color:#ed3f16;
+}
+.login li {
+	height:30px;
+	padding-top:12px;
+	vertical-align:text-bottom;
+	clear:both;
+	zoom:1;
+}
+.login label {
+	float:left;
+	width:58px;
+	padding:3px 0 0 3px;
+	color:#333333;
+}
+.login .l_r {
+	float:left;
+}
+.login input.text {
+	width:187px;
+	height:15px;
+	padding:5px 5px 6px;
+	background:url(input_bg.gif) repeat-x 0 0;
+	border:1px solid #b0b0b0;
+}
+.login input.key {
+	width:60px;
+	height:15px;
+	padding:5px 5px 6px;
+	background:url(input_bg.gif) repeat-x 0 0;
+	border:1px solid #b0b0b0;
+}
+
+.login input.text:focus,.login input.key:focus {
+	box-shadow:0 0 5px rgba(81,203,238,1);
+	-webkit-box-shadow:0 0 5px rgba(81,203,238,1);
+	-moz-box-shadow:0 0 5px rgba(81,203,238,1);
+	border:1px solid #4cae4c;
+}
+.login li .code_img {
+	float: left;
+	padding-left:4px;
+}
+.login li .code_img p {
+	margin-bottom:8px;
+	color:#6d6d6d;
+}
+.login li .code_img span {
+	display:inline-block; 
+	vertical-align:top;
+	padding:3px 0 0 12px;
+}
+.login li .code_img a {
+	display:inline-block;
+	color: #5CB85D;
+	text-decoration:underline;
+}
+.login li .code_img img {
+	width: 60px;
+	height:26px;vertical-align: middle;
+}
+.login li.bsaveinfo {
+	height:27px;
+	*height:30px;
+	padding:12px 0 0 63px;
+	*padding:9px 0 0 63px;
+}
+.login li.bsaveinfo .checkbox {
+	vertical-align:middle;
+	margin:-3px 0 0 2px;
+	*margin:0 0 0 -2px;
+	_margin:0 0 0 -3px;
+}
+.login li.bsaveinfo label {
+	float:none;
+}
+.login .submit {
+	width:121px;
+	height:35px;
+	margin-left:64px; margin-top:10px;
+	border:none;
+	cursor:pointer;
+	font-family:"Microsoft Yahei";
+	font-size:16px;
+	color:#fff;
+	background:transparent;
+	transition:all 0.2s linear;
+	-webkit-transition:all 0.2s linear;
+	-moz-transition:all 0.2s linear;
+	-o-transition:all 0.2s linear;
+	background-color:#5CB85D;
+}
+.login .submit:hover {
+	background:#449d44;
+}
+.login .pwd_find {
+	margin-top:8px;
+	margin-left:63px;
+	color:#3979c3;
+	line-height:24px;
+}
+.login .pwd_find a { color:#5CB85D;
+	text-decoration:none;
+}
+.login .pwd_find a:hover {
+color: #449D44;
+}
+#equestion {
+	padding:5px;
+	width:199px;
+}
