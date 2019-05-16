@@ -127,7 +127,7 @@ $tgetmid=(int)$_GET['mid'];
         <!-- brand -->
         <a target="_blank"  href="<?=$public_r['newsurl']?>" class="navbar-brand text-lt">
 <img src="<?=$public_r['newsurl']?>skin_member/picture/logo.png">
-<span class="hidden-folded m-l-xs">ASPKU</span>
+<span class="hidden-folded m-l-xs">CGI-Tool</span>
         </a></div>
         
         <?php

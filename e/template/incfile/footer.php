@@ -9,7 +9,7 @@ if(!defined('InEmpireCMS'))
 <script type="text/javascript">ZCenter_ActiveLeftMenu("aDashboard");</script>
 <!-- footer -->
 <footer id="footer" class="app-footer" role="footer">
-  <div class="wrapper b-t bg-light">Copyright &copy; 2017 www.aspku.com All Rights Reserved.<span class="pull-right"><a href="http://www.aspku.com" target="_blank">Power By ASPKU</a></span> </div>
+  <div class="wrapper b-t bg-light">Copyright ©2019 CGITool right reserved.京ICP备11081390号-1.<span class="pull-right"><a href="/" target="_blank">Power By CGITool</a></span> </div>
 </footer>
 <!-- / footer -->
 

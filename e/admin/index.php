@@ -36,7 +36,7 @@ elseif(getcvar('ecertkeyrnds'))
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>账户登录 -www.aspku.com</title>
+<title>账户登录 -CGI-Tool</title>
 <link rel="stylesheet" type="text/css" href="loginimg/login.css" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <script>
