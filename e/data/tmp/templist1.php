@@ -88,7 +88,7 @@ if(!defined('InEmpireCMS'))
 <!--登录弹窗-->
   <div class="logina"  id="logintc" style="display:none;">
  <form class="layui-form" method="post" action="/e/member/doaction.php">
-    <input type="hidden" name="ecmsfrom" value="9">
+    <input type="hidden" name="ecmsfrom" value="">
     <input name="tobind" type="hidden" id="tobind" value="0">
     <input type="hidden" name="enews" value="login">
     <input type="hidden" name="lifetime" value="3600">
@@ -180,6 +180,8 @@ if(!defined('InEmpireCMS'))
   </div>
 　<div class="pageBox pTB20">[!--show.listpage--]</div>
 
+</div>
+</div>
 </div>
 <!-- 页脚 -->
 <div class="footer">
