@@ -1,11 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php
+if(!defined('InEmpireCMS'))
+{
+	exit();
+}
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta name="renderer" content="webkit">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>素材网|测试文章２</title>
-<meta name="keywords" content="">
+<title><?=$public_r[sitename]?>|<?=$grpagetitle?></title>
+<meta name="keywords" content="<?=$ecms_gr[keyboard]?>">
 <link href="/just/css/style.css" type="text/css" rel="stylesheet" />
 <link type="text/css" rel="stylesheet" href="/skin/cy/css/chanyan.css"/>
 <script src="/just/js/jquery-1.11.3.min.js" type="text/javascript"></script>
@@ -22,59 +27,65 @@
       <li class="layui-nav-item layui-this"> <a href="/">首页</a> </li>
 
 
+      <?php
+        $ecms_bq_sql=sys_ReturnEcmsLoopBq('select classid,classname,classpath from [!db.pre!]enewsclass where bclassid=0 and showclass=0 order by myorder limit 10',20,24,0);
+        while($r=$empire->fetch($ecms_bq_sql))
+        {
+            $s = sys_ReturnEcmsLoopStext($r);
+            //$path = $public_r['newsurl'].$r['classpath']; 
+            ?>
+
+            <li class="layui-nav-item"> <a href="#"><?php echo $s['classname']; ?></a>
+              <dl class="layui-nav-child snav">
+                <?php
+                  $sql2=sys_ReturnEcmsLoopBq('select classid,classname,classpath from [!db.pre!]enewsclass where bclassid='.$r['classid'].' order by myorder limit 25',20,24,0);
+                  while($r2=$empire->fetch($sql2))
+                  {
+                        $s2 = sys_ReturnEcmsLoopStext($r2);
+                    ?>
+                    <dd>
+                      <a href="<?php echo $s2['classurl']; ?>" class="btit"><?php echo $s2['classname']; ?></a>
+                       <div class="snavfl clearfix">
+                         
+                        <?php 
+                            $sql3=sys_ReturnEcmsLoopBq('select classid,classname,classpath from [!db.pre!]enewsclass where bclassid='.$r2['classid'].' order by myorder limit 25',20,24,0);
+                            while($r3=$empire->fetch($sql3))
+                            {   
+                                $s3 = sys_ReturnEcmsLoopStext($r3);
+                            ?>
+                                <a href="<?php echo $s3['classurl']; ?>"><?php echo $s3['classname']; ?></a>
+                        <?php } ?>
+
+
+                       </div>
+                    </dd>
+                  <?php } ?>
+              </dl>
+            </li>
+            
+
+    <?php } ?>
       
-            <li class="layui-nav-item"> <a href="#">教程</a>
-              <dl class="layui-nav-child snav">
-                                    <dd>
-                      <a href="/jiaocheng/3djiaocheng/" class="btit">3D教程</a>
-                       <div class="snavfl clearfix">
-                         
-                                                        <a href="/jiaocheng/3djiaocheng/3d1/">3d-1</a>
-                                                        <a href="/jiaocheng/3djiaocheng/3d2/">3d-1</a>
-                        
+       <?php 
+      if($_COOKIE['wwogcmlusername']){
+         echo '<div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div>';
+     echo '<li class="layui-nav-item layui-nav-item1 usera" lay-unselect=""> <a href="javascript:;"><img src="/skin/cy/images/noavatar.gif" class="layui-nav-img">'. $_COOKIE['wwogcmlusername']  . '</a>
+        <dl class="layui-nav-child">
+          <dd><a href="/e/member/cp/">个人中心</a></dd>
+          <dd><a href="/e/member/doaction.php?enews=exit">退出</a></dd>
+        </dl>
+      </li>';
+   }
+ ?>
 
-                       </div>
-                    </dd>
-                                      <dd>
-                      <a href="/jiaocheng/2djiaocheng/" class="btit">2D教程</a>
-                       <div class="snavfl clearfix">
-                         
-                        
-
-                       </div>
-                    </dd>
-                                </dl>
-            </li>
-            
-
-    
-            <li class="layui-nav-item"> <a href="#">软件/插件</a>
-              <dl class="layui-nav-child snav">
-                                    <dd>
-                      <a href="/ruanjianchajian/ruanjianyi/" class="btit">软件一</a>
-                       <div class="snavfl clearfix">
-                         
-                                                        <a href="/ruanjianchajian/ruanjianyi/ruanjian1/">软件1</a>
-                        
-
-                       </div>
-                    </dd>
-                                </dl>
-            </li>
-            
-
-    
-            <li class="layui-nav-item"> <a href="#">素材</a>
-              <dl class="layui-nav-child snav">
-                              </dl>
-            </li>
-            
-
-          
-       
     </ul>
 
-    <div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div><div class="login"><a href="#" onclick="logintc()">登录</a>|<a href="#" onclick="design()">注册</a></div>
+    <?php 
+      if(!$_COOKIE['wwogcmlusername']){
+        echo '<div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div><div class="login"><a href="#" onclick="logintc()">登录</a>|<a href="#" onclick="design()">注册</a></div>';
+      }
+    ?>
+
 
   </div>
 
@@ -161,38 +172,43 @@
   <div class="detail">
     <div class="dmain">
       <div class="dmain-t">
-        <h1>测试文章２</h1>
+        <h1><?=$grpagetitle?></h1>
         <div class="intro">
           <ul>
-            <li> 分类：<a href="[!--bclass.url--]"> 3D教程 </a> -<a href="/jiaocheng/3djiaocheng/3d1/"> 3d-1 </a> </li>
+            <li> 分类：<a href="[!--bclass.url--]"> <?=$class_r[$grbclassid][classname]?> </a> -<a href="<?=$grclassurl?>"> <?=$class_r[$ecms_gr[classid]][classname]?> </a> </li>
             <!-- <li> 分类：合作 - <a href="#" target="_blank">资助&amp;合作</a>- <a href="#" target="_blank">推广教程</a> </li> -->
             <!-- <li> 标签： <a href="#" target="_blank">超写实</a> <a href="#" target="_blank">模型</a> <a href="#" target="_blank">预售</a> <a href="#" target="_blank">场景</a> </li> -->
 
             <li>
               标签：
-                      
-              <a href='/e/tags/?tagname=教程' class='tag-link-1' title='1个话题' style='font-size: 9pt;' target="_blank">教程</a>
-                      
-              <a href='/e/tags/?tagname=模型' class='tag-link-2' title='1个话题' style='font-size: 9pt;' target="_blank">模型</a>
-                      
-              <a href='/e/tags/?tagname=后期' class='tag-link-3' title='1个话题' style='font-size: 9pt;' target="_blank">后期</a>
-                      
-              <a href='/e/tags/?tagname=建模' class='tag-link-4' title='1个话题' style='font-size: 9pt;' target="_blank">建模</a>
-                          </li>
+              <?php
+$bqno=0;
+$ecms_bq_sql=sys_ReturnEcmsLoopBq("select * from [!db.pre!]enewstags order by tagid",0,24,0);
+if($ecms_bq_sql){
+while($bqr=$empire->fetch($ecms_bq_sql)){
+$bqsr=sys_ReturnEcmsLoopStext($bqr);
+$bqno++;
+?>        
+              <a href='<?=$public_r[newsurl]?>e/tags/?tagname=<?=$bqr['tagname']?>' class='tag-link-<?=$bqr['tagid']?>' title='<?=$bqr[num]?>个话题' style='font-size: 9pt;' target="_blank"><?=$bqr['tagname']?></a>
+              <?php
+}
+}
+?>
+            </li>
 
 
           </ul>
         </div>
-        <div class="conn"> <span class="view"> <i class="fa fa-eye" aria-hidden="true"></i><script src=/e/public/ViewClick/?classid=4&id=54&addclick=1></script> </span><span class="talk"> <i class="fa fa-commenting-o" aria-hidden="true"></i>0 </span><span class="up" > <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><script src=/e/public/ViewClick/?classid=4&id=54&down=5></script> </span> </div>
+        <div class="conn"> <span class="view"> <i class="fa fa-eye" aria-hidden="true"></i><script src=/e/public/ViewClick/?classid=<?=$ecms_gr[classid]?>&id=<?=$ecms_gr[id]?>&addclick=1></script> </span><span class="talk"> <i class="fa fa-commenting-o" aria-hidden="true"></i><?=$ecms_gr[plnum]?> </span><span class="up" > <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><script src=/e/public/ViewClick/?classid=<?=$ecms_gr[classid]?>&id=<?=$ecms_gr[id]?>&down=5></script> </span> </div>
       </div>
       <div class="dmain-m">
-        <p style="text-align: center;">Lynda - Learning Algorithmic Design with Grasshopper</p>
-<p style="text-align: center;">Lynda - 学习犀牛里的Grasshopper算法教程<br /><img alt="" src="/d/file/p/2019/05-02/d89f531d244709ae963deb3ef137b249.jpg" style="width: 880px; height: 495px;" /></p>        <!-- <p>到目前为止人数为138.现在提前结束这次统计.因为不会再次出售.请勿相信一切私人团购.按照之前约定.人气统计费用捐赠给网站...感谢支持我的朋友.以后我也会一如既往的努力.做出更好的作品----atng糖</p>
+        <?=strstr($ecms_gr[newstext],'[!--empirenews.page--]')?'[!--newstext--]':$ecms_gr[newstext]?>
+        <!-- <p>到目前为止人数为138.现在提前结束这次统计.因为不会再次出售.请勿相信一切私人团购.按照之前约定.人气统计费用捐赠给网站...感谢支持我的朋友.以后我也会一如既往的努力.做出更好的作品----atng糖</p>
         <img src="/just/images/pic.jpg" /> </div> -->
       <div class="ding">
         <div class="up"> 
-          <a href="JavaScript:makeRequest('/e/public/digg?classid=4&id=54&dotop=1&doajax=1&ajaxarea=diggnum','EchoReturnedText','GET','');">顶</a>
-          <p class="num"> <span id="diggnum"><script src=/e/public/ViewClick/?classid=4&id=54&down=5></script></span> </p>
+          <a href="JavaScript:makeRequest('/e/public/digg?classid=<?=$ecms_gr[classid]?>&id=<?=$ecms_gr[id]?>&dotop=1&doajax=1&ajaxarea=diggnum','EchoReturnedText','GET','');">顶</a>
+          <p class="num"> <span id="diggnum"><script src=/e/public/ViewClick/?classid=<?=$ecms_gr[classid]?>&id=<?=$ecms_gr[id]?>&down=5></script></span> </p>
         </div>
       </div>
 
@@ -353,15 +369,15 @@
 
 </div>
 
-<input name="id" type="hidden" id="id" value="54" />
+<input name="id" type="hidden" id="id" value="<?=$ecms_gr[id]?>" />
 
-<input name="classid" type="hidden" id="classid" value="4" />
+<input name="classid" type="hidden" id="classid" value="<?=$ecms_gr[classid]?>" />
 
 <input name="enews" type="hidden" id="enews" value="AddPl" />
 
 <input name="repid" type="hidden" id="repid" value="0" />
 
-<input type="hidden" name="ecmsfrom" value="/jiaocheng/3djiaocheng/3d1/2019-05-09/54.html">
+<input type="hidden" name="ecmsfrom" value="<?=$grtitleurl?>">
 
  
 
@@ -397,14 +413,14 @@
 
         <div class="cmt-list-number">
 
-            <span class="comment-number"><span class="cy-number"><script type="text/javascript" src="/e/public/ViewClick/?classid=4&id=54&down=2"></script></span>人参与,<span class="cy-number"><script type="text/javascript" src="/e/public/ViewClick/?classid=4&id=54&down=2"></script></span>条评论</span>
+            <span class="comment-number"><span class="cy-number"><script type="text/javascript" src="/e/public/ViewClick/?classid=<?=$ecms_gr[classid]?>&id=<?=$ecms_gr[id]?>&down=2"></script></span>人参与,<span class="cy-number"><script type="text/javascript" src="/e/public/ViewClick/?classid=<?=$ecms_gr[classid]?>&id=<?=$ecms_gr[id]?>&down=2"></script></span>条评论</span>
 
         </div>
 
     </div>
       <!-- 评论列表  S -->
        <!-- 最新评论 -->
-      <script src="/e/pl/more/?classid=4&id=54&num=10"></script>
+      <script src="/e/pl/more/?classid=<?=$ecms_gr[classid]?>&id=<?=$ecms_gr[id]?>&num=10"></script>
       </div>
       <!-- 评论列表  E -->
       </div></div>

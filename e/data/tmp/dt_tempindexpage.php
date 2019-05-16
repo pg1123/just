@@ -18,6 +18,7 @@ if(!defined('InEmpireCMS'))
 <body>
 <div id="container">
        
+
 <div class="header clearfix ctnt">
     <div class="logo"><img src="/just/images/logo.png" /></div>
 
@@ -66,6 +67,7 @@ if(!defined('InEmpireCMS'))
       
        <?php 
       if($_COOKIE['wwogcmlusername']){
+         echo '<div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div>';
      echo '<li class="layui-nav-item layui-nav-item1 usera" lay-unselect=""> <a href="javascript:;"><img src="/skin/cy/images/noavatar.gif" class="layui-nav-img">'. $_COOKIE['wwogcmlusername']  . '</a>
         <dl class="layui-nav-child">
           <dd><a href="/e/member/cp/">个人中心</a></dd>
