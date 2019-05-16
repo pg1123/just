@@ -17,8 +17,6 @@ if(!defined('InEmpireCMS'))
 
 <body>
 <div id="container">
-       
-
 <div class="header clearfix ctnt">
     <div class="logo"><img src="/just/images/logo.png" /></div>
 
@@ -155,7 +153,6 @@ if(!defined('InEmpireCMS'))
 <script type="text/javascript">
 
 </script>
-
   <div id="main">
     <div class="cgi cginew">
       <div class="tit clearfix">
