@@ -65,25 +65,12 @@ if(!defined('InEmpireCMS'))
 
     <?php } ?>
       
-       <?php 
-      if($_COOKIE['wwogcmlusername']){
-         echo '<div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div>';
-     echo '<li class="layui-nav-item layui-nav-item1 usera" lay-unselect=""> <a href="javascript:;"><img src="/skin/cy/images/noavatar.gif" class="layui-nav-img">'. $_COOKIE['wwogcmlusername']  . '</a>
-        <dl class="layui-nav-child">
-          <dd><a href="/e/member/cp/">个人中心</a></dd>
-          <dd><a href="/e/member/doaction.php?enews=exit">退出</a></dd>
-        </dl>
-      </li>';
-   }
- ?>
+  
+                 <script src="/e/member/login/logined.php"></script>
 
     </ul>
 
-    <?php 
-      if(!$_COOKIE['wwogcmlusername']){
-        echo '<div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div><div class="login"><a href="#" onclick="logintc()">登录</a>|<a href="#" onclick="design()">注册</a></div>';
-      }
-    ?>
+        <script src="/e/member/login/noLogined.php"></script>
 
 
   </div>
@@ -91,7 +78,7 @@ if(!defined('InEmpireCMS'))
 <!--登录弹窗-->
   <div class="logina"  id="logintc" style="display:none;">
  <form class="layui-form" method="post" action="/e/member/doaction.php">
-    <input type="hidden" name="ecmsfrom" value="">
+    <input type="hidden" name="ecmsfrom" value="9">
     <input name="tobind" type="hidden" id="tobind" value="0">
     <input type="hidden" name="enews" value="login">
     <input type="hidden" name="lifetime" value="3600">
@@ -127,6 +114,7 @@ if(!defined('InEmpireCMS'))
      <form class="layui-form" method="post" name="userinfoform" action="/e/member/doaction.php">
         <input name="tobind" type="hidden" id="tobind" value="0">
         <input type="hidden" name="enews" value="register">
+       <input type="hidden" name="ecmsfrom" value="9">
 
         <div class="layui-form-item">
           <label class="layui-form-label">用户名</label>
