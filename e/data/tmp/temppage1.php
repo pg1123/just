@@ -1,4 +1,9 @@
-@charset "utf-8";
+<?php
+if(!defined('InEmpireCMS'))
+{
+	exit();
+}
+?>@charset "utf-8";
 /* CSS Document */
 @import url("font-awesome.min.css");
 @import url("../layui/css/layui.css");

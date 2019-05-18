@@ -14,7 +14,9 @@
 
 <body>
 <div id="container">
- <div class="header clearfix ctnt">
+ <script type="text/javascript" src="/just/js/main.js"></script>
+
+<div class="header clearfix ctnt">
     <div class="logo"><img src="/just/images/logo.png" /></div>
 
     <ul class="layui-nav">
@@ -82,7 +84,7 @@
 
 <!--登录弹窗-->
   <div class="logina"  id="logintc" style="display:none;">
- <form class="layui-form" method="post" action="/e/member/doaction.php">
+ <form id="login_form" class="layui-form" method="post" action="/e/member/doaction.php">
     <input type="hidden" name="ecmsfrom" value="9">
     <input name="tobind" type="hidden" id="tobind" value="0">
     <input type="hidden" name="enews" value="login">
@@ -90,13 +92,13 @@
   <div class="layui-form-item">
     <label class="layui-form-label">用户名</label>
     <div class="layui-input-block">
-      <input type="text" name="username" id="username" lay-verify="title" autocomplete>
+      <input type="text" name="username" id="login_name" lay-verify="title" autocomplete>
     </div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">密码</label>
     <div class="layui-input-block">
-      <input type="password" name="password" id="password" lay-verify="required" autocomplete>
+      <input type="password" name="password" id="login_password" lay-verify="required" autocomplete>
     </div>
   </div>
   <div class="layui-form-item">
@@ -107,7 +109,7 @@
   </div>
   <div class="layui-form-item">
     <div class="layui-input-block">
-      <button class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即登录
+      <button id="login_button" class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即登录
       <button type="reset" class="layui-btn layui-btn-primary">重置</button>
     </div>
   </div>
@@ -124,42 +126,39 @@
         <div class="layui-form-item">
           <label class="layui-form-label">用户名</label>
           <div class="layui-input-block">
-            <input type="text" name="username" id="username" lay-verify="title" autocomplete>
+            <input type="text" name="username" id="reg_name" lay-verify="title" autocomplete>
           </div>
         </div>
 
         <div class="layui-form-item">
           <label class="layui-form-label">密码</label>
           <div class="layui-input-block">
-            <input type="password" name="password" id="password" lay-verify="required" autocomplete>
+            <input type="password" name="password" id="reg_password" lay-verify="required" autocomplete>
           </div>
         </div>
 
         <div class="layui-form-item">
           <label class="layui-form-label">重复密码</label>
           <div class="layui-input-block">
-            <input type="password" name="repassword" id='repassword' lay-verify="required">
+            <input type="password" name="repassword" id='reg_repassword' lay-verify="required">
           </div>
         </div>
 
         <div class="layui-form-item">
           <label class="layui-form-label">邮箱</label>
           <div class="layui-input-block">
-            <input type="text" name="email" id='email' type="text" lay-verify="required"> 
+            <input type="text" name="email" id='reg_email' type="text" lay-verify="required"> 
           </div>
         </div>
         <div class="layui-form-item">
           <div class="layui-input-block">
-            <button class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即注册
+            <button id="reg_button" class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即注册
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
           </div>
         </div>
 </form>
   </div>
 
-<script type="text/javascript">
-
-</script>
   <div class="detail">
     <div class="dmain">
       <div class="dmain-t">
@@ -427,52 +426,6 @@ Copyright ©2019 CGITool right reserved.京ICP备11081390号-1
 <script type="text/javascript" src="/e/data/js/ajax.js"></script>
 <script type="text/javascript">
 
-    layui.use('element', function(){
-  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
-  
-  //监听导航点击
-  element.on('nav(demo)', function(elem){
-    //console.log(elem)
-    layer.msg(elem.text());
-  });
-
-
-  layui.use(['form','upload', 'laydate','laypage', 'layer'], function(){
-    var form = layui.form,
-    layer = layui.layer,
-    laydate = layui.laydate;
-  });
-
-
-
-});
-
-
-//登录弹窗
-  function logintc(){
-      layer.open({
-        type: 1,
-        title: '用户登录',
-        shadeClose: true,
-        shade: 0.8,
-        area: ['400px', 'auto'],
-        content: $('#logintc') //iframe的url
-      });
-  }
-
-
-  //注册弹窗^M
-function design(){
-    layer.open({
-        type: 1,
-  title: '用户注册',
-  shadeClose: true,
-  shade: 0.8,
-  area: ['400px', 'auto'],
-  content: $('#design') //iframe的url
-        
-});
-}
 </script>
 </body>
 </html>
