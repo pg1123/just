@@ -158,10 +158,11 @@ if(!defined('InEmpireCMS'))
     <div class="cgi cginew">
       <div class="tit clearfix">
         <h2>CGI最新推荐</h2>
-        <a href="#"><i class="fa fa-refresh" aria-hidden="true"></i>显示更多</a></div>
+        <a href="/"><i class="fa fa-refresh" aria-hidden="true"></i>显示更多</a></div>
       <div class="layui-row">
          <?php 
-            $sql4=sys_ReturnEcmsLoopBq('select * from just_ecms_news where isgood=1 order by newstime limit 6',20,24,0);
+            //$sql4=sys_ReturnEcmsLoopBq('select * from just_ecms_news where isgood=1 order by newstime limit 6',20,24,0);
+            $sql4=sys_ReturnEcmsLoopBq('select * from just_ecms_news order by rand() limit 6',20,24,0);
             while($r4=$empire->fetch($sql4))
             {   
             ?>
