@@ -15,6 +15,7 @@ li {list-style: none;}
 a {color: #333;text-decoration: none;}
 a:focus {outline: none;}
 button, input {font-family: "微软雅黑";outline: none;}
+.pageBox b{ background-color:#0158ff; line-height:32px; display: inline-block; margin-right: 6px; color: #fff; padding: 0 8px;height: 32px; font: 14px/34px arial;}
 #container{ font-size:14px;font-family: "微软雅黑"; color:#333;}
 body{ background-color:#f7f7f7;}
 .ctnt{ min-width:1080px; }
@@ -93,8 +94,7 @@ body{ background-color:#f7f7f7;}
 .choose{ background-color:#fff; border:1px solid #ddd; border-left:none; border-right:none; width:90%; padding:0 5%; margin:18px 0; height:44px; }
 .choose a{ color:#999; margin:0 10px; line-height:42px; display:inline-block;}
 .choose .this a{ border-bottom:3px solid #0158ff; color:#0158ff; font-weight:bold;}
-.detail{width:90%; padding:0 5%; }
-.dmain{border:1px solid #ddd; background-color:#fff; padding:30px; margin-top:20px;}
+.dmain{border:1px solid #ddd; background-color:#fff; padding:30px; margin:20px 5%;margin-bottom:0;}
 .dmain-t{    line-height: 28px;text-align: left;color: #666;}
 .dmain-t h1{ line-height: 48px;font-size: 30px;color: #000;padding: 20px 0px;}
 .dmain-t a{margin-right: 10px;color:#0158ff;}
@@ -150,13 +150,13 @@ body{ background-color:#f7f7f7;}
 .logina input{height: 38px;line-height: 1.3;border:1px solid #e6e6e6;background-color: #fff; border-radius: 2px;display: block;width: 230px;padding-left: 10px;}
 /*无限加载更多*/
 .pageBox {text-align: center;}
-.pageBox a {border:1px solid #ddd;display:inline-block;margin-right:6px;color: #707070;padding:0 8px;height:32px;font:bold 14px/34px arial;}
-.pageBox a:hover,.pageBox a:active{background:#3aa9f2;color: #FFFFFF;text-decoration: none;}
+.pageBox a {border:1px solid #ddd;display:inline-block;margin-right:6px;color: #707070;padding:0 8px;height:32px;font:14px/34px arial;background-color:#fff;}
+.pageBox a:hover,.pageBox a:active{background:#0158ff;color: #FFFFFF;text-decoration: none;}
 .pageBox .cur { background: #3aa9f2;border: 1px solid #3aa9f2;text-decoration: none;}
 .pageBox a.cur {color: #fff;}
 .pageBox .disabled {width: 79px;}
 .nodata{ text-align: center; line-height: 80px;  }
-.footer{background-color:#393d49; width:100%; line-height: 60px; color: #fff; text-align: center;}
+.footer{background-color:#393d49; width:100%; line-height: 60px; color: #fff; text-align: center; margin-top:40px;}
 /*找回密码*/
 .app-content-body{ width:500px; margin:0 auto; margin-top:40px; background-color:#fff; padding-bottom:20px; border:1px solid #ddd;}
 .app-content-body div{ margin-bottom:15px;}

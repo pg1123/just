@@ -17,6 +17,8 @@ if(!defined('InEmpireCMS'))
 
 <body>
 <div id="container">
+<script type="text/javascript" src="/just/js/main.js"></script>
+
 <div class="header clearfix ctnt">
     <div class="logo"><img src="/just/images/logo.png" /></div>
 
@@ -75,7 +77,7 @@ if(!defined('InEmpireCMS'))
 
 <!--登录弹窗-->
   <div class="logina"  id="logintc" style="display:none;">
- <form class="layui-form" method="post" action="/e/member/doaction.php">
+ <form id="login_form" class="layui-form" method="post" action="/e/member/doaction.php">
     <input type="hidden" name="ecmsfrom" value="9">
     <input name="tobind" type="hidden" id="tobind" value="0">
     <input type="hidden" name="enews" value="login">
@@ -83,13 +85,13 @@ if(!defined('InEmpireCMS'))
   <div class="layui-form-item">
     <label class="layui-form-label">用户名</label>
     <div class="layui-input-block">
-      <input type="text" name="username" id="username" lay-verify="title" autocomplete>
+      <input type="text" name="username" id="login_name" lay-verify="title" autocomplete>
     </div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">密码</label>
     <div class="layui-input-block">
-      <input type="password" name="password" id="password" lay-verify="required" autocomplete>
+      <input type="password" name="password" id="login_password" lay-verify="required" autocomplete>
     </div>
   </div>
   <div class="layui-form-item">
@@ -100,7 +102,7 @@ if(!defined('InEmpireCMS'))
   </div>
   <div class="layui-form-item">
     <div class="layui-input-block">
-      <button class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即登录
+      <button id="login_button" class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即登录
       <button type="reset" class="layui-btn layui-btn-primary">重置</button>
     </div>
   </div>
@@ -117,42 +119,39 @@ if(!defined('InEmpireCMS'))
         <div class="layui-form-item">
           <label class="layui-form-label">用户名</label>
           <div class="layui-input-block">
-            <input type="text" name="username" id="username" lay-verify="title" autocomplete>
+            <input type="text" name="username" id="reg_name" lay-verify="title" autocomplete>
           </div>
         </div>
 
         <div class="layui-form-item">
           <label class="layui-form-label">密码</label>
           <div class="layui-input-block">
-            <input type="password" name="password" id="password" lay-verify="required" autocomplete>
+            <input type="password" name="password" id="reg_password" lay-verify="required" autocomplete>
           </div>
         </div>
 
         <div class="layui-form-item">
           <label class="layui-form-label">重复密码</label>
           <div class="layui-input-block">
-            <input type="password" name="repassword" id='repassword' lay-verify="required">
+            <input type="password" name="repassword" id='reg_repassword' lay-verify="required">
           </div>
         </div>
 
         <div class="layui-form-item">
           <label class="layui-form-label">邮箱</label>
           <div class="layui-input-block">
-            <input type="text" name="email" id='email' type="text" lay-verify="required"> 
+            <input type="text" name="email" id='reg_email' type="text" lay-verify="required"> 
           </div>
         </div>
         <div class="layui-form-item">
           <div class="layui-input-block">
-            <button class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即注册
+            <button id="reg_button" class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即注册
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
           </div>
         </div>
 </form>
   </div>
 
-<script type="text/javascript">
-
-</script>
   <div id="main">
     <div class="cgi cginew">
       <div class="tit clearfix">
@@ -312,119 +311,6 @@ Copyright ©2019 CGITool right reserved.京ICP备11081390号-1
 </div>
 </div>
 <script type="text/javascript">
-$(function(){
-    $(".show").hover(function() {
-      $(this).children(".shadow").show();
-    }, function() {
-      $(this).children(".shadow").hide();
-    });
-
-
-    var winH = $(window).height(); //页面可视区域高度  
-    var i = 4;  
-    $(window).scroll(function() {  
-        var pageH = $(document.body).height();  
-        var scrollT = $(window).scrollTop(); //滚动条top  
-        var aa = (pageH - winH - scrollT) / winH;  
-        if (aa < 0.02) {
-            $.getJSON("/e/extend/cmsdxmore.php",{page:i,cd:1},function(json){
-                if(json){
-                    var str = "";
-                    $.each(json, function(index, array) {
-
-                         str = str + '<div class="layui-col-xs3">';
-                         str = str + '<div class="grid-demo"> <a href="' + array['titleurl'] + '" class="show"> <img src="'+ array['titlepic'] +'" /></a>';
-                         str = str + '<div class="cgiarc">';
-                         str = str + '<div class="cgiarc1">';
-                         str = str + '<h3><a href="' + array['titleurl'] + '" title="' + array['title'] + '">' + array['title'] +  '</a></h3>';
-                         str = str + '<div class="tag tag1"><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong></div>';
-                         str = str + '</div>';
-                         str = str + '<div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>' +array['onclick']+ '</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>'+ array['plnum'] +'</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>'+array['diggtop']+'</span></div>';
-                         str = str + '</div>';
-                         str = str + '</div>';
-                         str = str + '</div>';
-                        $('#LAY_demo1').append(str);
-                    });
-                    i++;
-                } else {
-                    $(".nodata").show().html("别滚动了，已经到底了。。。");
-                    return false;
-                }
-
-
-            });
-
-
-
-            /*$.getJSON("result.php", {page: i}, function(json) {  
-                if (json) {  
-                    var str = "";  
-                    $.each(json, function(index, array) {  
-                        var str = "<div class="single_item"><div class="element_head">";  
-                        var str = str + "<div class="date">" + array['date'] + "</div>";  
-                        var str = str + "<div class="author">" + array['author'] + "</div>";  
-                        var str = str + "</div><div class="content">" + array['content'] + "</div></div>";  
-                        $("#container").append(str);  
-                    });  
-                    i++;  
-                } else {  
-                    $(".nodata").show().html("别滚动了，已经到底了。。。");  
-                    return false;  
-                }  
-            });  */
-        }  
-    });  
-
-
-})
-  
-  
-  layui.use('element', function(){
-  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
-  
-  //监听导航点击
-  element.on('nav(demo)', function(elem){
-    //console.log(elem)
-    layer.msg(elem.text());
-  });
-
-
-  layui.use(['form','upload', 'laydate','laypage', 'layer'], function(){
-    var form = layui.form,
-    layer = layui.layer,
-    laydate = layui.laydate;
-  });
-
-
-
-});
-
-
-//登录弹窗
-  function logintc(){
-      layer.open({
-        type: 1,
-        title: '用户登录',
-        shadeClose: true,
-        shade: 0.8,
-        area: ['400px', 'auto'],
-        content: $('#logintc') //iframe的url
-      });
-  }
-
-
-  //注册弹窗^M
-function design(){
-    layer.open({
-        type: 1,
-  title: '用户注册',
-  shadeClose: true,
-  shade: 0.8,
-  area: ['400px', 'auto'],
-  content: $('#design') //iframe的url
-        
-});
-}
 
 </script>
 </body>
