@@ -73,7 +73,7 @@ document.write("<div class=\"download\"> <img src=\"/just/images/downico1_1.gif\
 else
 {
 ?>
-document.write("<div class=\"download\"> <img src=\"/just/images/downico1_1.gif\" /><p>注册登录后可下载，点击<a href=\"/e/member/login\">登录</a>，点击<a href=\"#\">注册</a></p></div>");
+document.write("<div class=\"download\"> <img src=\"/just/images/downico1_1.gif\" /><p>注册登录后可下载，点击<a onclick=\"logintc()\" href=\"#\">登录</a>，点击<a onclick=\"design()\" href=\"#\">注册</a></p></div>");
 <?php
 }
 ?>

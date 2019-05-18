@@ -17,6 +17,7 @@ if(!defined('InEmpireCMS'))
 
 <body>
 <div id="container">
+
 <script type="text/javascript" src="/just/js/main.js"></script>
 
 <div class="header clearfix ctnt">
@@ -102,7 +103,7 @@ if(!defined('InEmpireCMS'))
   </div>
   <div class="layui-form-item">
     <div class="layui-input-block">
-      <button id="login_button" class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即登录
+      <button  class="login_button layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即登录
       <button type="reset" class="layui-btn layui-btn-primary">重置</button>
     </div>
   </div>
@@ -145,12 +146,13 @@ if(!defined('InEmpireCMS'))
         </div>
         <div class="layui-form-item">
           <div class="layui-input-block">
-            <button id="reg_button" class="layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即注册
+            <button  class="reg_button layui-btn layui-btn1" lay-submit="" lay-filter="demo1">立即注册
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
           </div>
         </div>
 </form>
   </div>
+
 
   <div id="main">
     <div class="cgi cginew">

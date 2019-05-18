@@ -111,7 +111,7 @@ $(function(){
 
 
 
-    $('#login_button').on('click', function(e){
+    $('.login_button').on('click', function(e){
             e.preventDefault();
             var url = '/e/member/doaction.php';
             var username = $('#login_name').val();
@@ -142,7 +142,23 @@ $(function(){
     });
 
 
-    $('#reg_button').on('click', function(e){
+    $('.login_out').on('click', function(e){
+            e.preventDefault();
+            var url = '/e/member/doaction.php';
+            var data = {
+                ecmsfrom:9,
+                enews:"exit", //login
+            };
+            $.post(url, data, function(data,status){
+                if(data.indexOf("成功") >= 0){
+                      location.reload();
+                  }
+
+            });
+    });
+
+
+    $('.reg_button').on('click', function(e){
             e.preventDefault();
             var url = '/e/member/doaction.php';
             var username = $('#reg_name').val();
