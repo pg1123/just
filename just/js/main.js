@@ -55,60 +55,51 @@ $(function(){
     });
 
 
-    var winH = $(window).height(); //页面可视区域高度  
-    var i = 4;  
-    $(window).scroll(function() {  
-        var pageH = $(document.body).height();  
-        var scrollT = $(window).scrollTop(); //滚动条top  
-        var aa = (pageH - winH - scrollT) / winH;  
-        if (aa < 0.02) {
-            $.getJSON("/e/extend/cmsdxmore.php",{page:i,cd:1},function(json){
-                if(json){
-                    var str = "";
-                    $.each(json, function(index, array) {
+    var winH = $(window).height(); //页面可视区域高度
+    var i = 4;
+    var isbool=true;//触发开关，防止多次调用事件
+    $(window).scroll(function() {
+        var pageH = $(document.body).height();
+        var scrollT = $(window).scrollTop(); //滚动条top
+        var aa = (pageH - winH - scrollT) / winH;
+        if (aa < 0.02 && isbool==true) {
+              //isbool=false;
+              push();
 
-                         str = str + '<div class="layui-col-xs3">';
-                         str = str + '<div class="grid-demo"> <a href="' + array['titleurl'] + '" class="show"> <img src="'+ array['titlepic'] +'" /></a>';
-                         str = str + '<div class="cgiarc">';
-                         str = str + '<div class="cgiarc1">';
-                         str = str + '<h3><a href="' + array['titleurl'] + '" title="' + array['title'] + '">' + array['title'] +  '</a></h3>';
-                         str = str + '<div class="tag tag1"><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong></div>';
-                         str = str + '</div>';
-                         str = str + '<div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>' +array['onclick']+ '</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>'+ array['plnum'] +'</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>'+array['diggtop']+'</span></div>';
-                         str = str + '</div>';
-                         str = str + '</div>';
-                         str = str + '</div>';
-                        $('#LAY_demo1').append(str);
-                    });
-                    i++;
-                } else {
-                    $(".nodata").show().html("别滚动了，已经到底了。。。");
-                    return false;
-                }
+        }
+    });
 
+    function push() {
+      $.getJSON("/e/extend/cmsdxmore.php",{page:i,cd:1},function(json){
+          if(json){
+              var str = "";
+              $.each(json, function(index, array) {
 
-            });
+                   // str = str + '<div class="layui-col-xs3">';
+                   // str = str + '<div class="grid-demo"> <a href="' + array['titleurl'] + '" class="show"> <img src="'+ array['titlepic'] +'" /></a>';
+                   // str = str + '<div class="cgiarc">';
+                   // str = str + '<div class="cgiarc1">';
+                   // str = str + '<h3><a href="' + array['titleurl'] + '" title="' + array['title'] + '">' + array['title'] +  '</a></h3>';
+                   // str = str + '<div class="tag tag1"><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong></div>';
+                   // str = str + '</div>';
+                   // str = str + '<div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>' +array['onclick']+ '</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>'+ array['plnum'] +'</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>'+array['diggtop']+'</span></div>';
+                   // str = str + '</div>';
+                   // str = str + '</div>';
+                   // str = str + '</div>';
 
-            /*$.getJSON("result.php", {page: i}, function(json) {  
-                if (json) {  
-                    var str = "";  
-                    $.each(json, function(index, array) {  
-                        var str = "<div class="single_item"><div class="element_head">";  
-                        var str = str + "<div class="date">" + array['date'] + "</div>";  
-                        var str = str + "<div class="author">" + array['author'] + "</div>";  
-                        var str = str + "</div><div class="content">" + array['content'] + "</div></div>";  
-                        $("#container").append(str);  
-                    });  
-                    i++;  
-                } else {  
-                    $(".nodata").show().html("别滚动了，已经到底了。。。");  
-                    return false;  
-                }  
-            });  */
-        }  
-    });  
+                   str =  '<div class="layui-col-xs3"><div class="grid-demo"> <a href="' + array['titleurl'] + '" class="show"> <img src="'+ array['titlepic'] +'" /></a><div class="cgiarc"><div class="cgiarc1"><h3><a href="' + array['titleurl'] + '" title="' + array['title'] + '">'  + array['title'] +  '</a></h3><div class="tag tag1"><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong></div></div><div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>' +array['onclick']+ '</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>'+ array['plnum'] +'</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>'+array['diggtop']+'</span></div></div></div></div>';
 
 
+                  $('#LAY_demo1').append(str);
+                  //isbool=false;
+              });
+              i++;
+            } else {
+                $(".nodata").show().html("别滚动了，已经到底了。。。");
+                return false;
+            }
+        });
+    }
 
 
     $('.login_button').on('click', function(e){
