@@ -87,7 +87,7 @@ $(function(){
                    // str = str + '</div>';
                    // str = str + '</div>';
 
-                   str =  '<div class="layui-col-xs3"><div class="grid-demo"> <a href="' + array['titleurl'] + '" class="show"> <img src="'+ array['titlepic'] +'" /></a><div class="cgiarc"><div class="cgiarc1"><h3><a href="' + array['titleurl'] + '" title="' + array['title'] + '">'  + array['title'] +  '</a></h3><div class="tag tag1"><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong></div></div><div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>' +array['onclick']+ '</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>'+ array['plnum'] +'</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>'+array['diggtop']+'</span></div></div></div></div>';
+                   str =  '<div class="layui-col-xs3"><div class="grid-demo"> <a href="' + array['titleurl'] + '" class="show"> <img src="'+ array['titlepic'] +'" /></a><div class="cgiarc"><div class="cgiarc1"><h3><a href="' + array['titleurl'] + '" title="' + array['title'] + '">'  + array['title'] +  '</a></h3><div class="tag tag1"><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong><strong>标签</strong></div></div><div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>' +array['onclick']+ '</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>'+ array['plnum'] +'</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="num">'+array['diggtop']+'</span></span></div></div></div></div>';
 
 
                   $('#LAY_demo1').append(str);
@@ -194,6 +194,31 @@ $(function(){
 
             });
     });
+
+
+
+    $(".fa-thumbs-o-up").click(function(event){ 
+        event.preventDefault();
+        var mythis = $(this); 
+        var classid = mythis.data("classid"); 
+        var id = mythis.data("id");
+        var dig = mythis.data("dig") + 1;
+            
+        $.ajax({ 
+          type:"GET", 
+          url:"/e/public/digg/", 
+          data:{"classid":classid,"id":id,"dotop":1,"doajax":1,"ajaxarea":"diggnum"}, 
+          dataType:"text", 
+          success:function(data){
+            if(data.indexOf("您已提交过") >= 0){
+                   alert('您已赞过');
+              }else{
+                mythis.parent(".handok").find('.num').text(dig);
+                return;
+              }
+          } 
+        }); 
+      }); 
 
 
 

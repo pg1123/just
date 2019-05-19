@@ -224,17 +224,18 @@ if(!defined('InEmpireCMS'))
               $sql8=sys_ReturnEcmsLoopBq($r7['classid'],12,0,1,'','');
               
               while($r8=$empire->fetch($sql8)){
-                echo '<div class="layui-col-xs3">
+                 echo '<div class="layui-col-xs3">
               <div class="grid-demo"> <a href="'.$r8['titleurl'].'" class="show"> <img src="'.$r8['titlepic'].'" /><span class="new">最新</span>
                 <div class="shadow" style="display:none;"> '.$r8['smalltext'].' </div>
                 </a>
                 <div class="cgiarc">
                   <h3><a href="'.$r8['titleurl'].'">'.$r8['title'].'</a></h3>
                   <div class="tag"><strong><a href="#">插画</a></strong><strong><a href="#">手绘</a></strong><strong><a href="#">绘画</a></strong><strong><a href="#">教程</a></strong><strong><a href="#">场景</a></strong><strong><a href="#">全景</a></strong></div>
-                  <div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>'.$r8['onclick'].'</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>'.$r8['plnum'].'</span><span class="handok"><a href="JavaScript:makeRequest("/e/public/digg?classid='.$r8["classid"].'&id='.$r8["id"]."&dotop=1&doajax=1&ajaxarea=diggnum","EchoReturnedText","GET",'");" ><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>'.'<script src=[!--news.url--]e/public/ViewClick/?classid='.$r8["classid"].'&id='.$r8["id"].'&down=5></script>'.'</span></div>
+                  <div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>'.$r8['onclick'].'</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>'.$r8['plnum'].'</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true" data-classid='.$r8['classid'].' data-id='.$r8['id'].' data-dig='.$r8['diggtop'].' ></i><span class="num">'.$r8['diggtop'].'</span></span></div>
                 </div>
               </div>
             </div>';
+
               }
               //exit;
             ?>
