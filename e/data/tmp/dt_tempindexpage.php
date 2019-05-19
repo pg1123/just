@@ -17,6 +17,10 @@ if(!defined('InEmpireCMS'))
 
 <body>
 <div id="container">
+<<<<<<< HEAD
+
+=======
+>>>>>>> 50ddad850ec3c998ed5b050d196d84d9588556bf
 <script type="text/javascript" src="/just/js/main.js"></script>
 
 <div class="header clearfix ctnt">
@@ -152,6 +156,10 @@ if(!defined('InEmpireCMS'))
 </form>
   </div>
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 50ddad850ec3c998ed5b050d196d84d9588556bf
   <div id="main">
     <div class="cgi cginew">
       <div class="tit clearfix">
