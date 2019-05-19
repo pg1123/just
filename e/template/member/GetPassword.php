@@ -38,7 +38,7 @@ $url="<a href=../../../>首页</a>&nbsp;>&nbsp;<a href=../cp/>会员中心</a>&n
     </div>
     <div class="clearfix"> 
       <p>&nbsp; </p>
-      <span> <input type="submit" name="button" value="提交" class="btn btn-primary tj"> <input name="enews" type="hidden" id="enews" value="SendPassword"><a href="#">返回网站首页</a></span>
+      <span> <input type="submit" name="button" value="提交" class="btn btn-primary tj"> <input name="enews" type="hidden" id="enews" value="SendPassword"><a href="/">返回网站首页</a></span>
     </div>
 
   </form>

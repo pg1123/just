@@ -1,3 +1,4 @@
+
 <?php
 if(!defined('InEmpireCMS'))
 {
@@ -9,7 +10,6 @@ $public_diyr['pagetitle']='会员中心';
 $url="<a href=../../../>首页</a>&nbsp;>&nbsp;<a href=../cp/>会员中心</a>";
 require(ECMS_PATH.'e/template/incfile/header.php');
 ?>
-
 <div class="app-content-body ">
 
 <div class="bg-light lter b-b wrapper-md">
