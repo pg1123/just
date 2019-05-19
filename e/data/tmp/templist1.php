@@ -17,7 +17,6 @@ if(!defined('InEmpireCMS'))
 
 <body>
 <div id="container">
-
 <script type="text/javascript" src="/just/js/main.js"></script>
 
 <div class="header clearfix ctnt">
@@ -154,7 +153,6 @@ if(!defined('InEmpireCMS'))
   </div>
 
 
-
   <div class="list">
     <div class="choose clearfix">
        <!-- <span class="this"><a href="[!--news.url--]e/public/ViewClick/?classid=[!--classid--]&id=[!--id--]&down=5">全部</a></span> -->
@@ -179,7 +177,9 @@ if(!defined('InEmpireCMS'))
 Copyright ©2019 CGITool right reserved.京ICP备11081390号-1
 </div>
 <script type="text/javascript">
+$(function(){
         
+}
 
 </script>
 </body>

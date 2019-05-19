@@ -12,7 +12,7 @@ $ecms_config['db']['dbver']='5.0';	//数据库版本
 $ecms_config['db']['dbserver']='localhost';	//数据库登录地址
 $ecms_config['db']['dbport']='';	//端口，不填为按默认
 $ecms_config['db']['dbusername']='root';	//数据库用户名
-$ecms_config['db']['dbpassword']='';	//数据库密码
+$ecms_config['db']['dbpassword']='alpha1';	//数据库密码
 $ecms_config['db']['dbname']='just';	//数据库名
 $ecms_config['db']['setchar']='utf8';	//设置默认编码
 $ecms_config['db']['dbchar']='utf8';	//数据库默认编码
@@ -157,7 +157,7 @@ $public_r=array('sitename'=>'素材网',
 'newslink'=>0,
 'checked'=>0,
 'searchtime'=>30,
-'loginnum'=>5,
+'loginnum'=>500,
 'logintime'=>60,
 'addnews_ok'=>1,
 'register_ok'=>0,
