@@ -17,10 +17,7 @@ if(!defined('InEmpireCMS'))
 
 <body>
 <div id="container">
-<<<<<<< HEAD
 
-=======
->>>>>>> 50ddad850ec3c998ed5b050d196d84d9588556bf
 <script type="text/javascript" src="/just/js/main.js"></script>
 
 <div class="header clearfix ctnt">
@@ -156,10 +153,7 @@ if(!defined('InEmpireCMS'))
 </form>
   </div>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 50ddad850ec3c998ed5b050d196d84d9588556bf
   <div id="main">
     <div class="cgi cginew">
       <div class="tit clearfix">
@@ -237,7 +231,7 @@ if(!defined('InEmpireCMS'))
                 <div class="cgiarc">
                   <h3><a href="'.$r8['titleurl'].'">'.$r8['title'].'</a></h3>
                   <div class="tag"><strong><a href="#">插画</a></strong><strong><a href="#">手绘</a></strong><strong><a href="#">绘画</a></strong><strong><a href="#">教程</a></strong><strong><a href="#">场景</a></strong><strong><a href="#">全景</a></strong></div>
-                  <div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>'.$r8['onclick'].'</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>'.$r8['plnum'].'</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>'.$r8['diggtop'].'</span></div>
+                  <div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>'.$r8['onclick'].'</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>'.$r8['plnum'].'</span><span class="handok"><a href="JavaScript:makeRequest("/e/public/digg?classid='.$r8["classid"].'&id='.$r8["id"]."&dotop=1&doajax=1&ajaxarea=diggnum","EchoReturnedText","GET",'");" ><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>'.'<script src=[!--news.url--]e/public/ViewClick/?classid='.$r8["classid"].'&id='.$r8["id"].'&down=5></script>'.'</span></div>
                 </div>
               </div>
             </div>';

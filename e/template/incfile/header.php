@@ -96,11 +96,11 @@ $tgetmid=(int)$_GET['mid'];
     <link rel="stylesheet" href="<?=$public_r['newsurl']?>skin_member/css/animate.css" type="text/css" />
     <link rel="stylesheet" href="<?=$public_r['newsurl']?>skin_member/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="<?=$public_r['newsurl']?>skin_member/css/bootstrap.css" type="text/css" />
-    <link href="/just/css/huiyuan.css" type="text/css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="<?=$public_r['newsurl']?>skin_member/css/angulr-admin.css" rel="stylesheet">
     <link rel="stylesheet" href="<?=$public_r['newsurl']?>skin_member/css/font.css" type="text/css" />
     <link rel="stylesheet" href="<?=$public_r['newsurl']?>skin_member/css/app.css" type="text/css" />
+    <link href="/just/css/huiyuan.css" type="text/css" rel="stylesheet" />
     <script src="<?=$public_r['newsurl']?>skin_member/js/jquery.js"></script>
     <script src="<?=$public_r['newsurl']?>skin_member/js/zbp_add.js"></script>
     <!-- ZCenter js-->
