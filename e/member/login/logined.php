@@ -66,7 +66,7 @@ if($mhavelogin==1)
 {
     $lgusername=RepPostVar(getcvar('mlusername'));//登陆用户
 ?>
-document.write('<div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div> ');
+<!-- document.write('<div class="hicon clearfix"> <a href="#" class="icon"><i class="fa fa-qq" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-question" aria-hidden="true"></i></a> <a href="#" class="icon"><i class="fa fa-bars" aria-hidden="true"></i></a> </div> '); -->
 document.write('<li class="layui-nav-item layui-nav-item1 usera" lay-unselect=""> <a href="javascript:;"><img src="/skin/cy/images/noavatar.gif" class="layui-nav-img"><?=$lgusername?></a><dl class="layui-nav-child"><dd><a href="/e/member/cp/">个人中心</a></dd><dd><a class="login_out" href="/e/member/doaction.php?enews=exit">退出</a></dd></dl></li>');
 <?php
     db_close();
