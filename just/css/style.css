@@ -14,7 +14,8 @@ button, input {font-family: "微软雅黑";outline: none;}
 #container{ font-size:14px;font-family: "微软雅黑"; color:#333;}
 body{ background-color:#f7f7f7;}
 .ctnt{ min-width:1080px; }
-/*头部导航*/
+
+/*头部导航111*/
 .header { position:relative; background-color:#393d49; width:100%; }
 .header .logo{ float:left; margin-left:20px; margin-right:50px; }
 .header .logo{ height:20px; margin-top:20px;}
@@ -34,7 +35,7 @@ body{ background-color:#f7f7f7;}
 .layui-nav-img{ width:28px; height:28px;}
 .layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after{ background-color:inherit; height:0;}
 .layui-nav .layui-this{ background-color:#0158ff}
-.header .login{ position:absolute ; right:190px; top:20px;color:#c4c5c9;}
+.header .login{ position:absolute ; right:20px; top:20px;color:#c4c5c9;}
 .header .login a{ color:#c4c5c9; margin:0 8px;}
 .header .login a:hover{ color:#fff;}
 .layui-nav .usera{ position: absolute; right: 200px; }
@@ -58,13 +59,13 @@ body{ background-color:#f7f7f7;}
 .layui-tab-title li:last-child{ border-right:none;}
 .layui-tab-brief>.layui-tab-title .layui-this {color: #fff; border-bottom:none; background-color:#0158ff;}
 .layui-tab-brief>.layui-tab-more li.layui-this:after, .layui-tab-brief>.layui-tab-title .layui-this:after{ border-bottom:none;}
-.layui-tab-content{ padding:10px 0; padding-top:16px;}
-.layui-tab-content .layui-row{margin:0 -8px;}
-.layui-tab-content .layui-row .grid-demo{ margin:0 8px; border:1px solid #ddd; margin-bottom:16px; background-color:#fff;}
-.layui-tab-content .layui-row a.show{overflow:hidden;position:relative;  display:block;}
-.layui-tab-content .more{ text-align:center; margin-top:10px;}
-.layui-tab-content .more a{ border-radius:30px; height:36px; line-height:36px; padding:0 30px; border:1px solid #ddd; display:inline-block; background-color:#eee;}
-.layui-tab-content .more a:hover{background-color:#0158ff; color:#fff;}
+.cgia{ margin-bottom:26px;}
+.cginew{ padding:10px 0; padding-top:0;}
+.cginew .layui-row{margin:0 -8px;}
+.cginew .layui-row .border{ width:20%; float:left;}
+.cginew .layui-row .grid-demo{ border:1px solid #ddd;  background-color:#fff; float:left; margin:0 8px;margin-bottom:16px;}
+.cginew .layui-row a.show{overflow:hidden;position:relative;  display:block;}
+.layui-tab-item{ display:block;}
 .shadow{ position:absolute; top:0; left:0; right:0; bottom:0; background-color:rgba(0,0,0,0.5); color:#fff; text-align:left; border-radius:3px; padding:10px; overflow:hidden;} 
 .cgiarc{ padding:10px;}
 .cgiarc1{ height:64px;}
@@ -85,7 +86,7 @@ body{ background-color:#f7f7f7;}
 .cginew .layui-col-xs3:nth-child(5),.cginew .layui-col-xs3:nth-child(6){ display:none;}
 .layui-laypage .layui-laypage-curr .layui-laypage-em{    background-color: #0158ff;}
 .list{ min-width:1000px;}
-.list .layui-tab-content{width:90%; padding:0 5%; margin:0 auto;}
+.list .cginew{width:90%; padding:0 5%; margin:0 auto;}
 .choose{ background-color:#fff; border:1px solid #ddd; border-left:none; border-right:none; width:90%; padding:0 5%; margin:18px 0; height:44px; }
 .choose a{ color:#999; margin:0 10px; line-height:42px; display:inline-block;}
 .choose .this a{ border-bottom:3px solid #0158ff; color:#0158ff; font-weight:bold;}
@@ -166,8 +167,7 @@ body{ background-color:#f7f7f7;}
 .app-content-body span a{ color:#3596dd; margin-left:10px;}
 .app-content-body span a:hover{ text-decoration:underline;}
 @media(min-width:1600px){
-    .layui-col-xs3{ width:16.666%;}
-    .cginew .layui-col-xs3:nth-child(5),.cginew .layui-col-xs3:nth-child(6){ display:block;}
+    .cgiall .layui-col-xs3{ width:16.666%;}
     }
 
 

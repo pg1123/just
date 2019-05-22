@@ -3,4 +3,5 @@ if(!defined('InEmpireCMS'))
 {
 	exit();
 }
-?>.bg-info.dk, .bg-info .dk {background-color: #393D49;}
+?>.bg-info.dker, .bg-info .dker {background-color: #393d49 !important;}
+.bg-black {background-color: #393d49;}

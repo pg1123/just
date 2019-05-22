@@ -17,7 +17,6 @@ if(!defined('InEmpireCMS'))
 
 <body>
 <div id="container">
-
 <script type="text/javascript" src="/just/js/main.js"></script>
 
 <div class="header clearfix ctnt">
@@ -153,9 +152,8 @@ if(!defined('InEmpireCMS'))
 </form>
   </div>
 
-
   <div id="main">
-    <div class="cgi cginew">
+    <div class="cgi cgia">
       <div class="tit clearfix">
         <h2>CGI最新推荐</h2>
         <a href="/"><i class="fa fa-refresh" aria-hidden="true"></i>显示更多</a></div>
@@ -170,47 +168,14 @@ if(!defined('InEmpireCMS'))
                     <div class="grid-demo"><a href="<?php echo $r4['titleurl']; ?>"><img src="<?php echo $r4['titlepic']; ?>" /></a></div>
                 </div>
         <?php } ?>
-        <!-- <div class="layui-col-xs3">
-          <div class="grid-demo"><a href="#"><img src="/just/images/img.jpg" /></a></div>
-        </div>
-        <div class="layui-col-xs3">
-          <div class="grid-demo"><a href="#"><img src="/just/images/img1.jpg" /></a></div>
-        </div>
-        <div class="layui-col-xs3">
-          <div class="grid-demo"><a href="#"><img src="/just/images/img2.jpg" /></a></div>
-        </div>
-        <div class="layui-col-xs3">
-          <div class="grid-demo"><a href="#"><img src="/just/images/img3.jpg" /></a></div>
-        </div>
-        <div class="layui-col-xs3">
-          <div class="grid-demo"><a href="#"><img src="/just/images/img2.jpg" /></a></div>
-        </div>
-        <div class="layui-col-xs3">
-          <div class="grid-demo"><a href="#"><img src="/just/images/img3.jpg" /></a></div>
-        </div> -->
       </div>
     </div>
-    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
-      <ul class="layui-tab-title">
-             
-          <?php 
-            $sql6=sys_ReturnEcmsLoopBq('select classid,classname,classpath from [!db.pre!]enewsclass where bclassid=0 and showclass=0 order by myorder limit 3',20,24,0);
-            $aa = 1;
-            while($r6=$empire->fetch($sql6))
-            {
-            ?>
-                <li  <?php if($aa==1) { echo 'class="layui-this"'; }  ?>   >CGI<?php echo $r6['classname']; ?></li>
-        <?php 
-          $aa++;
-         } ?>
-   
 
-      </ul>
+      <div class="cginew">
 
-
-      <div class="layui-tab-content">
-
-
+        <div class="tit clearfix">
+        <h2 <?php if($aa==1) { echo 'class="layui-this"'; }  ?>   >CGI<?php echo $r6['classname']; ?></h2>
+        <a href="<?php echo $r7['classpath']; ?>">查看更多</a></div>
         <?php 
             $sql7=sys_ReturnEcmsLoopBq('select classid,classname,classpath from [!db.pre!]enewsclass where bclassid=0 and showclass=0 order by myorder limit 3',20,24,0);
             $aa = 1;
@@ -219,28 +184,27 @@ if(!defined('InEmpireCMS'))
 
               <div class="layui-tab-item <?php if($aa==1) { echo 'layui-show'; }  ?>">
                   <div class="layui-row" id="con">
+                     
               <?php
          
               $sql8=sys_ReturnEcmsLoopBq($r7['classid'],12,0,1,'','');
               
               while($r8=$empire->fetch($sql8)){
-                 echo '<div class="layui-col-xs3">
+                echo '<div class="border">
               <div class="grid-demo"> <a href="'.$r8['titleurl'].'" class="show"> <img src="'.$r8['titlepic'].'" /><span class="new">最新</span>
                 <div class="shadow" style="display:none;"> '.$r8['smalltext'].' </div>
                 </a>
                 <div class="cgiarc">
                   <h3><a href="'.$r8['titleurl'].'">'.$r8['title'].'</a></h3>
                   <div class="tag"><strong><a href="#">插画</a></strong><strong><a href="#">手绘</a></strong><strong><a href="#">绘画</a></strong><strong><a href="#">教程</a></strong><strong><a href="#">场景</a></strong><strong><a href="#">全景</a></strong></div>
-                  <div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>'.$r8['onclick'].'</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>'.$r8['plnum'].'</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true" data-classid='.$r8['classid'].' data-id='.$r8['id'].' data-dig='.$r8['diggtop'].' ></i><span class="num">'.$r8['diggtop'].'</span></span></div>
+                  <div class="action"> <span><i class="fa fa-eye" aria-hidden="true"></i>'.$r8['onclick'].'</span><span><i class="fa fa-commenting-o" aria-hidden="true"></i>'.$r8['plnum'].'</span><span class="handok"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>'.$r8['diggtop'].'</span></div>
                 </div>
               </div>
             </div>';
-
               }
               //exit;
             ?>
                 </div>
-              <div class="more"><a href="<?php echo $r7['classpath']; ?>">查看全部项目</a></div>
             </div>
         <?php 
           $aa++;
@@ -252,7 +216,7 @@ if(!defined('InEmpireCMS'))
 
 
       </div>
-    </div>
+
 
 
 
